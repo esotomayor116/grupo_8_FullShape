@@ -1,7 +1,7 @@
 # SportCommerce
 ## Productos y Servicios
 #### Somos una compañia que ofrece la mayor variedad de articulos deportivos. Un servicio con experiencia y excelencia el cual es avalado por el grupo NewSport y SPORT 87, que cuenta con más de 30 locales al público en la ciudad de Cordoba, Mendoza y la Rioja.
-#### Como asi tambien 20 locales Internacionales en el pais de colombia
+#### Como asi tambien 20 locales Internacionales en el Pais de Colombia
 ##### Somos "El Shopping Online® Lider" y te invitamos a conocernos.
 
 ## Quienes son nuestros Clientes
