@@ -16,3 +16,5 @@
 #### Encargado en crear un wireframe y un boceto del sitio.
 ### **Antonio Troncoso** (Comerciante):
 #### Encargado de definir la temática del Market Place.
+
+## Eso es Todo
