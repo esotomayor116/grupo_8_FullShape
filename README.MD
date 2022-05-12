@@ -12,7 +12,22 @@
 #### Encargado en crear Repositorio Github.
 ### **Juan Sebastián Auza Ortega** (Piloto comercial de Avión):
 #### Encargado de buscar inspiración en referentes del mercado.
-### **Juan Sebastián Auza Ortega** (Empleado de Comercio):
+### **Luciano Salas** (Empleado de Comercio):
 #### Encargado en crear un wireframe y un boceto del sitio.
 ### **Antonio Troncoso** (Comerciante):
 #### Encargado de definir la temática del Market Place.
+
+## Páginas que nos inspirarán:
+### **MiroDeportes** (https://mirodeportes.com/):
+#### HomePage con un mensaje directo, motivador y una bonita presentación colorida, inspira buenas emociones.
+### **Decathlon** (https://www.decathlon.com.co/):
+#### Nos muestra directamente, cuales son los productos que generan mayor interés.
+### **Atlanta-Deportes** (https://atlanta-deportes.com.co/):
+#### Su presentación de inicio es un video, lo cual llama mucho más la atención que una imagen.
+### **DigitalSport** (https://www.digitalsport.com.ar/):
+#### Su HomePage contiene unos divertidos anuncios dinámicos con videos, y un excelente balance de colores que motivan al cliente.
+### **OpenSports** (https://www.opensports.com.ar/):
+#### Contiene un carrusel en la portada con las imagenes que más nos pueden interesar.
+
+
+
