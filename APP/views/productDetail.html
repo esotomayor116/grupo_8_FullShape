@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/2da8e91210.js" crossorigin="anonymous"></script>
+        <link href="./css/stylesPD.css" rel="stylesheet">
+        <title>Full Shape</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <a href="#"><li>Ayuda</li></a>
+                    <a href="#"><li>Iniciar sesión</li></a>
+                    <a href="#"><li>Registrate</li></a>
+                </ul>
+            </nav>
+            <img class="logo" src="/images/Shapepng2.svg" alt="">
+            <div class="barra-busqueda">
+                <form action="/" method="POST">
+                    <input class="busqueda" type="text" name="articulo" placeholder="Buscar artículo"> 
+                </form>
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <div>
+            </div>
+            <div class="seleccionar-categoria">
+                <p>Gimnasio</p>
+                <p>Suplementos</p>
+                <p>Fútbol</p>
+                <p>Boxeo</p>
+                <p>Kineseología</p>
+                <form action="/" method="POST">
+                <label>Seleccionar categoría</label>
+                <select style="font-size:18px;" name="Categoría">
+                    <option value="gimnasio">Gimnasio</option>
+                    <option value="gimnasio">Suplementos</option>
+                    <option value="gimnasio">Fútbol</option>
+                    <option value="gimnasio">Boxeo</option>
+                    <option value="gimnasio">Kineseología</option>
+                </select>
+                </form>
+            </div>
+        </header>
+        <main>
+            <div class="carrusel">
+                <img class="article" src="/images/casa-gimnasio.jpg" alt="">
+                <ul class="carrusel-fotos">
+                    <li id="foto1"><img id="c1"src="/images/casa-gimnasio.jpg" alt=""></li>
+                    <li id="foto2"><img id="c2"src="/images/ocho-gimnasios-en-casa-principal.jpg" alt=""></li>
+                    <li id="foto3"><img id="c3" src="/images/gimnasio-en-casa.jpg" alt=""></li>
+                </ul>
+            </div>
+            <div class="presentacion">
+                <h2>KIT DE GIMNASIO EN CASA</h1>
+                <p class="pp">Categoría - Maquinas</p>
+                <p class="pp">Código del producto</p>
+                <p class="pp">Estado - Nuevo</p>
+                <p class="pp">145008</p>
+                <h2 id="precio">$150.000</h2>
+                <p class="disponibilidad">Disponibles - 3 unidades</p>
+                <p>Añadir 1 al carrito</p>
+                <p id="descripcion">Aquí va una descripción breve del producto, y no, no será un Lorem Ipsum bla bla bla, I’ll rather let a random text in English for you here, just for filling the blank space with something long, don´t forget to study English with me.</p>
+                <p id="resenas">Reseñas - <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 25 Reseñas</p>
+            </div>
+            <div class="detalle">
+                <h3>DESCRIPCIÓN DETALLADA</h3>
+                <p class="detail">Aquí va una descripción detallada del producto, y no, no será un Lorem Ipsum bla bla bla, I’ll rather let a random text in English for you here, just for filling the blank space with something long, don´t forget to study English with me.</p>
+                <h3>Especificaciones técnicas</h3>
+                <ul class="techspecs">
+                    <li class="specs"></li>
+                    <li class="specs"></li>
+                    <li class="specs"></li>
+                    <li class="specs"></li>
+                </ul>
+            </div>
+            <div class="relacionados">
+                <h3>Productos relacionados:</h3>
+                <ul class="carrusel-fotos">
+                    <li id="foto4"><img id="c4"src="/images/Orbitrek.jpg" alt=""></li>
+                    <li id="foto5"><img id="c5"src="/images/Bici-estatica.jpg" alt=""></li>
+                    <li id="foto6"><img id="c-6"src="/images/mancuernas.jpg" alt=""></li>
+                    <li id="foto7"><img id="c-7"src="/images/barra.jpg" alt=""></li>
+                </ul>
+                <button><i class="fa-solid fa-arrow-left"></i></button>
+                <button><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </main>
+        <footer>
+            <div class="footer1">
+                <a href="#"><p style="font-weight:bold;">Formas de pago >>></p></a>
+                <a href="#"><p>Acerca de FullShape</p></a>
+                <a href="#"><p>Seguimiento de pedidos</p></a>
+                <a href="#"><p>Sucursales</p></a>
+                <a href="#"><p>Cambios y devoluciones</p></a>
+                <a href="#"><p>Contacto</p></a>
+                <a href="#"><p>Asistencia al cliente</p></a>
+                <a href="#"><p>Novedades y eventos</p></a>
+            </div>
+            <div class="redes">
+                <p style="font-weight:bold;">Seguinos en nuestras redes</p>
+                <a id="c6" href="https://web.facebook.com/"><img src="/images/facelogo.png" alt=""></a>
+                <a id="c7" href="https://www.instagram.com/"><img src="/images/Instalogo.png" alt=""></a>
+                <a id="c8" href="https://twitter.com/"><img src="/images/Twitter.png" alt=""></a>
+            </div>
+            <div class="footer2">
+                <a href="#"><p class="terms" style="font-weight:bold;">Política de privacidad</p></a>
+                <a href="#"><p class="terms" style="font-weight:bold;">Términos y condiciones</p></a>
+            </div>
+        </footer>
+    </body>
+</html>

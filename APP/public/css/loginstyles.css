@@ -1,0 +1,255 @@
+/* Estilos que aplican solo al formulario de login.
+Se especificaron clases en cada "div" para que no afecte el estilo del 
+resto al incorporarlo en un unico archivo de estilo. */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; 
+}
+
+main{
+    width: 90%;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+body.login{
+
+    background-image: url(/images/fondo1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+div.cuerpo-login{
+    background-color: aquamarine;
+    opacity: 80%;
+    margin: 5%;
+    border-radius: 5%;
+
+}
+
+
+div.login-header{
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 5%;
+    justify-content: space-between;
+    text-align: center;
+    align-items:stretch;
+    font-size: 12px;
+ }
+div.login-header .logo{
+     width: 100%;
+ }
+ .logo-login img{
+    text-align: center;
+    width: 50%;
+    opacity: 100%;
+ }
+
+.inicia-sesion{
+    padding: 4%;
+}
+
+
+.carrito-login img{
+    text-align: center;
+    width: 15%;
+    padding: 5px;
+ }
+
+
+ form div.login input {
+    border-radius: 5px;
+    background-color: #D9D9D9;
+    width: 90%;
+    height: 40px;
+ }
+
+ form div.login input{
+    border-radius: 5px;
+    background-color: #D9D9D9;
+    width: 90%;
+    height: 40px;
+ }
+
+::placeholder{
+    color: black;
+    text-align: center;
+ }
+
+
+ form div.login{
+    padding: 2%;
+    text-align: center;
+}
+form div.recordarme{
+    display: flex;
+    padding: 3%;
+    text-align: left;
+    justify-content: space-around;
+}
+
+ form.login{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 1%;
+    justify-content: space-between;
+    flex-direction: column;
+ }
+
+
+div.registrate{
+    text-align: center;
+}
+
+
+div button{
+
+    background-color: #03264C;
+    border-radius: 5px;
+    color: #FFF;
+    font-size: 20px;
+    margin: 10px 0px 20px 0px; 
+    padding: 10px;
+    text-align: center;
+}
+
+
+div.botonLogin{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5%;
+    justify-content:center
+
+}
+
+.botonLogin button{
+    flex-grow: 1;
+}
+.botonLogin button:hover{
+    background-color: #0022AA;
+}
+
+
+
+@media (max-width: 768px){
+
+    header div.carrito-login{
+        display: none;
+    }
+
+    div.login-header{
+
+        padding: 0%;
+    }
+
+    .recordarme, .registrate{
+        font-size: smaller
+    }
+
+}
+
+
+
+
+/* __________ Estilos footer ________________ */
+
+footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+footer p, footer a{
+    font-size: 14px;
+    margin: 5px 0px;
+    text-align: center;
+    align-self: center;
+}
+.footer1, .footerbottom{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #83FACF;
+    width: 100%;
+    text-align: center;
+    /* margin: 0% 1%; */
+}
+
+footer, .footerbottom{
+
+    border: 1px solid black;
+}
+
+
+.footer1-izquierdo, .footer1-derecho{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #83FACF;
+    width: 50%;
+    /* margin: 0% 1%; */
+}
+
+
+.redes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #83FACF;
+    width: 100%;
+    /* margin: 0% 1%; */
+}
+#c6, #c7 {
+    border-radius: 10px;
+}
+#c6, #c7, #c8 {
+    width: 7%;
+    margin: 10px 5px;
+}
+
+div.footer1 a{
+    margin: 1px;
+}
+div.redes p{
+    width: 100%;
+}
+.footer1, .redes{
+    width: 50%;
+}
+
+@media (max-width: 768px){
+
+
+    div.footer1 a, div.footerbottom a{
+        font-size: 14px;
+    }
+    a.terminos{
+        text-align: right;
+    }
+
+    div.redes {
+        width: 100%;
+        border: 1px solid black;
+    }
+
+    div.footer1{
+        width: 100%;
+    }
+
+    div.redes p{
+        width: 50%;
+        font-size: 12px;
+    }
+
+    
+}

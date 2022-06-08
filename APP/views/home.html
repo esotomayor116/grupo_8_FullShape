@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2da8e91210.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/home.css">
+<title>Bienvenidos a Full Shape</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href="#">Ayuda</a>
+                <a href="/login">Iniciar sesión</a>
+                <a href="/register">Registrate</a>
+            </ul>
+        </nav>
+        <img class="logo" src="/images/Shapepng2.svg" alt="">
+        <div class="barra-busqueda">
+            <form action="/" method="POST">
+                <input class="busqueda" type="text" name="articulo" placeholder="Buscar artículo"> 
+            </form>
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <a href="/shoppingcart"><i class="fa-solid fa-cart-shopping"></i></a>
+        <div class="seleccionar-categoria">
+            <p>Gimnasio</p>
+            <p>Suplementos</p>
+            <p>Fútbol</p>
+            <p>Boxeo</p>
+            <p>Kineseología</p>
+            <form action="/" method="POST">
+            <label>Seleccionar categoría</label>
+            <select style="font-size:18px;" name="Categoría">
+                <option value="gimnasio">Gimnasio</option>
+                <option value="gimnasio">Suplementos</option>
+                <option value="gimnasio">Fútbol</option>
+                <option value="gimnasio">Boxeo</option>
+                <option value="gimnasio">Kineseología</option>
+            </select>
+            </form>
+        </div>
+    </header>
+    <main class="home">
+        <section class="banner">
+            <img class="banner-flecha" src="/images/mover-al-anterior.png"/>
+            <div>
+                <p class="banner-notification">HOT WEEK</p><br>
+                <p class="banner-notification">50% OFF</p><br>
+                <p class="banner-notification">hasta 6 cuotas sin interés</p><br>
+            </div>
+            <img class="banner-flecha" src="/images/mover-al-siguiente.png"/>
+        </section>   
+            <div class="destacados" >
+                <h2 >Destacados</h2>
+            </div>
+            <div class="contenedor-padre">            
+            <div class="filtros" > 
+                <div class="filtro-item">
+                    <input type="checkbox">
+                    <label>Filtro 1</label>
+                </div>
+                <div class="filtro-item">
+                    <input type="checkbox">
+                    <label>Filtro 2</label>
+                </div>
+                <div class="filtro-item">
+                    <input type="checkbox">
+                    <label>Filtro 3</label>
+                </div>
+                <div class="filtro-item">
+                    <input type="checkbox">
+                    <label>Filtro 4</label>
+                </div>
+                <div class="filtro-item">
+                    <input type="checkbox">
+                    <label>Filtro 5</label>
+                </div>
+                <div class="filtro-item">
+                    <input type="checkbox">
+                    <label>Filtro 6</label>
+                </div>
+
+            </div>
+            <div class="products" > 
+                <article class="product">
+                    <img src="\images\bc63dcadeba093fb5f65b64a1ca22ece.jpg" alt="Maquina de gym" class="product_img">
+                    <div class="main-article"> 
+                    <p  class="price">$14.999</p>
+                    <p class="discount">20% off</p>
+                    <h4 class="description">Maquina de gym</h4>
+                    </div>
+                </article>
+                <article class="product">
+                    <img src="\images\pelota.jpg" alt="Pelota" class="product_img">
+                    <div class="main-article">
+                    <p class="price" >$5.499</p>
+                    <p class="discount">25% off</p>
+                    <h4 class="description">Pelota de futbol</h4>
+                    </div>
+                </article>
+                <article class="product">
+                    <img src="\images\conjunto.jpg" alt="Conjunto deportivo" class="product_img">
+                    <div class="main-article">
+                    <p class="price" >$8.999</p>
+                    <p class="discount" > 30% off</p>
+                    <h4 class="description"> Conjunto Deportivo</h4>
+                    </div>
+                </article>
+                <article class="product">
+                    <img src="\images\paleta.webp" alt="Paleta ping pong" class="product_img">
+                    <div class="main-article">
+                    <p class="price" >$2.670</p>
+                    <p class="discount">40% off</p>
+                    <h4 class="description">Paleta Ping Pong </h4>
+                    </div>   
+                </article>
+                <article class="product">
+                    <img src="\images\smartwach.jpg" alt="Smartwach" class="product_img">
+                    <div class="main-article">
+                    <p class="price">$5000</p>
+                    <p class="discount">20% off</p>
+                    <h4 class="description" >Smartwach</h4>
+                    </div>
+                </article>
+                <article class="product">
+                    <img src="\images\pesas.jpg" alt="Pesas" class="product_img">
+                    <div class="main-article">
+                    <p class="price">$3.799</p>
+                    <p class="discount">35% off</p>
+                    <h4 class="description" >Pesas de 30kg</h4>
+                    </div>
+                </article>
+            </div>
+            </div>
+    </main>
+    <footer>
+        <div class="footer1">
+                <div class="footer1-izquierdo">
+                    <a href="#">Formas de pago >>></a>
+                    <a href="#">Seguimiento de pedidos</a>
+                    <a href="#">Cambios y devoluciones</a>
+                    <a href="#">Asistencia al cliente</a>
+                </div>
+                <div class="footer1-izquierdo">
+                    <a href="#">Acerca de FullShape</a>
+                    <a href="#">Sucursales</a>
+                    <a href="#">Contacto</a>
+                    <a href="#">Novedades y eventos</a>
+                </div>
+        </div>
+        <div class="redes">
+            <p style="font-weight:bold;">Seguinos en nuestras redes</p>
+            <img id="c6"src="/images/facelogo.png" alt="">
+            <img id="c7"src="/images/Instalogo.png" alt="">
+            <img id="c8"src="/images/Twitter.png" alt="">
+        </div>
+        <div class="footerbottom">
+            <a class="politica" href="#">Politica de privacidad</a>
+            <a class="terminos" href="#">Términos y condiciones</a>
+        </div>
+    </footer>
+
+
+</body>
+</html>

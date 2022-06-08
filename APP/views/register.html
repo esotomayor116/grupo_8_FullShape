@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Regístrate</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet" href="css/registerstyles.css">
+    </head>
+    <body>
+        <header>
+        </header>
+        <div class="cuerpo-registro">
+        <main>
+                <form class="registro-popup" action="/registro" method="POST">  
+                    <div class="formRegistro-izquierdo">
+                        <h1 class="registrate">Registrate</h1> 
+                        <h6 class="requerido">los campos con asterisco son necesarios para el registro</h6>
+                    <!-- Aquí van los campos -->
+                        <div>
+                            <label for="Nombres">Nombres</label><label class="requerido">  *</label><br>
+                            <input type="text" name="Nombres"><br>
+                        </div>
+                        <div>
+                            <label for="Apellidos">Apellidos</label><label class="requerido">  *</label><br>
+                            <input type="text" name="Apellidos"><br>
+                        </div>
+                        <div>
+                            <label for="Telefono">Número de teléfono</label><label class="requerido">  *</label><br>
+                            <input type="number" name="Telefono"><br>
+                        </div>
+                        <div>
+                            <label for="email">Email</label><label class="requerido">  *</label><br>
+                            <input type="email" name="email"><br>
+                        </div>
+                        <div class="recibir-ofertas">
+                            <label class="recibir-ofertas">Recibir ofertas y novedades</label>
+                            <input class="radio" type="radio" name="recibirOfertas"><br>
+                        </div>
+                        <div>
+                            <label for="contraseña">Crear Contraseña</label><label class="requerido">  *</label><br>
+                            <input type="password" name="contraseña"><br>
+                            <h6>(?) la contraseña debe poseer al menos 6 caracteres</h6>
+                        </div>
+                        <div>
+                            <label for="contraseña">Repetir Contraseña</label><label class="requerido">  *</label><br>
+                            <input type="password" name="contraseña"><br>
+                        </div>
+                            <div class="botones">
+                            <p><button type="submit">Registrarse e iniciar sesión</button></p> 
+                        </div>
+                    </div>
+                    <div class="formRegistro-derecho">
+                        <div class="sign-in-with-buttons">
+                <!-- ------botón de inicio sesion con Facebook------- -->                 
+                            <div class="g-sign-in-button">
+                                <div class="content-wrapper">
+                                    <div class="logo-wrapper">
+                                        <img src='https://cdn-icons-png.flaticon.com/512/124/124010.png'>
+                                    </div>
+                                    <span class='text-container'>
+                                    Sign in with Facebook
+                                    </span>
+                                </div>
+                            </div>
+                <!-- ------botón de inicio sesion con Google------- -->
+                            <div class="g-sign-in-button">
+                                <div class="content-wrapper">
+                                    <div class="logo-wrapper">
+                                        <img src='https://developers.google.com/identity/images/g-logo.png'>
+                                    </div>
+                                    <span class='text-container'>
+                                    Sign in with Google
+                                    </span>
+                                </div>
+                        </div>
+            <!-- -------Fin de botones inicio sesion con...--------- -->
+                    </div>
+                        <div class="terminos">
+                            <a>Al usar cualquiera de estos métodos de registros, estas aceptando nuestros</a>
+                            <a href="#">Términos y condiciones</a>
+                        </div>
+                        <div class="logo-registro"> 
+                                <img src="/images/Shapepng2.svg" alt="Logo a Color Full Shape">
+                                <!-- <h1>Full Shape</h1> -->
+                        </div>
+                        
+                        <div class="registrate">
+                            <a>Si ya posees cuenta ingresa desde</a>
+                            <a href="/login">AQUI</a>
+                        </div>
+                    </div>
+            
+                </form>
+        </main>
+        <footer>
+            <div class="footer1">
+                    <div class="footer1-izquierdo">
+                        <a href="#">Formas de pago >>></a>
+                        <a href="#">Seguimiento de pedidos</a>
+                        <a href="#">Cambios y devoluciones</a>
+                        <a href="#">Asistencia al cliente</a>
+                    </div>
+                    <div class="footer1-izquierdo">
+                        <a href="#">Acerca de FullShape</a>
+                        <a href="#">Sucursales</a>
+                        <a href="#">Contacto</a>
+                        <a href="#">Novedades y eventos</a>
+                    </div>
+            </div>
+            <div class="redes">
+                <p style="font-weight:bold;">Seguinos en nuestras redes</p>
+                <img id="c6"src="/images/facelogo.png" alt="">
+                <img id="c7"src="/images/Instalogo.png" alt="">
+                <img id="c8"src="/images/Twitter.png" alt="">
+            </div>
+            <div class="footerbottom">
+                <a class="politica" href="#">Politica de privacidad</a>
+                <a class="terminos" href="#">Términos y condiciones</a>
+            </div>
+        </footer>
+        </div>
+    </body>
+</html>

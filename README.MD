@@ -29,6 +29,8 @@
 ### **OpenSports** (https://www.opensports.com.ar/):
 #### Contiene un carrusel en la portada con las imagenes que más nos pueden interesar.
 
-
+## Nuestros tableros de trabajo:
+### **Sprint1**: https://trello.com/invite/b/3qye5RKR/d94fd770d21ad596dd4fc6f581a178bb/sprint-1-09-05-20-05
+### **Sprint2**: https://trello.com/invite/b/er4f2guE/eb49ec6f6efb0a0cb368b194d4a539db/sprint-2-23-05-06-06
 
 ## Fin del entrenamiento.

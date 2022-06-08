@@ -1,0 +1,23 @@
+{
+  "name": "grupo_8_fullshape",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esotomayor116/grupo_8_SportCommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/esotomayor116/grupo_8_SportCommerce/issues"
+  },
+  "homepage": "https://github.com/esotomayor116/grupo_8_SportCommerce#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
