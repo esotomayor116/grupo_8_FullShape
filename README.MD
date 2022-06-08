@@ -33,4 +33,15 @@
 ### **Sprint1**: https://trello.com/invite/b/3qye5RKR/d94fd770d21ad596dd4fc6f581a178bb/sprint-1-09-05-20-05
 ### **Sprint2**: https://trello.com/invite/b/er4f2guE/eb49ec6f6efb0a0cb368b194d4a539db/sprint-2-23-05-06-06
 
+
+
+## Especificación Responsive:
+### **Referenciados por el siguiente link**: https://www.lambdatest.com/blog/how-to-use-css-breakpoints-for-responsive-design/#:~:text=What%20are%20common%20breakpoints%3F,extra%20large%20screens%20like%20TV
+
+### ---What are common breakpoints?
+#### Common breakpoints are 320px — 480px for mobile devices, 481px — 768px for iPads & tablets, 769px — 1024px for small screens like laptop, 1025px — 1200px for large screens like Desktops, and 1201px and above for extra large screens like TV.---
+
+### Conclusión: Tomaremos como breakpoint 769px para el máximo de dispositivos mobile. Cuidando también que los estilos se conserven de manera aceptable hasta un mínimo de 360px
+
+
 ## Fin del entrenamiento.
