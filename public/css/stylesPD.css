@@ -33,6 +33,17 @@ li {
     height: 100px;
 }
 
+header a#logo {
+    width: 43%;
+    height: 100px;
+}
+
+a#logo img{
+    width: 100%;
+    height: 100%;
+}
+
+
 .barra-busqueda {
     display: flex;
     width: 43%;
@@ -305,7 +316,8 @@ footer p {
 }
 
 @media (min-width:769px) {
-    .logo {
+
+    header a#logo {
         width: 22.5%;
         height: 125px;
     }

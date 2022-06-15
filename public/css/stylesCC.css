@@ -24,10 +24,16 @@ ul {
 li {
     font-size: 17px;
 }
-.logo {
+header a#logo {
     width: 43%;
     height: 100px;
 }
+
+a#logo img{
+    width: 100%;
+    height: 100%;
+}
+
 .barra-busqueda {
     display: flex;
     width: 43%;
@@ -429,7 +435,7 @@ footer p {
     main section div.products article{
         width: 22%;
 }
-.logo {
+header a#logo {
     width: 22.5%;
     height: 125px;
 }
