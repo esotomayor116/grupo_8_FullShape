@@ -1,49 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2da8e91210.js" crossorigin="anonymous"></script>
+    <%- include("../partials/head") %>
     <link rel="stylesheet" href="css/home.css">
 <title>Bienvenidos a Full Shape</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <a href="#"><li>Ayuda</li></a>
-                <a href="/login"><li>Iniciar sesión</li></a>
-                <a href="/register"><li>Registrate</li></a>
-            </ul>
-        </nav>
-        <img class="logo" src="/images/Shapepng2.svg" alt="">
-        <div class="barra-busqueda">
-            <form action="/" method="POST">
-                <input class="busqueda" type="text" name="articulo" placeholder="Buscar artículo"> 
-            </form>
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-        <a id="cart" href="/shoppingcart"><i class="fa-solid fa-cart-shopping"></i></a>
-        <div class="seleccionar-categoria">
-            <p>Gimnasio</p>
-            <p>Suplementos</p>
-            <p>Fútbol</p>
-            <p>Boxeo</p>
-            <p>Kineseología</p>
-            <form action="/" method="POST">
-            <label>Seleccionar categoría</label>
-            <select style="font-size:18px;" name="Categoría">
-                <option value="gimnasio">Gimnasio</option>
-                <option value="gimnasio">Suplementos</option>
-                <option value="gimnasio">Fútbol</option>
-                <option value="gimnasio">Boxeo</option>
-                <option value="gimnasio">Kineseología</option>
-            </select>
-            </form>
-        </div>
-    </header>
+    <%- include("../partials/header") %>
     <main class="home">
         <section class="banner">
             <img class="banner-flecha" src="/images/mover-al-anterior.png"/>
@@ -137,27 +100,6 @@
             </div>
             </div>
     </main>
-    <footer>
-        <div class="footer1">
-            <a href="#"><p style="font-weight:bold;">Formas de pago >>></p></a>
-            <a href="#"><p>Acerca de FullShape</p></a>
-            <a href="#"><p>Seguimiento de pedidos</p></a>
-            <a href="#"><p>Sucursales</p></a>
-            <a href="#"><p>Cambios y devoluciones</p></a>
-            <a href="#"><p>Contacto</p></a>
-            <a href="#"><p>Asistencia al cliente</p></a>
-            <a href="#"><p>Novedades y eventos</p></a>
-        </div>
-        <div class="redes">
-            <p style="font-weight:bold;">Seguinos en nuestras redes</p>
-            <a id="c6" href="https://web.facebook.com/"><img src="/images/facelogo.png" alt=""></a>
-            <a id="c7" href="https://www.instagram.com/"><img src="/images/Instalogo.png" alt=""></a>
-            <a id="c8" href="https://twitter.com/"><img src="/images/Twitter.png" alt=""></a>
-        </div>
-        <div class="footer2">
-            <a href="#"><p class="terms" style="font-weight:bold;">Política de privacidad</p></a>
-            <a href="#"><p class="terms" style="font-weight:bold;">Términos y condiciones</p></a>
-        </div>
-    </footer>
+    <%- include("../partials/footer") %>
 </body>
 </html>

@@ -1,49 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>FullShape</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <script src="https://kit.fontawesome.com/2da8e91210.js" crossorigin="anonymous"></script>
+        <%- include("../partials/head") %>
         <link rel="stylesheet" href="css/stylesCC.css">
     </head>
     <body>
-        <header>
-            <nav>
-                <ul>
-                    <a href="#"><li>Ayuda</li></a>
-                    <a href="/login"><li>Iniciar sesión</li></a>
-                    <a href="/register"><li>Registrate</li></a>
-                </ul>
-            </nav>
-            <a href="/" id="logo"><img  src="/images/Shapepng.svg" alt=""></a>
-            <div class="barra-busqueda">
-                <form action="/" method="POST">
-                    <input class="busqueda" type="text" name="articulo" placeholder="Buscar artículo">
-                </form>
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
-            <a id="cart" href="/shoppingcart"><i class="fa-solid fa-cart-shopping"></i></a>
-            <div class="seleccionar-categoria">
-                <p>Gimnasio</p>
-                <p>Suplementos</p>
-                <p>Fútbol</p>
-                <p>Boxeo</p>
-                <p>Kineseología</p>
-                <form action="/" method="POST">
-                <label>Seleccionar categoría</label>
-                <select style="font-size:18px;" name="Categoría">
-                    <option value="gimnasio">Gimnasio</option>
-                    <option value="gimnasio">Suplementos</option>
-                    <option value="gimnasio">Fútbol</option>
-                    <option value="gimnasio">Boxeo</option>
-                    <option value="gimnasio">Kineseología</option>
-                </select>
-                </form>
-            </div>
-        </header>
+        <%- include("../partials/header") %>
         <main>
                 <section class="last-visit">
                     <a id="volver" href="/"><button class="volver"><i class="fas fa-arrow-left"></i><h3>Volver a Comprar</h3></button></a>
@@ -142,34 +103,8 @@
                         <img src="images/Debito.jpg" alt="Tarjetas" class="debito"></div>
                         </section>
                     </div>
-                </section>
-                    
+                </section>   
         </main>
-        <footer>
-                <div class="footer1">
-                    <a href="#"><p style="font-weight:bold;">Formas de pago >>></p></a>
-                    <a href="#"><p>Acerca de FullShape</p></a>
-                    <a href="#"><p>Seguimiento de pedidos</p></a>
-                    <a href="#"><p>Sucursales</p></a>
-                    <a href="#"><p>Cambios y devoluciones</p></a>
-                    <a href="#"><p>Contacto</p></a>
-                    <a href="#"><p>Asistencia al cliente</p></a>
-                    <a href="#"><p>Novedades y eventos</p></a>
-                </div>
-                <div class="redes">
-                    <p style="font-weight:bold;">Seguinos en nuestras redes</p>
-                    <a id="c6" href="https://web.facebook.com/"><img src="/images/facelogo.png" alt=""></a>
-                    <a id="c7" href="https://www.instagram.com/"><img src="/images/Instalogo.png" alt=""></a>
-                    <a id="c8" href="https://twitter.com/"><img src="/images/Twitter.png" alt=""></a>
-                </div>
-                <div class="footer2">
-                    <a href="#"><p class="terms" style="font-weight:bold;">Política de privacidad</p></a>
-                    <a href="#"><p class="terms" style="font-weight:bold;">Términos y condiciones</p></a>
-                </div>
-            </footer>
-
-
-       
-        
+        <%- include("../partials/footer") %> 
     </body>
 </html>

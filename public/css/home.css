@@ -31,9 +31,14 @@ li {
     font-size: 17px;
 }
 
-.logo {
+#logo {
     width: 43%;
     height: 100px;
+}
+
+#logo img {
+    width:100%;
+    height: 100%;
 }
 
 .barra-busqueda {
@@ -339,9 +344,13 @@ footer p {
     li {
         margin: 0px 10px;
     }
-    .logo {
+    #logo {
         width: 22.5%;
         height: 125px;
+    }
+    #logo img {
+        width: 100%;
+        height: 100%;
     }
     .barra-busqueda {
         width: 33%;
