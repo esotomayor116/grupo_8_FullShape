@@ -262,7 +262,7 @@ li.specs {
 
 main a#edit {
     width: 120px;
-    margin-bottom: 5%;
+    margin: 0% 6% 5% 6%;
 }
 
 main a#edit button {
