@@ -256,88 +256,96 @@ footer {
     flex-wrap: wrap;
     width: 100%;
 }
-footer p, footer a{
-    font-size: 14px;
+
+footer p {
     margin: 5px 0px;
+    padding: 0px;
     text-align: center;
-    align-self: center;
-}
-.footer1, .footerbottom{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: #83FACF;
-    width: 100%;
-    text-align: center;
-    /* margin: 0% 1%; */
 }
 
-footer, .footerbottom{
-
-    border: 1px solid black;
-}
-
-
-.footer1-izquierdo, .footer1-derecho{
+.footer1, .footer2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    flex-direction: column;
+    border-top: 1px solid black; 
     background-color: #83FACF;
-    width: 50%;
-    /* margin: 0% 1%; */
+    width: 100%;
 }
-
+.footer2 {
+    justify-content: space-around;
+}
+.footer1 a {
+    width: 50%;
+}
 
 .redes {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    border-top: 1px solid black; 
     background-color: #83FACF;
     width: 100%;
-    /* margin: 0% 1%; */
 }
+
+.redes p {
+    margin: 0px auto;
+}
+
 #c6, #c7 {
     border-radius: 10px;
 }
+
 #c6, #c7, #c8 {
-    width: 7%;
-    margin: 10px 5px;
+    width: 8%;
+    margin: 10px;
+    margin-left: auto;
 }
 
-div.footer1 a{
-    margin: 1px;
-}
-div.redes p{
+#c6 img, #c7 img, #c8 img {
     width: 100%;
 }
-.footer1, .redes{
-    width: 50%;
-}
 
-@media (max-width: 768px){
-
-
-    div.footer1 a, div.footerbottom a{
-        font-size: 14px;
+@media (min-width:769px) {
+    footer {
+        justify-content: space-between;
     }
-    a.terminos{
-        text-align: right;
-    }
-
-    div.redes {
-        width: 100%;
-        border: 1px solid black;
-    }
-
-    div.footer1{
-        width: 100%;
-    }
-
-    div.redes p{
+    .footer1 {
         width: 50%;
-        font-size: 12px;
     }
-
-    
+    .footer1 a {
+        width: 47%;
+        padding-left: 10px;
+        padding-right: 0px;
+    }
+    .redes {
+        width: 50%;
+    }
+    .redes p {
+        margin: 0px;
+        margin-top: 10px;
+        text-align: center;
+        flex-basis: 100%;
+        height: 20%;
+        padding: 0px;
+    }
+    #c6 {
+        margin-left: auto;
+        margin-right: 5px;
+        margin-bottom: 15%;
+    }
+    #c7 {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 15%;
+    }
+    #c8 {
+        margin-right: auto;
+        margin-left: 5px;
+        margin-bottom: 15%;
+    }
+    .footer2 a {
+        padding-left: 10px;
+        padding-right: 0px;
+    }
 }
+

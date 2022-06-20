@@ -6,7 +6,6 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 app.set('view engine', 'ejs');
 
-
 app.get("/", (req, res) => {
     res.render("./products/home")
 })
@@ -25,6 +24,14 @@ app.get("/login", (req, res) => {
 
 app.get("/register", (req, res) => {
     res.render("./users/register")
+})
+
+app.get("/productcreate", (req, res) => {
+    res.render("./products/productCreate")
+})
+
+app.get("/productedit", (req, res) => {
+    res.render("./products/productEdit")
 })
 
 app.listen(process.env.PORT || 3000, () => {

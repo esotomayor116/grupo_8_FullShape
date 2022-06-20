@@ -1,6 +1,12 @@
-* {
+/* Estilos que aplican solo al formulario de creación y al de edicion
+de roductos.
+Se especificaron clases en cada "div" para que no afecte el estilo del 
+resto al incorporarlo en un unico archivo de estilo. */
+
+*{
     margin: 0px;
-    font-family:Lato;
+    padding: 0px;
+    box-sizing: border-box; 
 }
 
 header {
@@ -77,7 +83,7 @@ form {
 button {
     padding:0px;
     height: 100%;
-    width: 10%;
+    /* width: 10%; */
 }
 
 header a#cart {
@@ -109,167 +115,197 @@ select {
     height: 100%;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
+main.product_creation{
+    margin: 0 auto;
+    padding: 2% 2%;
 }
 
-.article {
-    width:90%;
-    border: 1px solid black;
-    margin: 5% 0%;
+body {
+    font-family: 'Lato', sans-serif;
 }
 
-.carrusel {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-bottom: 5%;
+
+div.cuerpo_creacion_edicion{
+
+    background-image: url(/images/fondo1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.carrusel-fotos {
-    width: 90%;
-    list-style-type: none;
-    border: 0px;
-    padding: 0px;
-}
-
-li#foto1, li#foto2, li#foto3 {
-    width: 33%;
-}
-
-li#foto4, li#foto5, li#foto6, li#foto7 {
-    width: 50%;
-    border: 1px solid black;
-    padding: 5px;
-    margin: 0px 5px;;
-}
-
-li#foto6, li#foto7 {
-    display: none;
-}
-
-#c1, #c2, #c3, #c4, #c5, #c-6, #c-7 {
-    width: 100%;
-    height:100%;
-    box-sizing: border-box;
-}
-
-.presentacion {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    border: 1px solid black;
-    width: 90%;
-    margin-bottom: 5%;
-}
-
-h2 {
-    flex-basis: 100%;
+ .logo img{
     text-align: center;
-    margin: 10px 0px;
-}
+    width: 30%;
+ }
 
-h3 {
-    margin: 10px 0px;
-    padding-left: 10px;
-}
+ .referenciaUniversal img{
+    text-align: center;
+    width: 20%;
+ } 
+ 
+ .referenciaUniversal{
+   display: contents;
+ }
 
-p {
-    font-size: 16px;
-    margin-bottom: 5px;
-    padding: 0px 10px;
-}
 
-p.pp {
-    font-size: 15.5px;
-    padding: 0px 5px;
-}
+div.botones button{
 
-.disponibilidad {
-    flex-basis: 100%;
-}
-
-#descripcion {
-    margin: 10px 0px;
-    text-align: justify;
-}
-
-.fa-star {
-    color: yellow;
-}
-
-.detalle {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    border: 1px solid black;
-    width: 90%;
-    margin-bottom: 5%;
-}
-
-.detail {
-    text-align: justify;
-}
-
-ul.techspecs {
-    list-style-type:disc;
-    flex-direction: column;
-    align-items:flex-start;
-    box-sizing: border-box;
-    padding: 0px;
-    width: 100%;
-    padding-bottom: 10px;
-}
-
-li.specs {
-    position: relative;
-    left: 30px;
-}
-
-.relacionados {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width:90%;
-    border: 1px solid black;
-    margin-bottom: 5%;
-}
-
-.relacionados h3 {
-    width: 100%;
-    text-align: left;
-}
-
-.relacionados .carrusel-fotos {
-    margin: 0% 5%;
-    margin-bottom: 10px;
-}
-
-.fa-arrow-left, .fa-arrow-right {
+    background-color: #03264C;
+    border-radius: 5px;
+    color: #FFF;
     font-size: 20px;
-    color: #03264C;
+    margin: 5px; 
+    padding: 10px;
+    text-align: center;
 }
 
-.relacionados button {
-    height: 22px;
-    margin-bottom: 10px;
-    background-color: #83FACF;
+
+.requerido{
+    color: red;
 }
 
-main a#edit {
-    width: 120px;
-    margin: 0% 6% 5% 6%;
+form.product_creation{
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 1%;
+    justify-content: center;
+    text-align: center;
+    align-items:stretch;
+    font-size: 15px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    background-color: aquamarine;
+    opacity: 85%;
+    border-radius: 5%;
+    height: 800px
 }
 
-main a#edit button {
-    width: 100%;
-    font-weight: bold;
-    font-size: 16px;
+form.product_creation div {margin-top: 10px;}
+
+
+form.product_creation div input{
+
+    border-radius: 5px;
+    width: 60%;
+    height: 30px;
 }
+
+form.product_creation div.DescripcionNuevoProducto input{
+
+    height: 50px;
+}
+
+
+div.imagenProducto{
+
+padding: 5px;
+align-self: center ;
+}
+div.imagenProducto input{
+
+    padding: 5px;
+    text-align: center ;
+    }
+
+form.product_creation div input.radio{
+
+    width: 20%;
+    height: 15px;
+}
+
+div.NuevoUsado{
+
+    width: 40%;
+
+}
+
+
+.botones button:hover{
+    background-color: #0022AA;
+}
+
+.logo img:active{
+
+    transform: rotateZ(-360deg);
+    transition: transform, 450ms;
+}
+
+.nuevoProductoCategoria, .nuevoProductoColores, .nuevoProdyctoTalles {
+
+text-align: left;
+
+}
+
+div.CodigoUniversal{
+
+    display: flex;
+    justify-content: space-around;
+}
+
+
+form.product_creation div.ClasificacionNuevoProducto{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0px;
+}
+
+div.NuevoUsadoRadios{
+
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+div.DetallesProducto{
+
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+div.PrecioNuevoProducto{
+
+    width: max-content;
+    align-self: center;
+}
+
+form.product_creation div.PrecioNuevoProducto input{
+
+    height:40px;
+}
+
+div.GuardarNuevoProducto{
+
+    display: flex;
+    justify-content: space-around;
+}
+
+form.product_creation div.logo{
+display: contents;
+
+}
+
+
+
+@media (min-width: 768px){
+
+    form.product_creation div.logo{
+
+        display: none;
+    }
+    div.CodigoUniversal {
+        display: flex;
+        justify-content: center;
+    }
+
+
+}
+
+/* __________ Estilos footer ________________ */
 
 footer {
     display: flex;
@@ -326,6 +362,33 @@ footer p {
     width: 100%;
 }
 
+@media (max-width: 768px){
+
+
+    div.footer1 a, div.footerbottom a{
+        font-size: 14px;
+    }
+    a.terminos{
+        text-align: right;
+    }
+
+    div.redes {
+        width: 100%;
+        border: 1px solid black;
+    }
+
+    div.footer1{
+        width: 100%;
+    }
+
+    div.redes p{
+        width: 50%;
+        font-size: 12px;
+    }
+
+    
+}
+
 @media (min-width:769px) {
 
     header a#logo {
@@ -345,9 +408,9 @@ footer p {
     .busqueda {
         height: 30px;
     }
-    button {
+    /* button {
         width: 7.5%;
-    }
+    } */
     .fa-magnifying-glass {
         font-size: 17px;
     }
@@ -374,46 +437,6 @@ footer p {
     .seleccionar-categoria form {
         display:none;
     }
-
-    .article {
-        width: 90%;
-        margin-top: 0%;
-    }
-    .carrusel {
-        width: 45%;
-        margin-top: 5%;
-    }
-    .presentacion {
-        width: 45%;
-        margin-top: 5%;
-    }
-
-    #descripcion {
-        width: 100%;
-    }
-    .presentacion p {
-        width: 45%;
-        font-size: 16.5px;
-        padding-left: 10px;
-    }
-    h2 {
-        font-size: 32px;
-    }
-    #resenas {
-        width: 100%;
-    }
-    .relacionados .carrusel-fotos {
-        width: 65%;
-        position: relative;
-        margin-left: auto;
-        margin-right: 2%;
-    }
-    .relacionados button {
-        display: none;
-    }
-    li#foto6, li#foto7 {
-        display: block;
-    }
     footer {
         justify-content: space-between;
     }
@@ -421,7 +444,7 @@ footer p {
         width: 50%;
     }
     .footer1 a {
-        width: 44%;
+        width: 47%;
         padding-left: 10px;
         padding-right: 0px;
     }
