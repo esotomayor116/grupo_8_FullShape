@@ -83,7 +83,7 @@ form {
 button {
     padding:0px;
     height: 100%;
-    width: 10%;
+    /* width: 10%; */
 }
 
 header a#cart {
@@ -224,6 +224,12 @@ div.NuevoUsado{
     background-color: #0022AA;
 }
 
+.logo img:active{
+
+    transform: rotateZ(-360deg);
+    transition: transform, 450ms;
+}
+
 .nuevoProductoCategoria, .nuevoProductoColores, .nuevoProdyctoTalles {
 
 text-align: left;
@@ -277,6 +283,12 @@ div.GuardarNuevoProducto{
     display: flex;
     justify-content: space-around;
 }
+
+form.product_creation div.logo{
+display: contents;
+
+}
+
 
 
 @media (min-width: 768px){
@@ -396,9 +408,9 @@ footer p {
     .busqueda {
         height: 30px;
     }
-    button {
+    /* button {
         width: 7.5%;
-    }
+    } */
     .fa-magnifying-glass {
         font-size: 17px;
     }
