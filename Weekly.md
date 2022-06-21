@@ -1,7 +1,7 @@
 # Weekly
 ## 14/06/2022
 ### 1. ¿Que Hicimos Hoy?
-    Seba: hoy subí a github todos los cambios de los estilos del header y footer y corregí un enlace de app.js para que funcionara en heroku.
+    Seba: Hoy subí a github todos los cambios de los estilos del header y footer y corregí un enlace de app.js para que funcionara en heroku.
 
     Eddy: Realice una tarea extra y decidí levantarla en heroku, además hice clase 19 y 20 teoría y práctica, y realicé localmente un proyecto con controladores.
 
