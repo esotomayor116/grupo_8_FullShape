@@ -139,7 +139,7 @@ main.home{
     width: 100%;
 }
 .banner-flecha{
-    width: 20%;
+    width: 5%;
     /* height: 8%; */
 }
 
@@ -184,29 +184,29 @@ div.products {
     background: linear-gradient(#83FACF, #0a2929);
 }
 .filtro-item{
-   
     align-items: flex-start;
     margin:10px
 
 
 }
 .product{
-    margin: 20px;
+    margin: 10px;
     border: 1px solid black;
     background-color: black;
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 224px;
+
 }
 
-.product_img{
-    flex-basis: min-content;
-    height: 200px;
-    max-height: unset;
-    width: 100%;
-    height: 200px;
-    
+.imagen-home{
+    width: 224px;
+    height: 224px;
 }
+
+
+
+
 
 
 
@@ -231,7 +231,6 @@ main.home section h3{
 .main-article{
     display: flex;
     flex-direction: column;
-    padding: 15px;
     justify-content: center;
     align-items: center;
     color: white;
@@ -244,8 +243,9 @@ main.home section h3{
 @media (max-width: 768px){
 
     .product{
-        margin: 40px;
+        margin: 15px;
     }
+
 
     .filtros{
         width: 50%;
@@ -257,6 +257,26 @@ main.home section h3{
 }
 
 }
+
+@media (max-width: 400px){
+    .product{
+        width: 200px;
+    
+    }
+    
+    .imagen-home{
+        width: 200px;
+        height: 200px;
+    }
+    .description{
+        display: none;
+    }
+    .filtros{
+        display: none;
+    }
+}
+
+
 
 
 /* __________ Estilos footer ________________ */
