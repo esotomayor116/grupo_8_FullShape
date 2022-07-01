@@ -158,14 +158,14 @@ main.home{
     background: linear-gradient(#83FACF, #0a2929);
 }
 
-div.products {
+products {
     display: flex;
     flex-wrap: wrap;
     /* flex-direction: column;*/
     justify-content: center;
     /* border: 1px solid black; */
     background: linear-gradient(#83FACF, #0a2929);
-    /* width: 75%; */
+    width: 75%; 
     padding: 30px;
     /* margin-bottom: 30px; */
     align-items: center;
@@ -179,7 +179,7 @@ div.products {
     width: 30%;
     align-items: center;
     padding-top: 30px;
-    justify-content: space-around;
+    justify-content: flex-start;
     /* margin-bottom: 30px; */
     background: linear-gradient(#83FACF, #0a2929);
 }
