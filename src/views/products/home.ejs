@@ -108,9 +108,9 @@
 
             </div>
             <div class="products" > 
-                <% for (const product of products){  %>
+                <% for (const product of products) {  %>
                 <article class="product">
-                    <a href="/products/<%= product.productId %>"><img class= "imagen-home"src="</images/<%=product.productMainImage%>" alt="" width="100%"></a>
+                    <a href="/products/<%= product.productId %>"><img class= "imagen-home"src="/images/<%= product.productMainImage %>" alt="" width="100%"></a>
                     <div class="main-article"> 
                     <p><%= product.productName %></p>
                     <p  class="price"><%= product.productUnitPrice %></p>

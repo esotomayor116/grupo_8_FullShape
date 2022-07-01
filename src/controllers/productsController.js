@@ -5,11 +5,7 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
     index: (req, res) => {
-<<<<<<< HEAD
-      res.render("./products/home" , { products })
-=======
       res.render('./products/home', { products });
->>>>>>> 79cd7755a052a489692ce9d78de6eab8662d5f55
     },
     detail: (req, res) => {
       let id = req.params.id;
