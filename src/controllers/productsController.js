@@ -5,11 +5,7 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
     index: (req, res) => {
-<<<<<<< Updated upstream
       res.render('./products/home', { products });
-=======
-      res.render("./products/home" , { products })
->>>>>>> Stashed changes
     },
     detail: (req, res) => {
       let id = req.params.id;
