@@ -2,11 +2,14 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const productsRouter = require('./routes/products');
+<<<<<<< HEAD
 const mainRouter =require('./routes/main')
+=======
+>>>>>>> 79cd7755a052a489692ce9d78de6eab8662d5f55
 const methodOverride =  require('method-override');
 
 app.use(express.static(path.join(__dirname, "../public")));
-app.use('/', mainRouter);
+
 app.use('/products', productsRouter);
 app.use(methodOverride('_method')); 
 
