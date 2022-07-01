@@ -37,9 +37,6 @@
                     <li class="specs"></li>
                     <li class="specs"></li>
                 </ul>
-                <form action="/products/3" method="DELETE" style="display: inline-flex">
-                    <button type="submit" class="action-button delete">ELIMINAR</button>
-                </form>
             </div>
             <div class="relacionados">
                 <h3>Productos relacionados:</h3>
@@ -53,6 +50,9 @@
                 <button><i class="fa-solid fa-arrow-right"></i></button>
             </div>
             <a id="edit" href="/products/<%= id %>/edit"><button>Editar producto</button></a>
+            <form id="delete" action="/products/<%= id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                <button type="submit">ELIMINAR</button>
+            </form>
         </main>
         <%- include("../partials/footer") %>
     </body>

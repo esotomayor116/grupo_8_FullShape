@@ -2,11 +2,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const productsRouter = require('./routes/products');
-<<<<<<< Updated upstream
 const mainRouter =require('./routes/main')
-=======
 const methodOverride =  require('method-override');
->>>>>>> Stashed changes
 
 app.use(express.static(path.join(__dirname, "../public")));
 app.use('/', mainRouter);
