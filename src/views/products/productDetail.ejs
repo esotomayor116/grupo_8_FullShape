@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include("../partials/head") %>
-    <link href="./css/stylesPD.css" rel="stylesheet">
+    <link href="/css/stylesPD.css" rel="stylesheet">
     <title>Full Shape</title>
     <body>
         <%- include("../partials/header") %>
@@ -49,7 +49,7 @@
                 <button><i class="fa-solid fa-arrow-left"></i></button>
                 <button><i class="fa-solid fa-arrow-right"></i></button>
             </div>
-            <a id="edit" href="/productEdit"><button>Editar producto</button></a>
+            <a id="edit" href="/products/<%= id %>/edit"><button>Editar producto</button></a>
         </main>
         <%- include("../partials/footer") %>
     </body>

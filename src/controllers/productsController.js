@@ -6,10 +6,11 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
     index: (req, res) => {
-
+      res.render('./products/home', { products });
     },
     detail: (req, res) => {
-
+      let id = req.params.id;
+      res.render('./products/productDetail',{ id });
     },
     create: (req, res) => {
 
@@ -21,7 +22,7 @@ const controller = {
         let id = req.params.id;
 		let productToEdit = null;
 		for (let i=0; i<products.length; i++) {
-			if (products[i].id == id) {
+			if (products[i].productId == id) {
 				productToEdit = products[i];
 			}
 		}
@@ -30,12 +31,12 @@ const controller = {
     update: (req, res) => {
       let id = req.params.id;
       for (let i=0; i<products.length; i++) {
-        if (products[i].id == id) {
-            products[i].name = req.body.name;
-            products[i].description = req.body.description;
-            products[i].image = req.body.image;
-            products[i].state = req.body.state;
-            products[i].category = req.body.category;
+        if (products[i].productId == id) {
+            products[i].productName = req.body.productName;
+            products[i].productDescription = req.body.productDescription;
+            products[i].productMainImage = req.body.productMainImage;
+            products[i].productStatus = req.body.productStatus;
+            products[i].productCategory = req.body.productCategory;
             products[i].color = req.body.color;
             products[i].size = req.body.size;
             products[i].code = req.body.code;

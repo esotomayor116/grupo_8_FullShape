@@ -13,31 +13,31 @@
                         <!-- Aquí van los campos -->
                             <div class="NombreNuevoProducto">
                                 <label for="NombreProducto">Nombre del producto</label><label class="requerido">  *</label><br>
-                                <input type="text" name="NombreProducto" placeholder="Pelota Molten Oficial" required oninvalid="this.setCustomValidity('Por favor ingresa un nombre del producto a agregar para continuar')"><br>
+                                <input type="text" name="productName" placeholder="<%= productToEdit.productName %>" required oninvalid="this.setCustomValidity('Por favor ingresa un nombre del producto a agregar para continuar')"><br>
                             </div>
                             <div class="DescripcionNuevoProducto">
-                                <label for="ProductDescripcion">Descripción del producto</label><label class="requerido">  *</label><br>
-                                <input type="text" name="ProductDescripcion" placeholder="Pelota Molten Oficial FIBA APPROVED - BG4500 reforzada" required oninvalid="this.setCustomValidity('Por favor ingresa una descripción del producto para continuar')"><br>
+                                <label for="ProductDescription">Descripción del producto</label><label class="requerido">  *</label><br>
+                                <textarea name="ProductDescription" id="ProductDescription" class="form-input"><%= productToEdit.productDescription %></textarea><br>
                             </div>
                             <div class="imagenProducto">
                                 <label>Agrega una o más imagenes de tu producto</label>
-                                <input type="file" name="imagenProducto" accept=".jpg,.png,.peg" multiple>
+                                <input type="file" name="productMainImage" accept=".jpg,.png,.peg" multiple>
                             </div>
                             <div class="ClasificacionNuevoProducto">
                                 <div class="NuevoUsadoRadios">
                                     <div class="NuevoUsado">
-                                        <input class="radio" type="radio" name="nuevoUsado" checked>
+                                        <input class="radio" type="radio" name="productStatus" checked>
                                         <label>Producto Nuevo</label>
                                     </div>
                                     <div class="NuevoUsado">
-                                        <input class="radio" type="radio" name="nuevoUsado">
+                                        <input class="radio" type="radio" name="productStatus">
                                         <label>Producto Usado</label>
                                     </div>
                                 </div>
                                 <div class="DetallesProducto">
                                     <div class="nuevoProductoCategoria">
                                         <label>Seleccionar categoría:</label>
-                                        <select style="font-size:18px;" name="Categoría">
+                                        <select style="font-size:18px;" name="productCategory">
                                             <option value="gimnasio">Gimnasio</option>
                                             <option value="Suplementos">Suplementos</option>
                                             <option value="Fútbol">Fútbol</option>
@@ -70,7 +70,7 @@
                             <div class="CodigoUniversal">
                                 <div>
                                     <label for="ProductUniversal">Código Universal del producto</label>
-                                    <input type="text" name="ProductUniversal" placeholder="5-201312-255000" ><br>
+                                    <textarea name="ProductUniversal" id="ProductUniversal" class="form-input"><%= productToEdit.productCode %></textarea><br>
                                     <p>Es un numero que se encuentra junto al código de barras, en la caja del producto o en su etiqueta. </p>
                                 </div>
                                 <div class="referenciaUniversal"> 
@@ -79,7 +79,7 @@
                             </div>
                             <div class="PrecioNuevoProducto">
                                 <label for="PrecioUnitario">Precio por Unidad (u$s)</label><label class="requerido">  *</label><br>
-                                <input type="number" name="PrecioUnitario" placeholder="u$s 32" required oninvalid="this.setCustomValidity('Por favor ingresa un precio del producto (precio unintario)')"><br>
+                                <input type="text" name="PrecioUnitario" placeholder="<%= productToEdit.productUnitPrice %>" required oninvalid="this.setCustomValidity('Por favor ingresa un precio del producto (precio unintario)')"><br>
                             </div>
                             <div class="GuardarNuevoProducto">
                                 <div class="botones">

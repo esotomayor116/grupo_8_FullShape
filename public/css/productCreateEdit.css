@@ -183,15 +183,15 @@ form.product_creation{
 form.product_creation div {margin-top: 10px;}
 
 
-form.product_creation div input{
-
+form.product_creation div input, form.product_creation div textarea{
+    vertical-align: middle;
+    padding-top: 5px;
     border-radius: 5px;
     width: 60%;
     height: 30px;
 }
 
-form.product_creation div.DescripcionNuevoProducto input{
-
+form.product_creation div.DescripcionNuevoProducto textarea{
     height: 50px;
 }
 
