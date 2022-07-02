@@ -29,20 +29,28 @@ const controller = {
     },
     update: (req, res) => {
       let id = req.params.id;
+      if (req.body.productColor == "") {
+        req.body.productColor = null;
+      }
+      if (req.body.productSize == "") {
+        req.body.productSize = null;
+      }
       for (let i=0; i<products.length; i++) {
         if (products[i].productId == id) {
-            products[i].productName = req.body.productName;
+            console.log(req.body);
+            products[i].productName = req.body.productName; //LA FALLA ESTÁ EN EL BODY!
             products[i].productDescription = req.body.productDescription;
             products[i].productMainImage = req.body.productMainImage;
             products[i].productStatus = req.body.productStatus;
             products[i].productCategory = req.body.productCategory;
-            products[i].color = req.body.color;
-            products[i].size = req.body.size;
-            products[i].code = req.body.code;
-            products[i].price = req.body.price; 
+            products[i].productColor = req.body.productColor;
+            products[i].productSize = req.body.productSize;
+            products[i].productCode = req.body.productCode;
+            products[i].productUnitPrice = req.body.productUnitPrice; 
         }
       }
-      res.redirect('/')
+      fs.writeFileSync(productsFilePath, JSON.stringify(products), 'utf-8')
+      res.redirect('/products')
     },
     delete: (req, res) => {
       let id = req.params.id;

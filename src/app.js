@@ -7,9 +7,12 @@ const methodOverride =  require('method-override');
 
 app.use(express.static(path.join(__dirname, "../public")));
 
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(methodOverride('_method')); 
 app.use('/products', productsRouter);
 app.use('/', mainRouter);
-app.use(methodOverride('_method')); 
+
 
 app.set('view engine', 'ejs');
 

@@ -7,7 +7,7 @@
         <div class="cuerpo_creacion_edicion">
             <%- include("../partials/header") %>
             <main class="product_creation">
-                    <form class="product_creation" action="/productCreation" method="POST">  
+                    <form class="product_creation" action="/products/<%= productToEdit.productId %>?_method=PUT" method="POST">  
                             <h1 class="creaTuProducto">Edita tu publicacion</h1> 
                             <h6 class="requerido">los campos con asterisco son necesarios para la creción del producto</h6>
                         <!-- Aquí van los campos -->
@@ -17,7 +17,7 @@
                             </div>
                             <div class="DescripcionNuevoProducto">
                                 <label for="ProductDescription">Descripción del producto</label><label class="requerido">  *</label><br>
-                                <textarea name="ProductDescription" id="ProductDescription" class="form-input"><%= productToEdit.productDescription %></textarea><br>
+                                <textarea name="productDescription" id="ProductDescription" class="form-input"><%= productToEdit.productDescription %></textarea><br>
                             </div>
                             <div class="imagenProducto">
                                 <label>Agrega una o más imagenes de tu producto</label>
@@ -26,11 +26,11 @@
                             <div class="ClasificacionNuevoProducto">
                                 <div class="NuevoUsadoRadios">
                                     <div class="NuevoUsado">
-                                        <input class="radio" type="radio" name="productStatus" checked>
+                                        <input class="radio" type="radio" name="productStatus" value="Nuevo" checked>
                                         <label>Producto Nuevo</label>
                                     </div>
                                     <div class="NuevoUsado">
-                                        <input class="radio" type="radio" name="productStatus">
+                                        <input class="radio" type="radio" name="productStatus" value="Usado">
                                         <label>Producto Usado</label>
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@
                                     <div class="nuevoProductoCategoria">
                                         <label>Seleccionar categoría:</label>
                                         <select style="font-size:18px;" name="productCategory">
-                                            <option value="gimnasio">Gimnasio</option>
+                                            <option value="Gimnasio">Gimnasio</option>
                                             <option value="Suplementos">Suplementos</option>
                                             <option value="Fútbol">Fútbol</option>
                                             <option value="Boxeo">Boxeo</option>
@@ -47,22 +47,24 @@
                                     </div>
                                     <div class="nuevoProductoColores">
                                         <label>Seleccione un color:</label>
-                                        <select name="color">
-                                            <option value="#ff0000">Rojo</option>
-                                            <option value="#00ff00">Verde</option>
-                                            <option value="#0000ff">Azul</option>
-                                            <option value="#770077">Morado</option>
+                                        <select name="productColor">
+                                            <option value="Rojo">Rojo</option>
+                                            <option value="Verde">Verde</option>
+                                            <option value="Azul">Azul</option>
+                                            <option value="Morado">Morado</option>
+                                            <option value="">No aplica</option>
                                         </select>
                                     </div>
                                     <div class="nuevoProdyctoTalles">
                                         <label>Seleccione un talle:</label>
-                                        <select name="talle">
+                                        <select name="productSize">
                                             <option value="ExtraSmall">XS</option>
                                             <option value="Small">S</option>
                                             <option value="Medium">M</option>
                                             <option value="Large">L</option>
                                             <option value="ExtraLarge">XL</option>
                                             <option value="ExtraExtraLarge">XXL</option>
+                                            <option value="" >No aplica</option>
                                         </select>
                                     </div>  
                                 </div>  
@@ -70,7 +72,7 @@
                             <div class="CodigoUniversal">
                                 <div>
                                     <label for="ProductUniversal">Código Universal del producto</label>
-                                    <textarea name="ProductUniversal" id="ProductUniversal" class="form-input"><%= productToEdit.productCode %></textarea><br>
+                                    <textarea name="productCode" id="ProductUniversal" class="form-input"><%= productToEdit.productCode %></textarea><br>
                                     <p>Es un numero que se encuentra junto al código de barras, en la caja del producto o en su etiqueta. </p>
                                 </div>
                                 <div class="referenciaUniversal"> 
@@ -79,7 +81,7 @@
                             </div>
                             <div class="PrecioNuevoProducto">
                                 <label for="PrecioUnitario">Precio por Unidad (u$s)</label><label class="requerido">  *</label><br>
-                                <input type="text" name="PrecioUnitario" placeholder="<%= productToEdit.productUnitPrice %>" required oninvalid="this.setCustomValidity('Por favor ingresa un precio del producto (precio unintario)')"><br>
+                                <input type="text" name="productUnitPrice" placeholder="<%= productToEdit.productUnitPrice %>" required oninvalid="this.setCustomValidity('Por favor ingresa un precio del producto (precio unintario)')"><br>
                             </div>
                             <div class="GuardarNuevoProducto">
                                 <div class="botones">
