@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/', controller.index);
 
 //Detalle de productos, vista productDetail.
-router.get('/:id', controller.detail);
+router.get('/:id/', controller.detail);
 
 //Formulario de creación, vista productCreate.
 router.get('/create', controller.create);
