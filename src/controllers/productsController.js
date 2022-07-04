@@ -31,10 +31,14 @@ const controller = {
 
 
     create: (req, res) => {
-
+      res.render('./products/productCreate')
     },
     store: (req, res) => {
-
+      let product = req.body;
+      product.id = (products.length + 1);
+      products.push(product);
+      fs.writeFileSync(productsFilePath, JSON.stringify(products), 'utf-8');
+      res.redirect('/products')
     },
     edit: (req, res) => {
         let id = req.params.id;

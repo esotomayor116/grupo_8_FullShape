@@ -5,12 +5,12 @@ const router = express.Router();
 //Listado de productos, vista home.
 router.get('/', controller.index);
 
-//Detalle de productos, vista productDetail.
-router.get('/:id/', controller.detail);
-
 //Formulario de creación, vista productCreate.
 router.get('/create', controller.create);
 router.post('/', controller.store);
+
+//Detalle de productos, vista productDetail.
+router.get('/:id', controller.detail);
 
 //Formulario de edición, vista productEdit.
 router.get('/:id/edit', controller.edit);
