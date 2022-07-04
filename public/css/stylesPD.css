@@ -137,22 +137,12 @@ main {
     padding: 0px;
 }
 
-li#foto1, li#foto2, li#foto3 {
-    width: 33%;
-}
-
-li#foto4, li#foto5, li#foto6, li#foto7 {
+li#foto0, li#foto1, li#foto2, li#foto3, li#foto4 {
     width: 50%;
     border: 1px solid black;
-    padding: 5px;
-    margin: 0px 5px;;
 }
 
-li#foto6, li#foto7 {
-    display: none;
-}
-
-#c1, #c2, #c3, #c4, #c5, #c-6, #c-7 {
+#c0, #c1, #c2, #c3, #c4, #c5, #c-6, #c-7 {
     width: 100%;
     height:100%;
     box-sizing: border-box;

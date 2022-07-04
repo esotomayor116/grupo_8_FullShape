@@ -26,11 +26,11 @@
                             <div class="ClasificacionNuevoProducto">
                                 <div class="NuevoUsadoRadios">
                                     <div class="NuevoUsado">
-                                        <input class="radio" type="radio" name="productStatus">
+                                        <input class="radio" type="radio" name="productStatus" value="Nuevo">
                                         <label>Producto Nuevo</label>
                                     </div>
                                     <div class="NuevoUsado">
-                                        <input class="radio" type="radio" name="productStatus">
+                                        <input class="radio" type="radio" name="productStatus" value="Usado">
                                         <label>Producto Usado</label>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@
                                             <option value="Verde">Verde</option>
                                             <option value="Azul">Azul</option>
                                             <option value="Morado">Morado</option>
-                                            <option value="No aplica">No aplica</option>
+                                            <option value="">No aplica</option>
                                         </select>
                                     </div>
                                     <div class="nuevoProdyctoTalles">
@@ -64,7 +64,7 @@
                                             <option value="Large">L</option>
                                             <option value="ExtraLarge">XL</option>
                                             <option value="ExtraExtraLarge">XXL</option>
-                                            <option value="No aplica">No aplica</option>
+                                            <option value="">No aplica</option>
                                         </select>
                                     </div>  
                                 </div>  
@@ -81,7 +81,7 @@
                             </div>
                             <div class="PrecioNuevoProducto">
                                 <label for="PrecioUnitario">Precio por Unidad (u$s)</label><label class="requerido">  *</label><br>
-                                <input type="number" name="productUnitPrice" required oninvalid="this.setCustomValidity('Por favor ingresa un precio del producto (precio unintario)')"><br>
+                                <input type="text" name="productUnitPrice" required oninvalid="this.setCustomValidity('Por favor ingresa un precio del producto (precio unintario)')"><br>
                             </div>
                             <div class="GuardarNuevoProducto">
                                 <div class="botones">

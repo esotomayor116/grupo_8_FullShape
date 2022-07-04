@@ -32,8 +32,14 @@ const controller = {
       res.render('./products/productCreate')
     },
     store: (req, res) => {
+      if (req.body.productColor == "") {
+        req.body.productColor = null;
+      }
+      if (req.body.productSize == "") {
+        req.body.productSize = null;
+      }
       let product = req.body;
-      product.id = (products.length + 1);
+      product.productId = (products.length + 1);
       products.push(product);
       fs.writeFileSync(productsFilePath, JSON.stringify(products), 'utf-8');
       res.redirect('/products')
