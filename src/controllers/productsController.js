@@ -82,10 +82,10 @@ const controller = {
     delete: (req, res) => {
       let id = req.params.id;
       newProducts = products.filter(function(product){
-        return product.id != id;
+        return product.productId != id;
       })
       fs.writeFileSync(productsFilePath, JSON.stringify(newProducts), 'utf-8')
-		res.redirect('/products/')
+		  res.redirect('/products')
 
     },
 };
