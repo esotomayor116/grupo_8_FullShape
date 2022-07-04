@@ -45,7 +45,7 @@
                 <ul class="carrusel-fotos">
 
                     <% for (let i=0; i<relatedProducts.length; i++) { %>
-                        <% if (relatedProducts[i].productId != "") { %>
+                        <% if (relatedProducts[i].productId != "" && relatedProducts[i].productId != product.productId) { %>
                         <li id="foto<%=i%>"><img id="c<%=i%>"src="/images/<%= relatedProducts[i].productMainImage %>" alt=""></li>
                   <% } %>
                 <% } %>

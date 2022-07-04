@@ -28,10 +28,8 @@ const controller = {
 
        res.render('./products/productDetail', { product, relatedProducts } );
     },
-
-
     create: (req, res) => {
-
+      res.render('./products/productCreate')
     },
     store: (req, res) => {
 

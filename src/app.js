@@ -36,7 +36,7 @@ app.get("/register", (req, res) => {
     res.render("./users/register")
 })
 
-app.get("/productcreate", (req, res) => {
+app.get("/products/create", (req, res) => {
     res.render("./products/productCreate")
 })
 
