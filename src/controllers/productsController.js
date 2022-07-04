@@ -7,10 +7,29 @@ const controller = {
     index: (req, res) => {
       res.render('./products/home', { products });
     },
+
+    // detail: (req, res) => {
+    //   let id = req.params.id;
+    //   res.render('./products/productDetail',{ id });
+    // },
+    
     detail: (req, res) => {
-      let id = req.params.id;
-      res.render('./products/productDetail',{ id });
+      let idProducto = req.params.id;
+      let product;
+      for (let i=0; i<products.length; i++) {
+              if (products[i].productId == idProducto) {
+          product = products[i];
+        }
+      }
+      let relatedProducts = products.filter(function(related){
+        return related.productCategory == product.productCategory
+  
+      });
+
+       res.render('./products/productDetail', { product, relatedProducts } );
     },
+
+
     create: (req, res) => {
 
     },
