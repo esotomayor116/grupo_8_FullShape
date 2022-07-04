@@ -55,3 +55,33 @@
     Lucho: Realizar ejercicios de practica para afianzar conocimiento en tema de rutas, controladores y EJS.
 
     Pablo: Terminar alguno de los ejercicios de la clase 19 y 20, y subir el daily.md en caso de tener solo esta reunión.
+
+## 29/06/2022
+### 1. ¿Que Hicimos Hoy?
+
+    Seba:  Organicé la estructura básica de carpetas y cree los archivos base para el CRUD.
+    
+    Eddy: Creé el archivo .json de productos y advertí errores en la pagina de Home.
+    
+    Lucho: Realice ejercitación pendiente de CRUD en Playground.
+    
+    Pablo: Creé el archivo user.json.   
+
+### 2.   ¿Qué bloqueos tenemos?
+    Seba: No tuve problema alguno, además no pude probar el funcionamiento de mis archivos debido a que no tenenemos creada la base de datos aún.
+
+    Eddy: Tuve ciertas dificultades para aprender a utilizar la app Mockaroo.
+
+    Lucho: Ninguno por ahora.
+
+    Pablo: Tuve dificultades con el servidor, ya que habia otra aplicación corriendo en el mismo puerto.
+
+### 3. ¿Qué haremos mañana? 
+    Seba: Estaré pendiente a ver si mis compañeros necesitan asistencia en sus asignaciones, y de ser posible, pondré a funcionar el formulario de edición.
+
+    Eddy: Continuaré realizando mi lista de actividades pendientes las cuales se distribuyeron en el tablero de Trello. 
+
+    Lucho: Actualizaré el archivo Weekly.md y comenzaré con la acción de borrado (delete).
+
+    Pablo: Realizaré tareas de CRUD.
+
