@@ -265,7 +265,18 @@ main a#edit {
     margin: 0% 6% 5% 6%;
 }
 
+main form#delete {
+    width: 120px;
+    margin: 0% 6% 5% 6%;
+}
+
 main a#edit button {
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+main form#delete button {
     width: 100%;
     font-weight: bold;
     font-size: 16px;
