@@ -53,3 +53,5 @@
 ### **•** Sincronizar correctamente los trabajos individuales (estilos, fuentes, logo, y navegacion entre paginas, etc.)
 ### **•** Considerar la posibilidad de usar otras plataformas para los tableros de Trello, ya que nos dimos cuenta de que necesitamos menos columnas.
 ### **•** Considerar la posibilidad de usar las herramientas que vimos para compartir el avance que vamos teniendo, como Heroku.
+
+
