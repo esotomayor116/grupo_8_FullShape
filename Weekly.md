@@ -85,3 +85,32 @@
 
     Pablo: Realizaré tareas de CRUD.
 
+## 04/07/2022
+### 1. ¿Que Hicimos Hoy?
+
+    Seba: Configurar el formulario de Edición de productos y su funcionalidad en el controlador. 
+    También asistió a Pablo en la configuración de formulario para Crear productos y su funcionalidad en el controlador. 
+
+    
+    Eddy: Vista de producto la volvió dinamica. Tambien incluyó imágenes a cada producto en la base JSON. 
+    
+    Lucho: Trabajo en la funcionalidad del Delete, y en corregir estilos del listado de productos. 
+    
+    Pablo: Dedique el tiempo a poner en funcionamiento el formulario para Crear productos y su funcionalidad en el controlador.
+### 2.   ¿Qué bloqueos tenemos?
+    Seba: No podía hacer funcionar la propiedad req.body, y bloqueo en renderizacion de formulario crear. 
+
+    Eddy: El proyecto que estaba usando como prueba tenia instalado el Molter y no me renderizaba por falta del "uploadFile.single" en la ruta. 
+
+    Lucho: Error en controlador, en la función delete llamando al productId
+
+    Pablo: Trabas en los formularios, no podía renderizar por un problema en la definición de la ruta. 
+
+### 3. ¿Qué haremos mañana? 
+    Seba: Participar de la retro y ponerse al día con las lecciones de playgroung.
+
+    Eddy: Armar tablero del sprint 5, actualizar Weekly con la ultima reunión. Participar de la retro y ponerse al día con las lecciones de playgroung.
+
+    Lucho: Participar de la retro y ponerse al día con las lecciones de playgroung.
+
+    Pablo: Participar de la retro y ponerse al día con las lecciones de playgroung.
