@@ -168,8 +168,10 @@ main.home{
     /* width: 75%;  */
     padding: 30px;
     /* margin-bottom: 30px; */
-    align-items: center;
+    /*align-items: center;*/
 }
+
+
 
 .filtros {
     display: flex;
