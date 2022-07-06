@@ -55,3 +55,33 @@
 ### **•** Considerar la posibilidad de usar las herramientas que vimos para compartir el avance que vamos teniendo, como Heroku.
 
 
+# 
+### **----------------------------**
+# 
+# Retrospectiva grupo8/Sprint3
+
+
+### Durante esta ceremonia nos dispusimos todos a hacer las siguientes actividades:
+
+### **1. Armado del tablero de Trello con 4 columnas:**
+#### **a.** ¿Qué problemas tuvimos?
+#### **b.** ¿Qué hicimos bien?
+#### **c.** ¿Qué queremos mejorar?
+#### **d.** Items de acción.
+
+### **2. Cada uno incluyó una tarjeta con su aporte a cada columna.**
+
+### **3. Votamos por las tarjetas que nos parecía que tenían la información más precisa para incluir en las conclusiones.**
+
+### **4. Debatimos de manera grupal el resultado de la votación.**
+
+### OBSERVACIONES:
+### **•** En este Sprint dejamos para lo último la retrospectiva, ya que primero empezamos por lo más complejo, que era el desarrollo de las tareas técnicas.
+### Sin embargo, pudimos determinar que no fue la mejor idea, ya que habiamos olvidando un poco los detalles sobre nuestra eficiencia en el sprint anterior.
+
+### **5. Se concluyeron los siguientes items de acción.**
+
+### **•** A partir del siguiente Sprint, la retrospectiva se hará desde el principio, siempre, para evitar olvidos que perjudiquen el análisis.
+### **•** Mantendremos una comunicación constante por WhatsApp, y seguiremos coordinando para resolver los bloqueos, ya que, en este Sprint, esto resultó en un mucho mejor manejo del tiempo, pues terminamos antes de lo estipulado.
+### **•** Cada compañero se encargará de reforzar intensivamente los temas vistos mediante práctica continua, para asegurar una mejor comprensión de los temas, y evitar tantos bloqueos.
+
