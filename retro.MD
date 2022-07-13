@@ -85,3 +85,30 @@
 ### **•** Mantendremos una comunicación constante por WhatsApp, y seguiremos coordinando para resolver los bloqueos, ya que, en este Sprint, esto resultó en un mucho mejor manejo del tiempo, pues terminamos antes de lo estipulado.
 ### **•** Cada compañero se encargará de reforzar intensivamente los temas vistos mediante práctica continua, para asegurar una mejor comprensión de los temas, y evitar tantos bloqueos.
 
+
+# 
+### **----------------------------**
+# 
+# Retrospectiva grupo8/Sprint4
+
+
+### Durante esta ceremonia nos dispusimos todos a hacer las siguientes actividades:
+
+### **1. Armado del tablero de Trello con 4 columnas:**
+#### **a.** ¿Qué problemas tuvimos?
+#### **b.** ¿Qué hicimos bien?
+#### **c.** ¿Qué queremos mejorar?
+#### **d.** Items de acción.
+
+### **2. Cada uno incluyó una tarjeta con su aporte a cada columna.**
+
+### **3. Votamos por las tarjetas que nos parecía que tenían la información más precisa para incluir en las conclusiones.**
+
+### **4. Debatimos de manera grupal el resultado de la votación.**
+
+### **5. Se concluyeron los siguientes items de acción.**
+
+### **•** Tuvimos algunas dificultades de comprensión del tema CRUD, debido a que involucra un poco más de complejidad en comparación a los temas que venimos viendo. Con lo cual es clave continuar asistiendo a los integrantes que mas bloqueos presentan. 
+### **•** Relacionado con el punto anterior, también implementaremos las fechas de vencimiento en tareas y reuniones mas periódicas donde revisaremos el avance y bloqueos que pudiesen existir.Esto también	nos permitirá evitar una sobrecarga de trabajo en los integrantes.
+### **•** Por último implementaremos una revisión en conjunto de los conceptos vistos en clases para tener una base mas solida a la hora de llevar a cabo la parte practica
+
