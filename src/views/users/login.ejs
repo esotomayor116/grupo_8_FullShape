@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link rel="stylesheet" href="css/loginstyles.css">
+        <link rel="stylesheet" href="/css/loginstyles.css">
     </head>
     <body class="login">
         <!-- <img src="/images/loginRegister-background.png" alt="loginRegister-background"> -->
@@ -27,10 +27,10 @@
             </nav>
         </header>
         <main>
-            <form class="login" action="/login" method="POST">   
+            <form class="login" action="/users/login" method="POST">   
                 <!-- Aquí van los campos -->
-                <div class="login"><input type="text" name="usuario" placeholder="Nombre de usuario"></div>
-                <div class="login"><input type="password" name="contraseña" placeholder="Contraseña"></div>
+                <div class="login"><input type="text" name="userEmail" placeholder="Email"></div>
+                <div class="login"><input type="password" name="userPassword" placeholder="Contraseña"></div>
                 <div class="recordarme"> 
                     <div>
                         <label>Recordarme</label>

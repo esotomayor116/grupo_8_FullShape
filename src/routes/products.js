@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/', controller.index);
 
 //Formulario de creación, vista productCreate.
-router.get('/create', (req, res) => res.render('./products/productCreate'));
+router.get('/create', controller.create);
 router.post('/', controller.store);
 
 //Detalle de productos, vista productDetail.
