@@ -39,11 +39,12 @@ const controller = {
         req.body.productSize = null;
       }
       let product = req.body;
+      product.productMainImage = req.file.filename;
       product.productId = (products.length + 1);
       products.push(product);
       fs.writeFileSync(productsFilePath, JSON.stringify(products), 'utf-8');
       res.redirect('/products')
-    },
+      },
     edit: (req, res) => {
         let id = req.params.id;
 		let productToEdit = null;
@@ -67,7 +68,7 @@ const controller = {
             console.log(req.body);
             products[i].productName = req.body.productName; //LA FALLA ESTÁ EN EL BODY!
             products[i].productDescription = req.body.productDescription;
-            products[i].productMainImage = req.body.productMainImage;
+            products[i].productMainImage = req.file.filename;
             products[i].productStatus = req.body.productStatus;
             products[i].productCategory = req.body.productCategory;
             products[i].productColor = req.body.productColor;

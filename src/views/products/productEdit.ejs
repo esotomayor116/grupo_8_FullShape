@@ -7,7 +7,7 @@
         <div class="cuerpo_creacion_edicion">
             <%- include("../partials/header") %>
             <main class="product_creation">
-                    <form class="product_creation" action="/products/<%= productToEdit.productId %>?_method=PUT" method="POST">  
+                    <form class="product_creation" action="/products/<%= productToEdit.productId %>?_method=PUT" method="POST" enctype="multipart/form-data">  
                             <h1 class="creaTuProducto">Edita tu publicacion</h1> 
                             <h6 class="requerido">los campos con asterisco son necesarios para la creción del producto</h6>
                         <!-- Aquí van los campos -->
