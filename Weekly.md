@@ -114,3 +114,72 @@
     Lucho: Participar de la retro y ponerse al día con las lecciones de playgroung.
 
     Pablo: Participar de la retro y ponerse al día con las lecciones de playgroung.
+
+
+    Weekly 19/07/2022
+
+
+### 1. ¿Que Hicimos en la semana?
+
+    Seba: Quedo el login de usuarios funcionando sin el encriptado de contraseña.
+
+    
+    Eddy: Actualización de Retro. Y complete las clases de Session, cookies y encriptación. 
+    
+    Lucho: 
+    
+    Pablo: Trabajo con Molter en el formulario de creación y edición de productos. 
+    
+### 2.   ¿Qué bloqueos tenemos?
+
+    Seba: Sin bloqueos
+
+    Eddy: No hubo bloqueos hasta el momento. 
+
+    Lucho: 
+
+    Pablo: No podía hacer funcionar las imágenes en la creación del producto.  
+
+### 3. ¿Qué haremos mañana? 
+
+    Seba: Va a trabajar en el session y cookies, y crear en el header las opciones del perfil.
+
+    Eddy: Trabajar en el registro de usuario, encriptacion de contraseñas. Actualizar Weekly.md 
+
+    Lucho: 
+
+    Pablo: Implementar rutas de usuario. Completar la clase 26.
+
+
+ Weekly DD/07/2022
+
+### 1. ¿Que Hicimos en la semana?
+
+    Seba: 
+
+    
+    Eddy: 
+    
+    Lucho: 
+    
+    Pablo: 
+    
+### 2.   ¿Qué bloqueos tenemos?
+
+    Seba: 
+
+    Eddy: 
+
+    Lucho: 
+
+    Pablo: 
+
+### 3. ¿Qué haremos mañana? 
+
+    Seba: 
+
+    Eddy:  
+
+    Lucho: 
+
+    Pablo: 
