@@ -29,6 +29,9 @@
         <main>
             <form class="login" action="/users/login" method="POST">   
                 <!-- Aquí van los campos -->
+                <% if (locals.errors && errors.log) { %>
+                    <p> <%= errors.log.msg %> </p>
+                <% } %>
                 <div class="login"><input type="text" name="userEmail" placeholder="Email"></div>
                 <div class="login"><input type="password" name="userPassword" placeholder="Contraseña"></div>
                 <div class="recordarme"> 

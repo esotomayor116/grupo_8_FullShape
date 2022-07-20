@@ -7,11 +7,11 @@
         <%- include("../partials/header") %>
         <main>
             <div class="carrusel">
-                <img class="article" src="/images/<%= product.productMainImage %>" alt="">
+                <img class="article" src="/images/products/<%= product.productMainImage %>" alt="">
                 <ul class="carrusel-fotos">
-                    <li id="foto1"><img id="c1"src="/images/<%= product.productMainImage %>" alt=""></li>
-                    <li id="foto2"><img id="c2"src="/images/<%= product.productMainImage %>" alt=""></li>
-                    <li id="foto3"><img id="c3"src="/images/<%= product.productMainImage %>" alt=""></li>
+                    <li id="foto1"><img id="c1"src="/images/products/<%= product.productMainImage %>" alt=""></li>
+                    <li id="foto2"><img id="c2"src="/images/products/<%= product.productMainImage %>" alt=""></li>
+                    <li id="foto3"><img id="c3"src="/images/products/<%= product.productMainImage %>" alt=""></li>
                 </ul>
             </div>
             <div class="presentacion">
@@ -20,7 +20,7 @@
                 <p class="pp">Código del producto</p>
                 <p class="pp">Estado - <%= product.productStatus %></p>
                 <p class="pp"><%= product.productCode %></p>
-                <h2 id="precio"><%= product.productUnitPrice.toLocaleString('es-Ar') %></h2>
+                <h2 id="precio">$<%= product.productUnitPrice.toLocaleString('es-Ar') %></h2>
                 <p class="disponibilidad">Disponibles - 3 unidades</p>
                 <p>Añadir 1 al carrito</p>
                 <p id="descripcion"><%= product.productDescription %></p>
@@ -46,7 +46,7 @@
 
                     <% for (let i=0; i<relatedProducts.length; i++) { %>
                         <% if (relatedProducts[i].productId != "" && relatedProducts[i].productId != product.productId) { %>
-                        <li id="foto<%=i%>"><img id="c<%=i%>"src="/images/<%= relatedProducts[i].productMainImage %>" alt=""></li>
+                        <li id="foto<%=i%>"><img id="c<%=i%>"src="/images/products/<%= relatedProducts[i].productMainImage %>" alt=""></li>
                   <% } %>
                 <% } %>
                 </ul>

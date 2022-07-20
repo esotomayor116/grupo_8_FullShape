@@ -9,7 +9,7 @@
         "productCategory": "Gimnasio",
         "productColor": "Azul",
         "productSize": null,
-        "productUnitPrice": "$4582.52"
+        "productUnitPrice": "4582.52"
     },
     {
         "productId": 2,
@@ -21,7 +21,7 @@
         "productCategory": "Gimnasio",
         "productColor": "Verde",
         "productSize": null,
-        "productUnitPrice": "$3105.88"
+        "productUnitPrice": "3105.88"
     },
     {
         "productId": 3,
@@ -33,7 +33,7 @@
         "productCategory": "Gimnasio",
         "productColor": "Celeste",
         "productSize": "XS",
-        "productUnitPrice": "$3546.96"
+        "productUnitPrice": "3546.96"
     },
     {
         "productId": 4,
@@ -45,7 +45,7 @@
         "productCategory": "Fútbol",
         "productColor": "Verde",
         "productSize": null,
-        "productUnitPrice": "$3342.67"
+        "productUnitPrice": "3342.67"
     },
     {
         "productId": 5,
@@ -57,7 +57,7 @@
         "productCategory": "Gimnasio",
         "productColor": "Negro",
         "productSize": null,
-        "productUnitPrice": "$3936.33"
+        "productUnitPrice": "3936.33"
     },
     {
         "productId": 6,
@@ -69,7 +69,7 @@
         "productCategory": "Gimnasio",
         "productColor": "Negro",
         "productSize": null,
-        "productUnitPrice": "$2644.91"
+        "productUnitPrice": "2644.91"
     },
     {
         "productId": 7,
@@ -81,7 +81,7 @@
         "productCategory": "Kinesiología",
         "productColor": "Blanco",
         "productSize": null,
-        "productUnitPrice": "$2098.91"
+        "productUnitPrice": "2098.91"
     },
     {
         "productId": 8,
@@ -93,7 +93,7 @@
         "productCategory": "Kinesiología",
         "productColor": "Rojo",
         "productSize": null,
-        "productUnitPrice": "$4542.00"
+        "productUnitPrice": "4542.00"
     },
     {
         "productId": 9,
@@ -105,7 +105,7 @@
         "productCategory": "Kinesiología",
         "productColor": "Amarillo",
         "productSize": "M",
-        "productUnitPrice": "$1272.20"
+        "productUnitPrice": "1272.20"
     },
     {
         "productId": 10,
@@ -117,7 +117,7 @@
         "productCategory": "Kinesiología",
         "productColor": "Celeste",
         "productSize": null,
-        "productUnitPrice": "$1426.22"
+        "productUnitPrice": "1426.22"
     },
     {
         "productId": 11,
@@ -129,7 +129,7 @@
         "productCategory": "Fútbol",
         "productColor": "Negro",
         "productSize": "M",
-        "productUnitPrice": "$4334.99"
+        "productUnitPrice": "4334.99"
     },
     {
         "productId": 12,
@@ -141,7 +141,7 @@
         "productCategory": "Suplementos",
         "productColor": null,
         "productSize": null,
-        "productUnitPrice": "$2944.86"
+        "productUnitPrice": "2944.86"
     },
     {
         "productId": 13,
@@ -153,7 +153,7 @@
         "productCategory": "Suplementos",
         "productColor": null,
         "productSize": null,
-        "productUnitPrice": "$3172.55"
+        "productUnitPrice": "3172.55"
     },
     {
         "productId": 14,
@@ -165,7 +165,7 @@
         "productCategory": "Suplementos",
         "productColor": null,
         "productSize": null,
-        "productUnitPrice": "$1601.44"
+        "productUnitPrice": "1601.44"
     },
     {
         "productId": 15,
@@ -177,7 +177,7 @@
         "productCategory": "Suplementos",
         "productColor": null,
         "productSize": null,
-        "productUnitPrice": "$1861.69"
+        "productUnitPrice": "1861.69"
     },
     {
         "productId": 16,
@@ -189,7 +189,7 @@
         "productCategory": "Suplementos",
         "productColor": null,
         "productSize": null,
-        "productUnitPrice": "$2290.33"
+        "productUnitPrice": "2290.33"
     },
     {
         "productId": 17,
@@ -201,7 +201,7 @@
         "productCategory": "Boxeo",
         "productColor": "Amarillo",
         "productSize": "S",
-        "productUnitPrice": "$948.46"
+        "productUnitPrice": "948.46"
     },
     {
         "productId": 18,
@@ -213,7 +213,7 @@
         "productCategory": "Boxeo",
         "productColor": "Negro",
         "productSize": "XL",
-        "productUnitPrice": "$4662.77"
+        "productUnitPrice": "4662.77"
     },
     {
         "productId": 19,
@@ -225,7 +225,7 @@
         "productCategory": "Boxeo",
         "productColor": "Rojo",
         "productSize": "M",
-        "productUnitPrice": "$1964.17"
+        "productUnitPrice": "1964.17"
     },
     {
         "productId": 20,
@@ -237,7 +237,7 @@
         "productCategory": "Boxeo",
         "productColor": "Rojo",
         "productSize": null,
-        "productUnitPrice": "$2389.62"
+        "productUnitPrice": "2389.62"
     },
     {
         "productName": "Pelota2",
@@ -249,6 +249,6 @@
         "productCode": "76519278",
         "productUnitPrice": "10000",
         "productId": 21,
-        "productMainImage": "productMainImage-1658200808664.png"
+        "productMainImage": "productMainImage-1658199926352.jpg"
     }
 ]

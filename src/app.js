@@ -5,6 +5,7 @@ const productsRouter = require('./routes/products');
 const mainRouter =require('./routes/main');
 const usersRouter = require('./routes/users');
 const methodOverride =  require('method-override');
+const session = require('express-session');
 
 
 app.use(express.static(path.join(__dirname, "../public")));
@@ -15,6 +16,11 @@ app.use(methodOverride('_method'));
 app.use('/products', productsRouter);
 app.use('/', mainRouter);
 app.use('/users', usersRouter);
+app.use(session({
+    secret: 'usuario en sesión',
+    resave: false,
+    saveUninitialized: false
+}));
 
 app.set('view engine', 'ejs');
 
