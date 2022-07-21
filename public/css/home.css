@@ -105,6 +105,47 @@ select {
     height: 100%;
 }
 
+.user-menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user-menu ul {
+    display: none;
+}
+
+
+.user-menu:hover ul {
+    display:block;
+    position: absolute;
+    right: 1px;
+    width: 89.963px;
+    margin-top: 20px;
+    border: 0px;
+    padding: 0px;
+    z-index: 1;
+    background-color: #83FACF;
+}
+
+.user-menu:hover ul a li {
+    font-size: 14px;
+    border: 1px black solid;
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+}
+
+.user-menu:hover ul form, .user-menu:hover ul form button {
+    width: 100%;
+    height: 100%;
+    background-color: #83FACF;
+    font-size: 14px;
+}
+
+.user-menu:hover ul form button {
+    border: 1px solid black;
+}
+
 
 /* ______ Fin Estilo header by Seba -------- */
 

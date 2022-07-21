@@ -6,8 +6,10 @@
             <% if (user) { %>
              <li class="user-menu"><%= user.userNames %>
                 <ul>
-                    <li>Ver perfil</li>
-                    <li>Cerrar sesión</li>
+                    <a href="#"><li>Ver perfil</li></a>
+                    <form action="/users" method="POST">
+                        <button type="submit"><li>Cerrar Sesión</li></button>
+                    </form>
                 </ul>
             </li>
             <% } else { %>

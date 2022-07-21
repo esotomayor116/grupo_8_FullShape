@@ -10,7 +10,7 @@ const controller = {
         res.render('./users/login');
     },
     access: (req, res) => {
-      let userFound = users.find(oneUser => oneUser.userEmail == req.body.userEmail)
+      let userFound = users.find(oneUser => oneUser.userEmail == req.body.userEmail);
       if (userFound) {
         /*let passwordIsOk = bcrypt.compareSync(req.body.userPassword, userFound.userPassword);
         if (passwordIsOk) {
@@ -20,14 +20,21 @@ const controller = {
         }*/
         if (userFound.userPassword == req.body.userPassword) {
           req.session.userLogged = userFound;
+          if (req.body.rememberMe) {
+              res.cookie('userLogData', [req.body.userEmail, req.body.userPassword], { maxAge: 120000 } )
+          }
           res.redirect('/products');
-          console.log(req.session.userLogged);
         } else {
           res.render('./users/login', { errors: { log:{ msg: 'Credenciales no válidas ' } } });
         }
       } else {
         res.render('./users/login', { errors: { log:{ msg: 'Credenciales no válidas ' } } });
       }
+    },
+    logout: (req, res) => {
+      req.session.destroy();
+      res.clearCookie('userLogData');
+      res.redirect('/products');
     }
 }
 

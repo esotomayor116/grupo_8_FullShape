@@ -6,6 +6,8 @@ const mainRouter =require('./routes/main');
 const usersRouter = require('./routes/users');
 const methodOverride =  require('method-override');
 const session = require('express-session');
+const cookies = require('cookie-parser');
+const userLoggedCookie = require('./middlewares/userLoggedCookie');
 
 
 app.use(express.static(path.join(__dirname, "../public")));
@@ -18,7 +20,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
-
+app.use(cookies());
+app.use(userLoggedCookie);
 app.use('/products', productsRouter);
 app.use('/', mainRouter);
 app.use('/users', usersRouter);
