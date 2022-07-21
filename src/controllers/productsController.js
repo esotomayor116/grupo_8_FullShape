@@ -5,7 +5,7 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
     index: (req, res) => {
-      res.render('./products/home', { products });
+      res.render('./products/home', { products,  user: req.session.userLogged});
     },
 
     // detail: (req, res) => {
@@ -26,10 +26,10 @@ const controller = {
   
       });
 
-       res.render('./products/productDetail', { product, relatedProducts } );
+       res.render('./products/productDetail', { product, relatedProducts, user: req.session.userLogged } );
     },
     create: (req, res) => {
-      res.render('./products/productCreate')
+      res.render('./products/productCreate', { user: req.session.userLogged })
     },
     store: (req, res) => {
       if (req.body.productColor == "") {
@@ -53,7 +53,7 @@ const controller = {
 				productToEdit = products[i];
 			}
 		}
-        res.render("./products/productEdit", { productToEdit })
+        res.render("./products/productEdit", { productToEdit , user: req.session.userLogged })
     },
     update: (req, res) => {
       let id = req.params.id;

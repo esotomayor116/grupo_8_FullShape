@@ -3,8 +3,17 @@
         <ul>
             <a href="/products/create"><li style="font-weight:bold">Vender</li></a>
             <a href="#"><li>Ayuda</li></a>
-            <a href="/users/login"><li>Iniciar sesión</li></a>
-            <a href="/register"><li>Registrate</li></a>
+            <% if (user) { %>
+             <li class="user-menu"><%= user.userNames %>
+                <ul>
+                    <li>Ver perfil</li>
+                    <li>Cerrar sesión</li>
+                </ul>
+            </li>
+            <% } else { %>
+              <a href="/users/login"><li>Iniciar sesión</li></a>
+              <a href="/register"><li>Registrate</li></a>
+            <% } %>
         </ul>
     </nav>
     <a href="/" id="logo"><img  src="/images/Shapepng.svg" alt=""></a>

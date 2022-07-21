@@ -13,19 +13,24 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(methodOverride('_method')); 
-app.use('/products', productsRouter);
-app.use('/', mainRouter);
-app.use('/users', usersRouter);
 app.use(session({
     secret: 'usuario en sesión',
     resave: false,
     saveUninitialized: false
 }));
 
+app.use('/products', productsRouter);
+app.use('/', mainRouter);
+app.use('/users', usersRouter);
+
 app.set('view engine', 'ejs');
 
 app.get("/register", (req, res) => {
     res.render("./users/register")
+})
+
+app.get("/shoppingcart", (req, res) => {
+    res.render("./products/carritoCompras", { user: req.session.userLogged })
 })
 
 app.listen(process.env.PORT || 3000, () => {

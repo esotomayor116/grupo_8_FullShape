@@ -14,7 +14,7 @@ const controller = {
       if (userFound) {
         /*let passwordIsOk = bcrypt.compareSync(req.body.userPassword, userFound.userPassword);
         if (passwordIsOk) {
-          res.render('./products/home', { products });
+          res.redirect('/products');
         } else {
           res.render('./users/login', { errors: { log:{ msg: 'Credenciales no válidas ' } } });
         }*/
