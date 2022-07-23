@@ -8,7 +8,8 @@ const methodOverride =  require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const userLoggedCookie = require('./middlewares/userLoggedCookie');
-
+const guestMiddleware = require('./middlewares/guestMiddleware');
+const authMiddleware = require('./middlewares/authMiddleware');
 
 app.use(express.static(path.join(__dirname, "../public")));
 
@@ -25,6 +26,8 @@ app.use(userLoggedCookie);
 app.use('/products', productsRouter);
 app.use('/', mainRouter);
 app.use('/users', usersRouter);
+app.use(guestMiddleware);
+app.use(authMiddleware);
 
 app.set('view engine', 'ejs');
 

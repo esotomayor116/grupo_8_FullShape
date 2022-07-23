@@ -16,9 +16,13 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
+//Middleware
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
+
 //aqui comienzan las rutas. 
 //Las siguientes son rutas del login
-router.get('/login', controller.login);
+router.get('/login', guestMiddleware, controller.login);
 router.post('/login', controller.access);
 router.post('/', controller.logout);
 
@@ -26,13 +30,13 @@ router.post('/', controller.logout);
 router.get('/', controller.index);
 
 //Ruta para ver el formulario de registro funciona OK
-router.get('/register', controller.create);
+router.get('/register', guestMiddleware, controller.create);
 
 //Procesamiento del formulario de creación
 router.post('/guardar', upload.single('userImage'), controller.store);
 
 //Detalle del Usuario
-router.get('/:id', controller.show);
+router.get('/:id', authMiddleware, controller.show);
 
 
 module.exports = router;
