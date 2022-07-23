@@ -6,46 +6,47 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link rel="stylesheet" href="css/registerstyles.css">
+        <link rel="stylesheet" href="/css/registerstyles.css">
     </head>
     <body>
         <header>
         </header>
         <div class="cuerpo-registro">
         <main>
-                <form class="registro-popup" action="/registro" method="POST">  
+                <form class="registro-popup" action="/users/guardar" method="POST">  
                     <div class="formRegistro-izquierdo">
                         <h1 class="registrate">Registrate</h1> 
                         <h6 class="requerido">los campos con asterisco son necesarios para el registro</h6>
                     <!-- Aquí van los campos -->
+        
                         <div>
                             <label for="Nombres">Nombres</label><label class="requerido">  *</label><br>
-                            <input type="text" name="Nombres"><br>
+                            <input type="text" name="userNames"><br>
                         </div>
                         <div>
                             <label for="Apellidos">Apellidos</label><label class="requerido">  *</label><br>
-                            <input type="text" name="Apellidos"><br>
+                            <input type="text" name="userLastNames"><br>
                         </div>
                         <div>
                             <label for="Telefono">Número de teléfono</label><label class="requerido">  *</label><br>
-                            <input type="number" name="Telefono"><br>
+                            <input type="number" name="userPhone"><br>
                         </div>
                         <div>
                             <label for="email">Email</label><label class="requerido">  *</label><br>
-                            <input type="email" name="email"><br>
+                            <input type="email" name="userEmail"><br>
                         </div>
                         <div class="recibir-ofertas">
                             <label class="recibir-ofertas">Recibir ofertas y novedades</label>
-                            <input class="radio" type="radio" name="recibirOfertas"><br>
+                            <input class="radio" type="radio" name="userReceiveOffersAndNews"><br>
                         </div>
                         <div>
                             <label for="contraseña">Crear Contraseña</label><label class="requerido">  *</label><br>
-                            <input type="password" name="contraseña"><br>
+                            <input type="password" name="userPassword"><br>
                             <h6>(?) la contraseña debe poseer al menos 6 caracteres</h6>
                         </div>
                         <div>
                             <label for="contraseña">Repetir Contraseña</label><label class="requerido">  *</label><br>
-                            <input type="password" name="contraseña"><br>
+                            <input type="password"><br>
                         </div>
                             <div class="botones">
                             <p><button type="submit">Registrarse e iniciar sesión</button></p> 

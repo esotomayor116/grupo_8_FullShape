@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head") %>
+    <link rel="stylesheet" href="/css/userIndex.css">
+<title>Bienvenidos a Full Shape</title>
+</head>
+<body>
+<!-- Aqui va el partial del header, pero me estaba dando error en la renderizacion de esta vista cuando era incluido -->
+    <main class="index">
+            <div class="contenedor-padre">            
+                <div class="usuarios" > 
+                    <% for (const user of users) {  %>
+                    <article class="user">
+                        <a href="/users/<%= user.userId %>"><img class= "imagen-index"src="/images/users/User_Avatar.jpeg" alt=""></a>
+                        <div class="main-article"> 
+                        <p><%= user.userNames %></p>
+                        <p><%= user.LastNames %></p>
+                        <p><%= user.userPhone %></p>
+                        <p><%= user.userEmail%></p>
+                        </div>
+                    </article>
+                    <% } %>
+                </div>
+            </div>
+    </main>
+    <%- include("../partials/footer") %>
+</body>
+</html>

@@ -35,7 +35,33 @@ const controller = {
       req.session.destroy();
       res.clearCookie('userLogData');
       res.redirect('/products');
-    }
+    },
+    index: (req, res) => {
+      res.render('./users/index', { users });
+    },
+    create: (req, res) => {
+      res.render("./users/register");
+    },
+
+    store: (req, res) => {
+      let user = req.body;
+      // product.productMainImage = req.file.filename;
+      user.userId = (users.length + 1);
+      if (user.userReceiveOffersAndNews == "on"){
+        user.userReceiveOffersAndNews = true
+      } else{
+        user.userReceiveOffersAndNews = false
+      }
+      users.push(user);
+      fs.writeFileSync(usersFilePath, JSON.stringify(users), 'utf-8');
+      res.redirect('/users')
+      },
+
+    show: (req, res) => {
+      let user = users.find(req.params.id);
+
+      res.render('user/detail', { user });
+    },
 }
 
 module.exports = controller;
