@@ -45,13 +45,20 @@ const controller = {
 
     store: (req, res) => {
       let user = req.body;
-      // product.productMainImage = req.file.filename;
+      
+      if (req.file) {
+        user.userImage = req.file.filename;
+      } else{
+        user.userImage = "User_Avatar.jpeg"
+      };
+
       user.userId = (users.length + 1);
       if (user.userReceiveOffersAndNews == "on"){
         user.userReceiveOffersAndNews = true
       } else{
         user.userReceiveOffersAndNews = false
       }
+      user.userPassword = bcrypt.hashSync(user.userPassword, 10)
       users.push(user);
       fs.writeFileSync(usersFilePath, JSON.stringify(users), 'utf-8');
       res.redirect('/users')

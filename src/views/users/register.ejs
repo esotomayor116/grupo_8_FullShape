@@ -13,7 +13,7 @@
         </header>
         <div class="cuerpo-registro">
         <main>
-                <form class="registro-popup" action="/users/guardar" method="POST">  
+                <form class="registro-popup" action="/users/guardar" method="POST" enctype="multipart/form-data">  
                     <div class="formRegistro-izquierdo">
                         <h1 class="registrate">Registrate</h1> 
                         <h6 class="requerido">los campos con asterisco son necesarios para el registro</h6>
@@ -47,6 +47,10 @@
                         <div>
                             <label for="contraseña">Repetir Contraseña</label><label class="requerido">  *</label><br>
                             <input type="password"><br>
+                        </div>
+                        <div>
+                            <label for="userImage">Imagen del usuario</label><br>
+                            <input type="file" name="userImage" id="userImage"><br>
                         </div>
                             <div class="botones">
                             <p><button type="submit">Registrarse e iniciar sesión</button></p> 

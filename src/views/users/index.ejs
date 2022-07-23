@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include("../partials/head") %>
-    <link rel="stylesheet" href="/css/userIndex.css">
+    <link rel="stylesheet" href="/css/index.css">
 <title>Bienvenidos a Full Shape</title>
 </head>
 <body>
@@ -12,12 +12,12 @@
                 <div class="usuarios" > 
                     <% for (const user of users) {  %>
                     <article class="user">
-                        <a href="/users/<%= user.userId %>"><img class= "imagen-index"src="/images/users/User_Avatar.jpeg" alt=""></a>
+                        <a href="/users/<%= user.userId %>"><img class= "imagen-index"src="/images/users/<%= user.userImage %>" alt="" width="100%"></a>
                         <div class="main-article"> 
-                        <p><%= user.userNames %></p>
-                        <p><%= user.LastNames %></p>
-                        <p><%= user.userPhone %></p>
-                        <p><%= user.userEmail%></p>
+                        <p>Nombres: <%= user.userNames %></p>
+                        <p>Apellidos: <%= user.userLastNames %></p>
+                        <p>Teléfono: <%= user.userPhone %></p>
+                        <p>Email: <%= user.userEmail%></p>
                         </div>
                     </article>
                     <% } %>

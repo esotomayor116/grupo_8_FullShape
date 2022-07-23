@@ -1,7 +1,23 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
 const controller = require('../controllers/usersControllers');
+const path = require ('path');
+const storage = multer.diskStorage({
+    destination: (req, file, cb) =>{
+        cb(null,path.join(__dirname, '../../public/images/users'))
+    },
+    filename: (req,file,cb) =>{
+        console.log(file);
+        const newFilename = file.fieldname + "-" + Date.now() + path.extname(file.originalname);
+        cb(null, newFilename);
+    }
+    });
 
+const upload = multer({storage});
+
+//aqui comienzan las rutas. 
+//Las siguientes son rutas del login
 router.get('/login', controller.login);
 router.post('/login', controller.access);
 router.post('/', controller.logout);
@@ -13,7 +29,7 @@ router.get('/', controller.index);
 router.get('/register', controller.create);
 
 //Procesamiento del formulario de creación
-router.post('/guardar', controller.store);
+router.post('/guardar', upload.single('userImage'), controller.store);
 
 //Detalle del Usuario
 router.get('/:id', controller.show);

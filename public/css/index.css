@@ -156,41 +156,6 @@ main.home{
     background-color: #D9D9D9;
 }
 
-
-/* ----- inicio Estilos de Banner ----- */
-
-.banner{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url(/images/fondo1.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    align-self: flex-end;
-    padding: 10px;
-    }
-
-    div p.banner-notification{
-        color: white;
-        font-weight: bold;
-        font-size: 200%;
-    }
-
-.banner-img{
-    width: 100%;
-}
-.banner-flecha{
-    width: 5%;
-    /* height: 8%; */
-}
-
-/* ----- fin estilos banner---- */
-
-.destacados{
-    display: flex;
-    justify-content: center;
-    margin: 30px;
-}
 .contenedor-padre{
     display: flex;
     background-color: #FFF;
@@ -199,77 +164,25 @@ main.home{
     background: linear-gradient(#83FACF, #0a2929);
 }
 
-.products {
+.usuarios{
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column;*/
-    justify-content: center;
-    /* border: 1px solid black; */
-    background: linear-gradient(#83FACF, #0a2929);
-    /* width: 75%;  */
-    padding: 30px;
-    /* margin-bottom: 30px; */
-    /*align-items: center;*/
-}
-
-
-
-.filtros {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    background-color: #83FACF;
-    width: 30%;
-    align-items: center;
-    padding-top: 30px;
-    justify-content: flex-start;
-    /* margin-bottom: 30px; */
-    background: linear-gradient(#83FACF, #0a2929);
-}
-.filtro-item{
     align-items: flex-start;
-    margin:10px
-
-
-}
-.product{
-    margin: 10px;
-    border: 1px solid black;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    width: 224px;
-
+    justify-content: space-evenly;
+    align-content: space-between;
 }
 
-.imagen-home{
+
+.imagen-index{
     width: 224px;
     height: 224px;
 }
 
-
-
-
-
-
-
-main.home section article i{
-    display: block;
-    font-size: 16px;
-    padding: 5px;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #39b54a;
-    background-color: #FFF;
-    border-radius: 50%;
-    position: absolute;
-    right: 20px;
-    top: -15px;
+article.user{
+text-align: center;
+margin:20px;
 }
 
-main.home section h3{
-    margin: 20px 0px;
-}
 
 .main-article{
     display: flex;
@@ -278,47 +191,9 @@ main.home section h3{
     align-items: center;
     color: white;
     background-color: black;
+    text-align: center;
     
 }
-
-
-
-@media (max-width: 768px){
-
-    .product{
-        margin: 15px;
-    }
-
-
-    .filtros{
-        width: 50%;
-    }
-
-.filtro-item{
-    margin: 0px;
-
-}
-
-}
-
-@media (max-width: 400px){
-    .product{
-        width: 200px;
-    
-    }
-    
-    .imagen-home{
-        width: 200px;
-        height: 200px;
-    }
-    .description{
-        display: none;
-    }
-    .filtros{
-        display: none;
-    }
-}
-
 
 
 

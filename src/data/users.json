@@ -2,6 +2,7 @@
     {
         "userEmail": "ojordon0@ask.com",
         "userId": 1,
+        "userImage": "User_Avatar.jpeg",
         "userLastNames": "Jordon",
         "userNames": "Orran",
         "userPassword": "QXYKOW4wh",
@@ -11,6 +12,7 @@
     {
         "userEmail": "vdewey1@ifeng.com",
         "userId": 2,
+        "userImage": "User_Avatar.jpeg",
         "userLastNames": "Dewey",
         "userNames": "Viviana",
         "userPassword": "Y5ouonwz",
@@ -20,6 +22,7 @@
     {
         "userEmail": "mkilbee2@delicious.com",
         "userId": 3,
+        "userImage": "userImage-1658553182833.jpeg",
         "userLastNames": "Kilbee",
         "userNames": "Meredith",
         "userPassword": "cN1Rw7R6ciQ",
@@ -29,6 +32,7 @@
     {
         "userEmail": "wdidball3@seesaa.net",
         "userId": 4,
+        "userImage": "userImage-1658553182835.jpeg",
         "userLastNames": "Didball",
         "userNames": "Wye",
         "userPassword": "xTkslxe4yVp",
@@ -38,6 +42,7 @@
     {
         "userEmail": "mcheater4@independent.co.uk",
         "userId": 5,
+        "userImage": "User_Avatar.jpeg",
         "userLastNames": "Cheater",
         "userNames": "Moyna",
         "userPassword": "A9hhsz9",
@@ -47,6 +52,7 @@
     {
         "userEmail": "jberkowitz5@berkeley.edu",
         "userId": 6,
+        "userImage": "User_Avatar.jpeg",
         "userLastNames": "Berkowitz",
         "userNames": "Jules",
         "userPassword": "qEWdiHX",
@@ -56,6 +62,7 @@
     {
         "userEmail": "rlush6@springer.com",
         "userId": 7,
+        "userImage": "User_Avatar.jpeg",
         "userLastNames": "Lush",
         "userNames": "Raphael",
         "userPassword": "73iZbyP",
@@ -65,6 +72,7 @@
     {
         "userEmail": "krentoll7@examiner.com",
         "userId": 8,
+        "userImage": "userImage-1658553182839.jpeg",
         "userLastNames": "Rentoll",
         "userNames": "Karia",
         "userPassword": "cofaF7Ul",
@@ -74,6 +82,7 @@
     {
         "userEmail": "fspeller8@gov.uk",
         "userId": 9,
+        "userImage": "User_Avatar.jpeg",
         "userLastNames": "Speller",
         "userNames": "Frederic",
         "userPassword": "zhvo3gqq5Yx",
@@ -83,6 +92,7 @@
     {
         "userEmail": "rdeppe9@weather.com",
         "userId": 10,
+        "userImage": "userImage-1658553182841.jpeg",
         "userLastNames": "Deppe",
         "userNames": "Reggie",
         "userPassword": "LEcfRfVFs5F",
@@ -92,6 +102,7 @@
     {
         "userEmail": "wjordisona@google.it",
         "userId": 11,
+        "userImage": "User_Avatar.jpeg",
         "userLastNames": "Jordison",
         "userNames": "Weber",
         "userPassword": "Si7HFa",
@@ -101,6 +112,7 @@
     {
         "userEmail": "jgulbergb@goo.gl",
         "userId": 12,
+        "userImage": "User_Avatar.jpeg",
         "userLastNames": "Gulberg",
         "userNames": "Janelle",
         "userPassword": "FFTQjLScoR",
@@ -110,6 +122,7 @@
     {
         "userEmail": "aashbeyc@twitter.com",
         "userId": 13,
+        "userImage": "User_Avatar.jpeg",
         "userLastNames": "Ashbey",
         "userNames": "Ainsley",
         "userPassword": "F6HFWKkHCJHe",
@@ -119,6 +132,7 @@
     {
         "userEmail": "hvossingd@amazon.co.jp",
         "userId": 14,
+        "userImage": "userImage-1658553182845.jpeg",
         "userLastNames": "Vossing",
         "userNames": "Hastings",
         "userPassword": "k4ewVOwdkmHt",
@@ -128,6 +142,7 @@
     {
         "userEmail": "fhatjee@altervista.org",
         "userId": 15,
+        "userImage": "User_Avatar.jpeg",
         "userLastNames": "Hatje",
         "userNames": "Ferrell",
         "userPassword": "f0HKjDBv",
@@ -137,6 +152,7 @@
     {
         "userEmail": "prableyf@slashdot.org",
         "userId": 16,
+        "userImage": "userImage-1658553182847.jpeg",
         "userLastNames": "Rabley",
         "userNames": "Penrod",
         "userPassword": "mfKQvkWAHoQ",
@@ -146,6 +162,7 @@
     {
         "userEmail": "ibewsheag@purevolume.com",
         "userId": 17,
+        "userImage": "User_Avatar.jpeg",
         "userLastNames": "Bewshea",
         "userNames": "Ian",
         "userPassword": "IDqXoj3xggkE",
@@ -155,6 +172,7 @@
     {
         "userEmail": "calelsandrovichh@ox.ac.uk",
         "userId": 18,
+        "userImage": "User_Avatar.jpeg",
         "userLastNames": "Alelsandrovich",
         "userNames": "Celle",
         "userPassword": "cAhse0Kstmw",
@@ -164,6 +182,7 @@
     {
         "userEmail": "fridholei@globo.com",
         "userId": 19,
+        "userImage": "User_Avatar.jpeg",
         "userLastNames": "Ridhole",
         "userNames": "Florentia",
         "userPassword": "PcR2425HGfDD",
@@ -173,10 +192,31 @@
     {
         "userEmail": "pocriganj@accuweather.com",
         "userId": 20,
+        "userImage": "User_Avatar.jpeg",
         "userLastNames": "O'Crigan",
         "userNames": "Patience",
         "userPassword": "d1VoPdb1",
         "userPhone": "981-196-2613",
         "userReceiveOffersAndNews ": false
+    },
+    {
+        "userEmail": "esotomayor116@gmail.com",
+        "userId": 21,
+        "userImage": "userImage-1658554822655.png",
+        "userLastNames": "Sotomayor",
+        "userNames": "Edgardo",
+        "userPassword": "78686728",
+        "userPhone": "09709709790",
+        "userReceiveOffersAndNews": true
+    },
+    {
+        "userEmail": "esotomayor116@gmail.com",
+        "userId": 22,
+        "userImage": "userImage-1658555642017.png",
+        "userLastNames": "Belgrano",
+        "userNames": "Manuel",
+        "userPassword": "$2a$10$cJsLMUanbqO6THIuUUMjBu8hWHqa3P20v8EcBa6LX8SLjGvamjudW",
+        "userPhone": "981373047",
+        "userReceiveOffersAndNews": false
     }
 ]
