@@ -218,5 +218,15 @@
         "userPassword": "$2a$10$cJsLMUanbqO6THIuUUMjBu8hWHqa3P20v8EcBa6LX8SLjGvamjudW",
         "userPhone": "981373047",
         "userReceiveOffersAndNews": false
+    },
+    {
+        "userNames": "Sebas",
+        "userLastNames": "Auza",
+        "userPhone": "1234567890",
+        "userEmail": "auza@hotmail.com",
+        "userReceiveOffersAndNews": true,
+        "userPassword": "$2a$10$RO23lVDZCEedxvLsYlj9Fu0zC3u3lSPIW5JPYj/59efQcVPZgSsa6",
+        "userImage": "userImage-1658674212808.jpg",
+        "userId": 23
     }
 ]

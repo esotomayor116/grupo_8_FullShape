@@ -12,13 +12,17 @@ const controller = {
     access: (req, res) => {
       let userFound = users.find(oneUser => oneUser.userEmail == req.body.userEmail);
       if (userFound) {
-        /*let passwordIsOk = bcrypt.compareSync(req.body.userPassword, userFound.userPassword);
+        let passwordIsOk = bcrypt.compareSync(req.body.userPassword, userFound.userPassword);
         if (passwordIsOk) {
+          req.session.userLogged = userFound;
+          if (req.body.rememberMe) {
+              res.cookie('userLogData', [req.body.userEmail, userFound.userPassword ], { maxAge: 120000 } )
+          }
           res.redirect('/products');
         } else {
           res.render('./users/login', { errors: { log:{ msg: 'Credenciales no válidas ' } } });
-        }*/
-        if (userFound.userPassword == req.body.userPassword) {
+        }
+        /*if (userFound.userPassword == req.body.userPassword) {
           req.session.userLogged = userFound;
           if (req.body.rememberMe) {
               res.cookie('userLogData', [req.body.userEmail, req.body.userPassword], { maxAge: 120000 } )
@@ -26,7 +30,7 @@ const controller = {
           res.redirect('/products');
         } else {
           res.render('./users/login', { errors: { log:{ msg: 'Credenciales no válidas ' } } });
-        }
+        }*/
       } else {
         res.render('./users/login', { errors: { log:{ msg: 'Credenciales no válidas ' } } });
       }
@@ -65,9 +69,8 @@ const controller = {
       },
 
     show: (req, res) => {
-      let user = users.find(req.params.id);
-
-      res.render('user/detail', { user });
+      let user = req.session.userLogged;
+      res.render('./users/userDetail', { user });
     },
 }
 

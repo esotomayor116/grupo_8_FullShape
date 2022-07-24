@@ -3,6 +3,7 @@ const controller = require('../controllers/productsController');
 const router = express.Router();
 const multer = require('multer');
 const path = require ('path')
+const guestMiddleware = require('../middlewares/guestMiddleware');
 const storage = multer.diskStorage({
     destination: (req, file, cb) =>{
         cb(null,path.join(__dirname, '../../public/images/products'))
@@ -21,14 +22,14 @@ const upload = multer({storage});
 router.get('/', controller.index);
 
 //Formulario de creación, vista productCreate.
-router.get('/create', controller.create);
+router.get('/create', guestMiddleware, controller.create);
 router.post('/',upload.single('productMainImage'), controller.store);
 
 //Detalle de productos, vista productDetail.
 router.get('/:id', controller.detail);
 
 //Formulario de edición, vista productEdit.
-router.get('/:id/edit',  controller.edit);
+router.get('/:id/edit', guestMiddleware,  controller.edit);
 router.put('/:id', upload.single('productMainImage') , controller.update);
 
 //botón de borrado, en vista productDetail.

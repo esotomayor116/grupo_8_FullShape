@@ -30,7 +30,7 @@
             <form class="login" action="/users/login" method="POST">   
                 <!-- Aquí van los campos -->
                 <% if (locals.errors && errors.log) { %>
-                    <p> <%= errors.log.msg %> </p>
+                    <p style="color:red; text-align:center; font-size:18px"> <%= errors.log.msg %> </p>
                 <% } %>
                 <div class="login"><input type="text" name="userEmail" placeholder="Email"></div>
                 <div class="login"><input type="password" name="userPassword" placeholder="Contraseña"></div>
