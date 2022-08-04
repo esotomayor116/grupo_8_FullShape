@@ -126,7 +126,7 @@
     
     Eddy: Actualización de Retro. Y complete las clases de Session, cookies y encriptación. 
     
-    Lucho: 
+    Lucho: Estuve trabajando con middlewares para crear rutas de huéspedes 
     
     Pablo: Trabajo con Molter en el formulario de creación y edición de productos. 
     
@@ -136,7 +136,7 @@
 
     Eddy: No hubo bloqueos hasta el momento. 
 
-    Lucho: 
+    Lucho: No me encontré con inconvenientes.
 
     Pablo: No podía hacer funcionar las imágenes en la creación del producto.  
 
@@ -146,40 +146,39 @@
 
     Eddy: Trabajar en el registro de usuario, encriptacion de contraseñas. Actualizar Weekly.md 
 
-    Lucho: 
+    Lucho: Terminar la tarea correspondiente a los middlewares.
 
     Pablo: Implementar rutas de usuario. Completar la clase 26.
 
 
- Weekly DD/07/2022
+ Weekly 23/07/2022
 
 ### 1. ¿Que Hicimos en la semana?
 
-    Seba: 
+    Seba: completé mi parte del login funcional, con register, Session y Cookies
 
+    Eddy: Trabaje en los formularios de creacion de usuarios, quedo funionando el registro y el indice de todos los usuarios, tambien aplique multer y encriptacion de password.
     
-    Eddy: 
+    Lucho: Se implemento las rutas de usuarios logueados y no logueados (huéspedes y visitantes)
     
-    Lucho: 
-    
-    Pablo: 
+    Pablo: complete clases faltantes para actualizar conceptos
     
 ### 2.   ¿Qué bloqueos tenemos?
 
-    Seba: 
+    Seba: Sin bloqueos
 
-    Eddy: 
+    Eddy: Problemas con las rutas de creacion de usuarios, pero quedo resuelto despues de renegar un rato. 
 
-    Lucho: 
+    Lucho: Sin bloqueos
 
-    Pablo: 
+    Pablo: Sin bloqueos
 
 ### 3. ¿Qué haremos mañana? 
 
-    Seba: 
+    Seba: Revisar detalles finales para poder entregar el proyecto.
 
-    Eddy:  
+    Eddy:  Revisar detalles finales y repasar contenido del Sprint actual.
 
-    Lucho: 
+    Lucho: Revisar detalles finales y repasar contenido del Sprint actual.
 
-    Pablo: 
+    Pablo: Revisar detalles finales y repasar contenido del Sprint actual.
