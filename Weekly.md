@@ -182,3 +182,37 @@
     Lucho: Revisar detalles finales y repasar contenido del Sprint actual.
 
     Pablo: Revisar detalles finales y repasar contenido del Sprint actual.
+
+
+
+Weekly 08/08/2022
+
+### 1. ¿Que Hicimos en la semana?
+
+    Seba: Creación de modelos con sus asociaciones y se implementaron mejoras en los scripts de generación de base de datos. 
+
+    Eddy: Generación de diagramas de estructura de tablas. Generación de scripts de creación de bases de datos, tablas y datos. 
+    
+    Lucho: 
+    
+    Pablo: Revisión de las clases correspondientes al tema del sprint. 
+    
+### 2.   ¿Qué bloqueos tenemos?
+
+    Seba: Problemas al generar la base de datos por compatibilidad de scripts con MariaDB
+
+    Eddy: En la generción del diagrama tuve problemas al interpretar como implementar el carrito de compras. 
+
+    Lucho: 
+
+    Pablo: Bloqueos en la instalacion del XAMPP. 
+
+### 3. ¿Qué haremos mañana? 
+
+    Seba: Una vez importada la base de datos, probar que los modelos funcionen correctamente. 
+
+    Eddy:  Revisar la clase del Crud basándonos en el ejercicio práctico integrador.
+
+    Lucho: 
+
+    Pablo: Coordinar con Seba para revisar la estructura de los modelos. 
