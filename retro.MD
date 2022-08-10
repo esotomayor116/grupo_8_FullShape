@@ -110,5 +110,32 @@
 
 ### **•** Tuvimos algunas dificultades de comprensión del tema CRUD, debido a que involucra un poco más de complejidad en comparación a los temas que venimos viendo. Con lo cual es clave continuar asistiendo a los integrantes que mas bloqueos presentan. 
 ### **•** Relacionado con el punto anterior, también implementaremos las fechas de vencimiento en tareas y reuniones mas periódicas donde revisaremos el avance y bloqueos que pudiesen existir.Esto también	nos permitirá evitar una sobrecarga de trabajo en los integrantes.
-### **•** Por último implementaremos una revisión en conjunto de los conceptos vistos en clases para tener una base mas solida a la hora de llevar a cabo la parte practica
+### **•** Por último implementaremos una revisión en conjunto de los conceptos vistos en clases para tener una base mas solida a la hora de llevar a cabo la parte practica.
+
+
+# 
+### **----------------------------**
+# 
+# Retrospectiva grupo8/Sprint5
+
+
+### Durante esta ceremonia nos dispusimos todos a hacer las siguientes actividades:
+
+### **1. Armado del tablero de Trello con 4 columnas:**
+#### **a.** ¿Qué problemas tuvimos?
+#### **b.** ¿Qué hicimos bien?
+#### **c.** ¿Qué queremos mejorar?
+#### **d.** Items de acción.
+
+### **2. Cada uno incluyó una tarjeta con su aporte a cada columna.**
+
+### **3. Votamos por las tarjetas que nos parecía que tenían la información más precisa para incluir en las conclusiones.**
+
+### **4. Debatimos de manera grupal el resultado de la votación.**
+
+### **5. Se concluyeron los siguientes items de acción.**
+
+### **•** Decidimos programarnos un tiempo con antelación para la weekly, además de intentar obtener un tiempo libre en el día para poder cumplir con los checkpoints y en caso de no disponer de tiempo notificar al grupo para redistribuir las tareas.
+### **•** En segundo lugar nos comprometimos en realizar un refuerzo constante de los temas vistos para evitar bloqueos que debamos solucionar a última hora.
+### **•** Por último debatimos sobre la distribución de tareas ya que deberíamos estimarlas mejor al principio del sprint.
 
