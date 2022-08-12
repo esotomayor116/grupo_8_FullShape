@@ -3,7 +3,7 @@
     INSERT INTO productStatus (`statusId`, `statusName`) VALUES ('2', 'Usado');
 
 -- datos para productCategories
-    INSERT INTO ProductCategories (`categoryId`, `categoryName`) VALUES ('1', 'Gimnasio');
+    INSERT INTO `ProductCategories` (`categoryId`, `categoryName`) VALUES ('1', 'Gimnasio');
     INSERT INTO `ProductCategories` (`categoryId`, `categoryName`) VALUES ('2', 'Fútbol');
     INSERT INTO `ProductCategories` (`categoryId`, `categoryName`) VALUES ('3', 'Kinesiología');
     INSERT INTO `ProductCategories` (`categoryId`, `categoryName`) VALUES ('4', 'Suplementos');

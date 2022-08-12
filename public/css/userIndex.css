@@ -1,0 +1,221 @@
+* {
+    margin: 0px;
+    font-family:Lato;
+}
+
+main.home{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #D9D9D9;
+}
+
+.contenedor-padre{
+    display: flex;
+    background-color: #FFF;
+    justify-content: space-around;
+    margin: 0px 10px;
+    background: linear-gradient(#83FACF, #0a2929);
+}
+
+.usuarios{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    align-content: space-between;
+}
+
+
+.imagen-index{
+    width: 224px;
+    height: 224px;
+}
+
+article.user{
+text-align: center;
+margin:20px;
+}
+
+
+.main-article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    text-align: center;
+    
+}
+
+
+
+/* __________ Estilos footer ________________ */
+
+footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+footer p {
+    margin: 5px 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.footer1, .footer2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid black; 
+    background-color: #83FACF;
+    width: 100%;
+}
+.footer2 {
+    justify-content: space-around;
+}
+.footer1 a {
+    width: 50%;
+}
+.redes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-top: 1px solid black; 
+    background-color: #83FACF;
+    width: 100%;
+}
+.redes p {
+    margin: 0px auto;
+}
+#c6, #c7 {
+    border-radius: 10px;
+}
+
+#c6, #c7, #c8 {
+    width: 8%;
+    margin: 10px;
+    margin-left:auto;
+}
+
+#c6 img, #c7 img, #c8 img {
+    width: 100%;
+}
+
+@media (max-width: 768px){
+
+    .barra-busqueda {
+        width: 43%;
+    }
+    a.terminos{
+        text-align: right;
+    }
+
+    div.redes {
+        width: 100%;
+        border: 0px 1px solid black;
+    }
+
+    div.redes p{
+        font-size: 16px;
+    }
+
+    
+}
+
+@media (min-width: 769px) {
+    header {
+        gap: 0px;
+    }
+    ul {
+        justify-content: flex-end;
+    }
+    li {
+        margin: 0px 10px;
+    }
+    #logo {
+        width: 22.5%;
+        height: 125px;
+    }
+    #logo img {
+        width: 100%;
+        height: 100%;
+    }
+    .barra-busqueda {
+        width: 33%;
+        height: 30px;
+        position: relative;
+        left: 17.5%;
+    }
+    form {
+        width: 92.5%;
+        height: 30px;
+    }
+    .busqueda {
+        height: 30px;
+    }
+    button {
+        width: 7.5%;
+    }
+    .fa-cart-shopping {
+        font-size: 20px;
+        position: relative;
+    }
+    .seleccionar-categoria {
+        display: flex;
+        justify-content: space-around;
+    }
+    .seleccionar-categoria p {
+        display: block;
+    }
+    p {
+        font-size: 16px;
+        margin-bottom: 5px;
+        padding: 0px 10px;
+    }
+    .seleccionar-categoria form {
+        display:none;
+    }
+    footer {
+        justify-content: space-between;
+    }
+    .footer1 {
+        width: 50%;
+    }
+    .footer1 a {
+        width: 44%;
+        padding-left: 10px;
+    }
+    .redes {
+        width: 50%;
+    }
+    .redes p {
+        margin: 0px;
+        margin-top: 10px;
+        text-align: center;
+        flex-basis: 100%;
+        height: 20%;
+        padding: 0px;
+    }
+    #c6 {
+        margin-left: auto;
+        margin-right: 5px;
+        margin-bottom: 15%;
+    }
+    #c7 {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 15%;
+    }
+    #c8 {
+        margin-right: auto;
+        margin-left: 5px;
+        margin-bottom: 15%;
+    }
+    .footer2 a {
+        padding-left: 10px;
+        padding-right: 0px;
+    }
+}

@@ -64,10 +64,10 @@ CREATE TABLE `fullshape_db`.`products` (
   `productUnitPrice` DECIMAL(10,2) NOT NULL,
   `productMainImage` TEXT,
   PRIMARY KEY (`productId`),
-  INDEX `statusId_idx` (`productStatusId` ASC) VISIBLE,
-  INDEX `categoryId_idx` (`productCategoryId` ASC) VISIBLE,
-  INDEX `colorId_idx` (`productColorId` ASC) VISIBLE,
-  INDEX `sizeId_idx` (`productSizeId` ASC) VISIBLE,
+  INDEX `statusId_idx` (`productStatusId` ASC) ,
+  INDEX `categoryId_idx` (`productCategoryId` ASC) ,
+  INDEX `colorId_idx` (`productColorId` ASC) ,
+  INDEX `sizeId_idx` (`productSizeId` ASC) ,
   CONSTRAINT `statusId`
     FOREIGN KEY (`productStatusId`)
     REFERENCES `fullshape_db`.`productStatus` (`statusId`)
@@ -98,7 +98,7 @@ CREATE TABLE `fullshape_db`.`shoppingCart` (
   `CartNumberOfItems` INT NOT NULL,
   `CartTotalPrice` DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (`shoppingCartId`),
-  INDEX `userId_idx` (`userId` ASC) VISIBLE,
+  INDEX `userId_idx` (`userId` ASC) ,
   CONSTRAINT `userId`
     FOREIGN KEY (`userId`)
     REFERENCES `fullshape_db`.`users` (`userId`)
@@ -113,8 +113,8 @@ CREATE TABLE `fullshape_db`.`productCart` (
   `productId` INT NOT NULL,
   `shoppingCartId` INT NOT NULL,
   PRIMARY KEY (`productCartId`),
-  INDEX `productId_idx` (`productId` ASC) VISIBLE,
-  INDEX `shoppingCartId_idx` (`shoppingCartId` ASC) VISIBLE,
+  INDEX `productId_idx` (`productId` ASC) ,
+  INDEX `shoppingCartId_idx` (`shoppingCartId` ASC) ,
   CONSTRAINT `productId`
     FOREIGN KEY (`productId`)
     REFERENCES `fullshape_db`.`products` (`productId`)

@@ -66,7 +66,7 @@ CREATE TABLE `fullshape_db`.`products` (
   PRIMARY KEY (`productId`),
   INDEX `statusId_idx` (`productStatusId` ASC) VISIBLE,
   INDEX `categoryId_idx` (`productCategoryId` ASC) VISIBLE,
-  INDEX `colorId_idx` (`productColorId` ASC) VISIBLE,
+  INDEX `colorid_idx` (`productColorId` ASC) VISIBLE,
   INDEX `sizeId_idx` (`productSizeId` ASC) VISIBLE,
   CONSTRAINT `statusId`
     FOREIGN KEY (`productStatusId`)
