@@ -26,45 +26,52 @@
                             <div class="ClasificacionNuevoProducto">
                                 <div class="NuevoUsadoRadios">
                                     <div class="NuevoUsado">
-                                        <input class="radio" type="radio" name="productStatus" value="Nuevo" checked>
-                                        <label>Producto Nuevo</label>
-                                    </div>
-                                    <div class="NuevoUsado">
-                                        <input class="radio" type="radio" name="productStatus" value="Usado">
-                                        <label>Producto Usado</label>
+                                        <% aStatus.forEach(status => { %>
+                                        <input class="radio" type="radio" name="productStatus" value="<%= status.statusName %>" <% if(productToEdit.productStatusId == status.statusId ) { %>
+                                            checked
+                                            <% } %>>
+                                        <label>Producto <%= status.statusName %></label>
+                                        <% }) %>
                                     </div>
                                 </div>
                                 <div class="DetallesProducto">
                                     <div class="nuevoProductoCategoria">
                                         <label>Seleccionar categoría:</label>
                                         <select style="font-size:18px;" name="productCategory">
-                                            <option value="Gimnasio">Gimnasio</option>
-                                            <option value="Suplementos">Suplementos</option>
-                                            <option value="Fútbol">Fútbol</option>
-                                            <option value="Boxeo">Boxeo</option>
-                                            <option value="Kineseología">Kineseología</option>
+                                            <% aCategories.forEach(category => { %>
+                                            <option value="<%= category.categoryName %>" <% if (productToEdit.productCategoryId == category.categoryId) { %>
+                                                  selected
+                                                <% } %>><%= category.categoryName %>
+                                            </option>
+                                            <% }) %>
                                         </select>
                                     </div>
                                     <div class="nuevoProductoColores">
                                         <label>Seleccione un color:</label>
                                         <select name="productColor">
-                                            <option value="Rojo">Rojo</option>
-                                            <option value="Verde">Verde</option>
-                                            <option value="Azul">Azul</option>
-                                            <option value="Morado">Morado</option>
-                                            <option value="">No aplica</option>
+                                            <% aColors.forEach(color => { %>
+                                                <option value="<%= color.colorName %>" <% if (productToEdit.productColorId == color.colorId) { %>
+                                                      selected
+                                                    <% } %>><%= color.colorName %>
+                                                </option>
+                                            <% }) %>
+                                            <option value='' <% if(productToEdit.productColorId == null) { %>
+                                                    selected 
+                                            <% } %>>No aplica</option>
                                         </select>
                                     </div>
                                     <div class="nuevoProdyctoTalles">
                                         <label>Seleccione un talle:</label>
                                         <select name="productSize">
-                                            <option value="ExtraSmall">XS</option>
-                                            <option value="Small">S</option>
-                                            <option value="Medium">M</option>
-                                            <option value="Large">L</option>
-                                            <option value="ExtraLarge">XL</option>
-                                            <option value="ExtraExtraLarge">XXL</option>
-                                            <option value="" >No aplica</option>
+                                            <% aSizes.forEach(size => { %>
+                                                <option value="<%= size.sizeName %>" <% if (productToEdit.productSizeId == size.sizeId) { %>
+                                                      selected
+                                                    <% } %>><%= size.sizeName %>
+                                                </option>
+                                            <% }) %>
+                                            <option value='' <% if(productToEdit.productSizeId == null) { %>
+                                                    selected 
+                                            <% } %>>No aplica</option>
                                         </select>
                                     </div>  
                                 </div>  
