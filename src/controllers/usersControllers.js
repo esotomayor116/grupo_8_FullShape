@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
-
+const db = require('../database/models');
 const usersFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
@@ -68,10 +68,11 @@ const controller = {
       res.redirect('/users')
       },
 
-    show: (req, res) => {
-      let user = req.session.userLogged;
-      res.render('./users/userDetail', { user });
-    },
+      show: (req, res) => {
+        let idUser = req.params.id;
+        db.User.findByPk(idUser)
+          .then(user => res.render('./users/userDetail', { user }))
+        },
 }
 
 module.exports = controller;

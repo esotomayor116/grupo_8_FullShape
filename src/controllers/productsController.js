@@ -107,8 +107,7 @@ const controller = {
       })
       fs.writeFileSync(productsFilePath, JSON.stringify(newProducts), 'utf-8')
 		  res.redirect('/products')
-
-    },
+    }
 };
 
 module.exports = controller;
