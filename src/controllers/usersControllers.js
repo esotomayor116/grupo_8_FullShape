@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -47,6 +50,7 @@ const controller = {
       res.render("./users/register");
     },
 
+
     store: (req, res) => {
       let user = req.body;
       
@@ -67,6 +71,27 @@ const controller = {
       fs.writeFileSync(usersFilePath, JSON.stringify(users), 'utf-8');
       res.redirect('/users')
       },
+
+      store2: (req, res) => {
+        //Información que sera capturada por el metodo Create para crear usuario
+        db.User.create({
+          userEmail: req.body.userEmail,
+          userImage: req.body.userImage,
+          userNames: req.body.userNames,
+          userLastNames: req.body.userLastNames,
+          userPassword: req.body.userPassword,
+          userPhone: req.body.userPhone,
+          userReceiveOffersAndNews: '1',
+          userType: 'comprador',
+
+        })
+          .then(function () {
+            res.redirect('/users')
+          })
+
+      },
+
+
 
     show: (req, res) => {
       let user = req.session.userLogged;
