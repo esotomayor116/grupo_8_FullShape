@@ -184,7 +184,13 @@ li#foto0, li#foto1, li#foto2, li#foto3, li#foto4 {
     border: 1px solid black;
 }
 
-#c0, #c1, #c2, #c3, #c4, #c5, #c-6, #c-7 {
+ #c1  , #c2 , #c3 {
+    width: 100%;
+    height:100%;
+    box-sizing: border-box;
+}
+
+.c img {
     width: 100%;
     height:100%;
     box-sizing: border-box;

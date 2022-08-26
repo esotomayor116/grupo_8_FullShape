@@ -188,6 +188,7 @@ div.botones button{
     margin: 5px; 
     padding: 10px;
     text-align: center;
+    width: 100%;
 }
 
 
@@ -247,7 +248,7 @@ form.product_creation div input.radio{
 
 div.NuevoUsado{
 
-    width: 40%;
+    width: 50%;
 
 }
 

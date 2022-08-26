@@ -33,7 +33,7 @@ router.get('/', guestMiddleware, controller.index);
 router.get('/register', authMiddleware, controller.create);
 
 //Procesamiento del formulario de creación
-router.post('/guardar', upload.single('userImage'), controller.store);
+router.post('/guardar', upload.single('userImage'), controller.store2);
 
 //Detalle del Usuario
 router.get('/:id', guestMiddleware, controller.show);

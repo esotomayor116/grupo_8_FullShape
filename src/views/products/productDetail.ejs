@@ -16,9 +16,9 @@
             </div>
             <div class="presentacion">
                 <h2><%= product.productName %></h1>
-                <p class="pp">Categoría - <%= product.productCategory %></p>
+                <p class="pp">Categoría - <%= category.categoryName %></p>
                 <p class="pp">Código del producto</p>
-                <p class="pp">Estado - <%= product.productStatus %></p>
+                <p class="pp">Estado - <%= status.statusName %></p>
                 <p class="pp"><%= product.productCode %></p>
                 <h2 id="precio">$<%= product.productUnitPrice.toLocaleString('es-Ar') %></h2>
                 <p class="disponibilidad">Disponibles - 3 unidades</p>
@@ -31,13 +31,13 @@
                 <p class="detail"><%= product.productDescription %><%= product.productDescription %><%= product.productDescription %></p>
                 <h3>Especificaciones técnicas</h3>
                 <ul class="techspecs">
-                    <% if (product.productColor != null) { %>
-                        <li class="specs">Color - <%= product.productColor %></li>
+                    <% if (product.productColorId != null) { %>
+                        <li class="specs">Color - <%= color.colorName %></li>
                     <% } %>
-                    <% if (product.productSize != null) { %>
-                        <li class="specs">Talle - <%= product.productSize %></li>
+                    <% if (product.productSizeId != null) { %>
+                        <li class="specs">Talle - <%= size.sizeName %></li>
                     <% } %>
-                        <li class="specs">Estado - <%= product.productStatus %></li>
+                        <li class="specs">Estado - <%= status.statusName %></li>
                 </ul>
             </div>
             <div class="relacionados">
@@ -46,8 +46,10 @@
 
                     <% for (let i=0; i<relatedProducts.length; i++) { %>
                         <% if (relatedProducts[i].productId != "" && relatedProducts[i].productId != product.productId) { %>
-                        <li id="foto<%=i%>"><img id="c<%=i%>"src="/images/products/<%= relatedProducts[i].productMainImage %>" alt=""></li>
-                  <% } %>
+                        <li id="foto<%=i%>" <% if(i < 6) { %>
+                            ><a href = '/products/<%= relatedProducts[i].productId %>'class= "c"><img src="/images/products/<%= relatedProducts[i].productMainImage %>" alt=""></a></li>
+                        <% } %>
+                            <% } %>
                 <% } %>
                 </ul>
                 <button><i class="fa-solid fa-arrow-left"></i></button>
