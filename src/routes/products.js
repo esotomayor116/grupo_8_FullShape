@@ -35,5 +35,8 @@ router.put('/:id', upload.single('productMainImage') , controller.update);
 //botón de borrado, en vista productDetail.
 router.delete('/:id', controller.delete)
 
+//ruta de busqueda de productos
+router.get('/search', controller.search)
+
 module.exports = router;
 
