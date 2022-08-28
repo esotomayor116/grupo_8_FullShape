@@ -33,7 +33,8 @@ router.get('/:id/edit', guestMiddleware,  controller.edit);
 router.put('/:id', upload.single('productMainImage') , controller.update);
 
 //botón de borrado, en vista productDetail.
-router.delete('/:id', controller.delete)
+
+router.get ('/:id', controller.delete)
 
 //ruta de busqueda de productos
 router.get('/search', controller.search)
