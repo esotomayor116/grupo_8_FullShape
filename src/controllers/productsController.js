@@ -132,7 +132,18 @@ const controller = {
       .then(function (idProducto){
         res.render("productDetail",{idProducto})
       })
+    },
+    search: (req, res) => {
+      let loBuscado = req.query.articulo;
+      db.Product.findAll({
+        where:{
+          productName: {[Op.Like]:'%'+loBuscado+'%'}
+              } 
+      })
+      .then(products => res.render('./products/home', { products,  user: req.session.userLogged}))
+
     }
+
 };
 
 module.exports = controller; 
