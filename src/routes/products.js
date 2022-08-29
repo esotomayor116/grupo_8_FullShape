@@ -37,6 +37,6 @@ router.put('/:id', upload.single('productMainImage') , controller.update);
 router.delete ('/:id', controller.delete)
 
 //ruta de busqueda de productos
-router.get('/search', controller.search)
+router.post('/search', controller.search)
 
 module.exports = router;

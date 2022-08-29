@@ -4,6 +4,7 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db = require('../database/models');
+const Op = db.Sequelize.Op;
 
 const controller = {
     index: (req, res) => {
@@ -121,23 +122,21 @@ const controller = {
     delete: (req, res) =>{
       db.Product.destroy({
         where:{
-          id: req.params.id
+          productId: req.params.id
         }
       })
       .then(() =>  res.redirect ("/products"))
-    },
-    
+    },  
     search: (req, res) => {
-      let loBuscado = req.query.articulo;
-      db.Product.findAll({
+      let loBuscado = req.body.articulo;
+      db.Product.findOne({
         where:{
-          productName: {[Op.Like]:'%'+loBuscado+'%'}
+          productName: loBuscado
               } 
       })
-      .then(products => res.render('./products/home', { products,  user: req.session.userLogged}))
+      .then(product => res.redirect(`/products/${product.productId}`))
 
     }
-
 };
 
 module.exports = controller; 
