@@ -125,17 +125,14 @@ const controller = {
       })
       fs.writeFileSync(productsFilePath, JSON.stringify(newProducts), 'utf-8')
 		  res.redirect('/products')
-    },
-    search: (req, res) => {
-      let loBuscado = req.query.articulo;
-      db.Product.findAll({
-        where:{
-          productName: {[Op.Like]:'%'+loBuscado+'%'}
-              } 
-      })
-      .then(products => res.render('./products/home', { products,  user: req.session.userLogged}))
 
+    },
+    delete: function (req, res) {
+      products.findByPk(req.params.id)
+      .then(function (idProducto){
+        res.render("productDetail",{idProducto})
+      })
     }
 };
 
-module.exports = controller;
+module.exports = controller; 
