@@ -118,7 +118,7 @@ const controller = {
           res.redirect('/products')
           })
     },
-    delete: (req, res) => {
+    /*delete: (req, res) => {
       let id = req.params.id;
       newProducts = products.filter(function(product){
         return product.productId != id;
@@ -126,13 +126,17 @@ const controller = {
       fs.writeFileSync(productsFilePath, JSON.stringify(newProducts), 'utf-8')
 		  res.redirect('/products')
 
-    },
-    delete: function (req, res) {
-      products.findByPk(req.params.id)
-      .then(function (idProducto){
-        res.render("productDetail",{idProducto})
+    },*/
+    delete: (req, res) =>{
+      db.Product.destroy({
+        where:{
+          id: req.params.id
+        }
       })
+      res.redirect ("/products")
+
     },
+    
     search: (req, res) => {
       let loBuscado = req.query.articulo;
       db.Product.findAll({
