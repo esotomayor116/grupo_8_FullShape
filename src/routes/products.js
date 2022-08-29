@@ -40,4 +40,3 @@ router.delete ('/:id', controller.delete)
 router.get('/search', controller.search)
 
 module.exports = router;
-
