@@ -12,7 +12,7 @@ const controller = {
        },
     detail: (req, res) => {
       let idProducto = req.params.id;
-      let relatedProducts;
+      let related;
       let productStatus;
       let productCategory;
       let productColor;
@@ -118,7 +118,7 @@ const controller = {
           res.redirect('/products')
           })
     },
-    delete: (req, res) => {
+    /*delete: (req, res) => {
       let id = req.params.id;
       newProducts = products.filter(function(product){
         return product.productId != id;
@@ -126,10 +126,10 @@ const controller = {
       fs.writeFileSync(productsFilePath, JSON.stringify(newProducts), 'utf-8')
 		  res.redirect('/products')
 
-    },
+    },*/
     delete: function (req, res) {
-      products.findByPk(req.params.id)
-      .then(function (idProducto){
+      products.findByPk(req.params.id) // Debes usar el método "db.Product.destroy({where: ""})" Módulo 6, Clase 32
+      .then(function (idProducto){ // Luego puedes sencillamente retornar al índice principal con "res.redirect("")"
         res.render("productDetail",{idProducto})
       })
     }
