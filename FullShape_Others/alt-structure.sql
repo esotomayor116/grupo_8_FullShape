@@ -56,8 +56,8 @@ CREATE TABLE `fullshape_db`.`products` (
   `productId` INT NOT NULL AUTO_INCREMENT,
   `productName` VARCHAR(100) NOT NULL,
   `productDescription` TEXT NOT NULL,
-  `productStatusId` INT NOT NULL,
-  `productCategoryId` INT NOT NULL,
+  `productStatusId` INT,
+  `productCategoryId` INT,
   `productColorId` INT,
   `productSizeId` INT,
   `productCode` VARCHAR(50),
@@ -71,22 +71,22 @@ CREATE TABLE `fullshape_db`.`products` (
   CONSTRAINT `statusId`
     FOREIGN KEY (`productStatusId`)
     REFERENCES `fullshape_db`.`productStatus` (`statusId`)
-    ON DELETE CASCADE
+    ON DELETE SET NULL;
     ON UPDATE NO ACTION,
   CONSTRAINT `categoryId`
     FOREIGN KEY (`productCategoryId`)
     REFERENCES `fullshape_db`.`productCategories` (`categoryId`)
-    ON DELETE CASCADE
+    ON DELETE SET NULL;
     ON UPDATE NO ACTION,
   CONSTRAINT `colorid`
     FOREIGN KEY (`productColorId`)
     REFERENCES `fullshape_db`.`productColors` (`colorid`)
-    ON DELETE CASCADE
+    ON DELETE SET NULL;
     ON UPDATE NO ACTION,
   CONSTRAINT `sizeId`
     FOREIGN KEY (`productSizeId`)
     REFERENCES `fullshape_db`.`productSizes` (`sizeId`)
-    ON DELETE CASCADE
+    ON DELETE SET NULL;
     ON UPDATE NO ACTION);
 
 

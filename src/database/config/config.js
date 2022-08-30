@@ -10,10 +10,10 @@ module.exports = {
     "dialect": "mysql"
   },
 
-  //Configuracion de Edy
+  // Configuracion de Edy
   // "development": {
   //   "username": "root",
-  //   "password": '',
+  //   "password": 'Twingoarr876.',
   //   "database": "fullshape_db",
   //   "host": "127.0.0.1",
   //   "dialect": "mysql"
