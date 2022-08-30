@@ -131,7 +131,7 @@ const controller = {
       let loBuscado = req.body.articulo;
       db.Product.findOne({
         where:{
-          productName: loBuscado
+          productName: {[Op.Like] : loBuscado}
               } 
       })
       .then(product => res.redirect(`/products/${product.productId}`))
