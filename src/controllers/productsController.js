@@ -5,12 +5,14 @@ const productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db = require('../database/models');
 const Op = db.Sequelize.Op;
+//const { Op } = require("sequelize");
+
 
 const controller = {
     index: (req, res) => {
       db.Product.findAll()
         .then(products => res.render('./products/home', { products,  user: req.session.userLogged}))
-       },
+      },
     detail: (req, res) => {
       let idProducto = req.params.id;
       let related;
@@ -48,7 +50,7 @@ const controller = {
               color = color.colorId;
           }
           if (size != null) {
-             size = size.sizeId;
+            size = size.sizeId;
           }
           db.Product.create({
               productName: req.body.productName,
@@ -101,7 +103,7 @@ const controller = {
               color = color.colorId;
           }
           if (size != null) {
-             size = size.sizeId;
+            size = size.sizeId;
           }
             db.Product.update({
               productName: req.body.productName,
@@ -127,16 +129,25 @@ const controller = {
       })
       .then(() =>  res.redirect ("/products"))
     },  
+
     search: (req, res) => {
-      let loBuscado = req.body.articulo;
-      db.Product.findOne({
+      let loBuscado = req.query.articulo;
+      db.Product.findAll({
         where:{
+<<<<<<< HEAD
           productName: {[Op.Like] : loBuscado}
+=======
+          productName: {[Op.like]:`%${loBuscado}%`}
+          //productName: loBuscado
+>>>>>>> 8361f3bbd7a24597f06403b20f8da9544165ec76
               } 
       })
-      .then(product => res.redirect(`/products/${product.productId}`))
 
-    }
+      .then(products => res.render('./products/home', { products,  user: req.session.userLogged}))
+      // .then(product => res.redirect(`/products/${product.productId}`))
+
+    },
+
 };
 
 module.exports = controller; 

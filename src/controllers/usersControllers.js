@@ -108,9 +108,15 @@ const controller = {
       show: (req, res) => {
         let idUser = req.params.id;
         db.User.findByPk(idUser)
-          .then(user => res.render('./users/userDetail', { user })) // Debes insertar un "if (user == req.session.userLogged) {""}";
-        },                                                          // en el "else {""}", pones el mismo "res.render("")", solo que le pones
-                                                                    // "user: req.session.userLogged" en el parametro dentro de llaves.
-}
+        .then(user =>{
+          if(user == req.session.userLogged){
+            res.render('./users/userDetail', {user})
+          }
+          else {
+            res.render('./users/userDetail', {user : req.session.userLogged})
+          }
+        })
+      }
+    }
 
 module.exports = controller;
