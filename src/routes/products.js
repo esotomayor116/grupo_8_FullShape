@@ -25,6 +25,9 @@ router.get('/', controller.index);
 router.get('/create', guestMiddleware, controller.create);
 router.post('/',upload.single('productMainImage'), controller.store);
 
+//ruta de busqueda de productos
+router.get('/search', controller.search)
+
 //Detalle de productos, vista productDetail.
 router.get('/:id', controller.detail);
 
@@ -33,7 +36,8 @@ router.get('/:id/edit', guestMiddleware,  controller.edit);
 router.put('/:id', upload.single('productMainImage') , controller.update);
 
 //botón de borrado, en vista productDetail.
-router.delete('/:id', controller.delete)
+
+router.delete ('/:id', controller.delete)
+
 
 module.exports = router;
-

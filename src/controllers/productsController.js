@@ -4,15 +4,18 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db = require('../database/models');
+const Op = db.Sequelize.Op;
+//const { Op } = require("sequelize");
+
 
 const controller = {
     index: (req, res) => {
       db.Product.findAll()
         .then(products => res.render('./products/home', { products,  user: req.session.userLogged}))
-       },
+      },
     detail: (req, res) => {
       let idProducto = req.params.id;
-      let relatedProducts;
+      let related;
       let productStatus;
       let productCategory;
       let productColor;
@@ -47,7 +50,7 @@ const controller = {
               color = color.colorId;
           }
           if (size != null) {
-             size = size.sizeId;
+            size = size.sizeId;
           }
           db.Product.create({
               productName: req.body.productName,
@@ -100,7 +103,7 @@ const controller = {
               color = color.colorId;
           }
           if (size != null) {
-             size = size.sizeId;
+            size = size.sizeId;
           }
             db.Product.update({
               productName: req.body.productName,
@@ -118,14 +121,29 @@ const controller = {
           res.redirect('/products')
           })
     },
-    delete: (req, res) => {
-      let id = req.params.id;
-      newProducts = products.filter(function(product){
-        return product.productId != id;
+    delete: (req, res) =>{
+      db.Product.destroy({
+        where:{
+          productId: req.params.id
+        }
       })
-      fs.writeFileSync(productsFilePath, JSON.stringify(newProducts), 'utf-8')
-		  res.redirect('/products')
-    }
+      .then(() =>  res.redirect ("/products"))
+    },  
+
+    search: (req, res) => {
+      let loBuscado = req.query.articulo;
+      db.Product.findAll({
+        where:{
+          productName: {[Op.like]:`%${loBuscado}%`}
+          //productName: loBuscado
+              } 
+      })
+
+      .then(products => res.render('./products/home', { products,  user: req.session.userLogged}))
+      // .then(product => res.redirect(`/products/${product.productId}`))
+
+    },
+
 };
 
-module.exports = controller;
+module.exports = controller; 

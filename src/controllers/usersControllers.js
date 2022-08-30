@@ -70,15 +70,32 @@ const controller = {
       },
 
       store2: (req, res) => {
-        //Información que sera capturada por el metodo Create para crear usuario
+        let userBody = req.body;
+
+        if (req.file) {
+          userBody.userImage = req.file.filename;
+        } else{
+          userBody.userImage = "User_Avatar.jpeg"
+        };
+
+        userBody.userId = (users.length + 1);
+        if (userBody.userReceiveOffersAndNews == "on"){
+          userBody.userReceiveOffersAndNews = true
+        } else{
+          userBody.userReceiveOffersAndNews = false
+        }
+        userBody.userPassword = bcrypt.hashSync(userBody.userPassword, 10)
+
+        
+//Información que sera capturada por el metodo Create para crear usuario
         db.User.create({
           userEmail: req.body.userEmail,
-          userImage: req.body.userImage,
+          userImage: userBody.userImage,
           userNames: req.body.userNames,
           userLastNames: req.body.userLastNames,
-          userPassword: req.body.userPassword,
+          userPassword: userBody.userPassword,
           userPhone: req.body.userPhone,
-          userReceiveOffersAndNews: '1',
+          userReceiveOffersAndNews: userBody.userReceiveOffersAndNews,
           userType: 'comprador',
 
         })
