@@ -215,4 +215,60 @@ Weekly 08/08/2022
 
     Lucho: 
 
-    Pablo: Coordinar con Seba para revisar la estructura de los modelos. 
+    Pablo: Coordinar con Seba para revisar la estructura de los modelos.
+
+Weekly 22/08/2022
+
+### 1. ¿Que Hicimos en la semana?
+
+Eddy:
+
+- Ponerme al día con las clases virtuales de playground.
+
+Pablo:
+
+- Avancé con las clases virtuales de playground. Practiqué con los modelos crud.
+
+Luciano:
+
+- Estuve poniendome al día con los ejercicios del playground.
+
+Sebastian:
+
+- Terminé mi parte del Sprint, la del Crud de Productos.
+
+### 2.   ¿Qué bloqueos tenemos?
+
+Eddy:
+
+- Ninguno al momento.
+
+Pablo:
+
+- Ningun bloqueo al momento, estoy pendiente de probar el crud.
+
+Luciano:
+
+- Algunos ejercicios me costaron
+
+Sebastián:
+
+- No tengo bloqueos al momento.
+
+### 3. ¿Qué haremos mañana?
+
+Eddy:
+
+- Me dedicaré a terminar las tareas asignadas del sprint.
+
+Pablo:
+
+- Poner en práctica lo modelado con el crud.
+
+Luciano:
+
+ - Terminar las tareas asignadas para este sprint junto con Pablo.
+
+Sebastián:
+
+- Asistiré a mis compañeros a revisar o corregir lo que necesiten.

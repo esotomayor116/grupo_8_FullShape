@@ -134,12 +134,7 @@ const controller = {
       let loBuscado = req.query.articulo;
       db.Product.findAll({
         where:{
-<<<<<<< HEAD
-          productName: {[Op.Like] : loBuscado}
-=======
           productName: {[Op.like]:`%${loBuscado}%`}
-          //productName: loBuscado
->>>>>>> 8361f3bbd7a24597f06403b20f8da9544165ec76
               } 
       })
 
