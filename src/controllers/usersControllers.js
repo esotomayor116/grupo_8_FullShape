@@ -91,8 +91,15 @@ const controller = {
       show: (req, res) => {
         let idUser = req.params.id;
         db.User.findByPk(idUser)
-          .then(user => res.render('./users/userDetail', { user }))
-        },
-}
+        .then(user =>{
+          if(user == req.session.userLogged){
+            res.render('./users/userDetail', {user})
+          }
+          else {
+            res.render('./users/userDetail', {user : req.session.userLogged})
+          }
+        })
+      }
+    }
 
 module.exports = controller;
