@@ -102,7 +102,7 @@ CREATE TABLE `fullshape_db`.`shoppingCart` (
   CONSTRAINT `userId`
     FOREIGN KEY (`userId`)
     REFERENCES `fullshape_db`.`users` (`userId`)
-    ON DELETE CASCADE
+    ON DELETE NO ACTION;
     ON UPDATE NO ACTION);
 
 
@@ -118,12 +118,12 @@ CREATE TABLE `fullshape_db`.`productCart` (
   CONSTRAINT `productId`
     FOREIGN KEY (`productId`)
     REFERENCES `fullshape_db`.`products` (`productId`)
-    ON DELETE CASCADE
+    ON DELETE NO ACTION;
     ON UPDATE NO ACTION,
   CONSTRAINT `shoppingCartId`
     FOREIGN KEY (`shoppingCartId`)
     REFERENCES `fullshape_db`.`shoppingCart` (`shoppingCartId`)
-    ON DELETE CASCADE
+    ON DELETE NO ACTION;
     ON UPDATE NO ACTION);
 
 
