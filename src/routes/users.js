@@ -32,6 +32,8 @@ router.get('/', guestMiddleware, controller.index);
 //Ruta para ver el formulario de registro funciona OK
 router.get('/register', authMiddleware, controller.create);
 
+router.get('/edit', guestMiddleware, controller.edit);
+
 //Procesamiento del formulario de creación
 router.post('/guardar', upload.single('userImage'), controller.store2);
 

@@ -227,7 +227,7 @@ Eddy:
 
 Pablo:
 
-- Avancé con las clases virtuales de playground. Practiqué con los modelos crud.
+- Avancé con las clases virtuales de playground. Practiqué con los modelos CRUD.
 
 Luciano:
 
@@ -235,7 +235,7 @@ Luciano:
 
 Sebastian:
 
-- Terminé mi parte del Sprint, la del Crud de Productos.
+- Terminé mi parte del Sprint, la del CRUD de Productos.
 
 ### 2.   ¿Qué bloqueos tenemos?
 
@@ -245,11 +245,11 @@ Eddy:
 
 Pablo:
 
-- Ningun bloqueo al momento, estoy pendiente de probar el crud.
+- Ningún bloqueo al momento, estoy pendiente de probar el CRUD.
 
 Luciano:
 
-- Algunos ejercicios me costaron
+- Algunos ejercicios me costaron.
 
 Sebastián:
 
@@ -263,7 +263,7 @@ Eddy:
 
 Pablo:
 
-- Poner en práctica lo modelado con el crud.
+- Poner en práctica lo modelado con el CRUD.
 
 Luciano:
 

@@ -101,6 +101,9 @@ const controller = {
           })
 
       },
+      edit: (req, res) => {
+        res.render("./users/userEdit");
+      },
       show: (req, res) => {
         let idUser = req.params.id;
         db.User.findByPk(idUser)
