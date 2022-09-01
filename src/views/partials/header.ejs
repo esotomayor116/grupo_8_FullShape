@@ -7,6 +7,7 @@
              <li class="user-menu"><%= user.userNames %>
                 <ul>
                     <a href="/users/<%= user.userId %>"><li>Ver perfil</li></a>
+                    <a href="/users/edit/<%= user.userId %>"><li>Editar perfil</li></a>
                     <form action="/users" method="POST">
                         <button type="submit"><li>Cerrar Sesión</li></button>
                     </form>

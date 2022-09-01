@@ -41,7 +41,7 @@ router.post('/guardar', upload.single('userImage'), controller.store2);
 router.get('/:id', guestMiddleware, controller.show);
 
 //Actualizacion de usuario
-router.put('/:id', controller.update)
+router.put('/prueba/:id', upload.single('userImage'), controller.update)
 
 
 module.exports = router;

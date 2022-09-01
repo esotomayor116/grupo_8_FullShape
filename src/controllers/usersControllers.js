@@ -103,7 +103,7 @@ const controller = {
       },
       edit: (req, res) => {
         let id = req.params.id;
-        db.User.findByPk(id)
+        db.User.findByPk(id, {raw: true})
           .then(function(userToEdit){
             res.render("./users/userEdit", {userToEdit});
           })
@@ -111,14 +111,22 @@ const controller = {
 
       update: (req, res) => {
         let id = req.params.id;
-        console.log(req.body)
         db.User.findByPk(id)
         .then (function(user){
+          if (req.body.userReceiveOffersAndNews == "on"){
+            req.body.userReceiveOffersAndNews = true
+          } else{
+            req.body.userReceiveOffersAndNews = false
+          }
           if(req.body.userPassword == ''){
           req.body.userPassword = user.userPassword
+        } else {
+          req.body.userPassword = bcrypt.hashSync(req.body.userPassword, 10);
         }
-          if(req.body.userImage == ''){
-          req.body.userImage = user.userImage
+        if (req.file) {
+          req.body.userImage = req.file.filename;
+        } else{
+          req.body.userImage = user.userImage;
         }
         db.User.update({
           userNames: req.body.userNames,
@@ -134,21 +142,19 @@ const controller = {
         .then(function(){
           res.redirect('/users/' + user.userId)
         })
-        })
-        
+        }) 
       },
-
       show: (req, res) => {
         let idUser = req.params.id;
-        db.User.findByPk(idUser)
-        .then(user =>{
-          if(user == req.session.userLogged){
+        let sessionUser = req.session.userLogged; 
+        if (idUser == sessionUser.userId) {
+          db.User.findByPk(idUser)
+            .then(user =>{
             res.render('./users/userDetail', {user})
-          }
-          else {
-            res.render('./users/userDetail', {user : req.session.userLogged})
-          }
-        })
+            })
+        } else {
+          res.redirect('/users/' + sessionUser.userId);
+        }
       }
     }
 
