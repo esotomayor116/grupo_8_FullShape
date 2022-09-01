@@ -13,10 +13,10 @@
         </header>
         <div class="cuerpo-registro">
         <main>
-                <form class="registro-popup" action="/users/guardar" method="POST" enctype="multipart/form-data" style="width:50%; margin:auto;  height: 825px">
+                <form class="registro-popup" action="/users/<%= userToEdit.userId %>?_method=PUT" method="POST" enctype="multipart/form-data" style="width:50%; margin:auto;  height: 950px">
                     <div class="formRegistro-izquierdo" style="width:100%;">
                         <div class="logo-registro" style="border-right: 0px;"> 
-                            <a href="/"><img src="/images/Shapepng2.svg" alt="Logo a Color Full Shape"></a>
+                            <a href="/"><img src="/images/Shapepng2.svg" alt="Logo a Color Full Shape" style="width:35%;"></a>
                                 <!-- <h1>Full Shape</h1> -->
                         </div>  
                         <h1 class="registrate">Actualiza tus datos</h1> 
@@ -25,23 +25,25 @@
         
                         <div style="border-right: 0px;">
                             <label for="userNames">Nombres</label><label class="requerido">  *</label><br>
-                            <input type="text" name="userNames"><br>
+                            <input type="text" name="userNames" value="<%= userToEdit.userNames %>" ><br>
                         </div>
                         <div style="border-right: 0px;">
                             <label for="userLastNames">Apellidos</label><label class="requerido">  *</label><br>
-                            <input type="text" name="userLastNames"><br>
+                            <input type="text" name="userLastNames" value="<%= userToEdit.userLastNames %>"><br>
                         </div>
                         <div style="border-right: 0px;">
                             <label for="userPhone">Número de teléfono</label><label class="requerido">  *</label><br>
-                            <input type="number" name="userPhone"><br>
+                            <input type="number" name="userPhone" value="<%= userToEdit.userPhone %>"><br>
                         </div>
                         <div style="border-right: 0px;">
                             <label for="userEmail">Email</label><label class="requerido">  *</label><br>
-                            <input type="email" name="userEmail"><br>
+                            <input type="email" name="userEmail" value="<%= userToEdit.userEmail %>"><br>
                         </div>
                         <div class="recibir-ofertas" style="border-right: 0px;">
                             <label class="recibir-ofertas">Recibir ofertas y novedades</label>
-                            <input class="radio" type="radio" name="userReceiveOffersAndNews"><br>
+                            <input class="radio" type="radio" name="userReceiveOffersAndNews" <% if(userToEdit.userReceiveOffersAndNews == 1 ) { %>
+                                checked
+                                <% } %>><br>
                         </div>
                         <div style="border-right: 0px;">
                             <label for="userPassword">Cambiar Contraseña</label> (Opcional)<br>
@@ -56,6 +58,11 @@
                             <label for="userImage">Imagen del usuario</label><br>
                             <input type="file" name="userImage" id="userImage"><br>
                         </div>
+                        <div class="logo-registro" style="border-right: 0px;"> 
+                            <a href="/"><img src="/images/users/<%= userToEdit.userImage %>" alt="Logo a Color Full Shape" style="width:35%;"></a>
+                                <!-- <h1>Full Shape</h1> -->
+                        </div>  
+
                             <div class="botones" style="border-right: 0px;">
                             <p><button type="submit">Guardar cambios</button></p> 
                         </div>

@@ -102,8 +102,42 @@ const controller = {
 
       },
       edit: (req, res) => {
-        res.render("./users/userEdit");
+        let id = req.params.id;
+        db.User.findByPk(id)
+          .then(function(userToEdit){
+            res.render("./users/userEdit", {userToEdit});
+          })
       },
+
+      update: (req, res) => {
+        let id = req.params.id;
+        console.log(req.body)
+        db.User.findByPk(id)
+        .then (function(user){
+          if(req.body.userPassword == ''){
+          req.body.userPassword = user.userPassword
+        }
+          if(req.body.userImage == ''){
+          req.body.userImage = user.userImage
+        }
+        db.User.update({
+          userNames: req.body.userNames,
+          userLastNames: req.body.userLastNames,
+          userPhone: req.body.userPhone,
+          userEmail: req.body.userEmail,
+          userReceiveOffersAndNews: req.body.userReceiveOffersAndNews,
+          userPassword: req.body.userPassword,
+          userImage:req.body.userImage
+        }, {
+          where: {userId : user.userId}
+        })
+        .then(function(){
+          res.redirect('/users/' + user.userId)
+        })
+        })
+        
+      },
+
       show: (req, res) => {
         let idUser = req.params.id;
         db.User.findByPk(idUser)
