@@ -5,6 +5,7 @@ const productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db = require('../database/models');
 const Op = db.Sequelize.Op;
+const { validationResult } = require('express-validator');
 //const { Op } = require("sequelize");
 
 
@@ -37,38 +38,43 @@ const controller = {
       res.render('./products/productCreate', { user: req.session.userLogged })
     },
     store: (req, res) => {
-      if(req.file != undefined) {
-        req.body.productMainImage = req.file.filename;
+      const validation = validationResult(req);
+      if (validation.errors.length > 0) {
+          return res.render('./products/productCreate', { user: req.session.userLogged, errors: validation.mapped()})
+      } else {
+        if(req.file != undefined) {
+          req.body.productMainImage = req.file.filename;
+        }
+        let productStatus = db.ProductStatus.findOne({where: {statusName: req.body.productStatus}});
+        let productCategory = db.ProductCategory.findOne({where: {categoryName: req.body.productCategory}});
+        let productColor = db.ProductColor.findOne({where: {colorName: req.body.productColor}});
+        let productSize = db.ProductSize.findOne({where: {sizeName: req.body.productSize}});
+        Promise.all([productStatus, productCategory, productColor, productSize])
+          .then(([status, category, color, size]) => {
+            if (color != null) {
+                color = color.colorId;
+            }
+            if (size != null) {
+              size = size.sizeId;
+            }
+            db.Product.create({
+                productName: req.body.productName,
+                productDescription: req.body.productDescription,
+                productMainImage: req.body.productMainImage,
+                productStatusId: status.statusId,
+                productCategoryId: category.categoryId,
+                productColorId: color,
+                productSizeId: size,
+                productCode: req.body.productCode,
+                productUnitPrice: req.body.productUnitPrice
+              })
+              .then (() => {
+                res.redirect('/products')
+              })
+            }
+            //}
+            )
       }
-      let productStatus = db.ProductStatus.findOne({where: {statusName: req.body.productStatus}});
-      let productCategory = db.ProductCategory.findOne({where: {categoryName: req.body.productCategory}});
-      let productColor = db.ProductColor.findOne({where: {colorName: req.body.productColor}});
-      let productSize = db.ProductSize.findOne({where: {sizeName: req.body.productSize}});
-      Promise.all([productStatus, productCategory, productColor, productSize])
-        .then(([status, category, color, size]) => {
-          if (color != null) {
-              color = color.colorId;
-          }
-          if (size != null) {
-            size = size.sizeId;
-          }
-          db.Product.create({
-              productName: req.body.productName,
-              productDescription: req.body.productDescription,
-              productMainImage: req.body.productMainImage,
-              productStatusId: status.statusId,
-              productCategoryId: category.categoryId,
-              productColorId: color,
-              productSizeId: size,
-              productCode: req.body.productCode,
-              productUnitPrice: req.body.productUnitPrice
-            })
-            .then (() => {
-              res.redirect('/products')
-            })
-          }
-          //}
-          )
       },
     edit: (req, res) => {
         let id = req.params.id;

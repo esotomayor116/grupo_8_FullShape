@@ -4,6 +4,8 @@ const router = express.Router();
 const multer = require('multer');
 const path = require ('path')
 const guestMiddleware = require('../middlewares/guestMiddleware');
+const { body } = require('express-validator');
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) =>{
         cb(null,path.join(__dirname, '../../public/images/products'))
@@ -18,12 +20,35 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
+const validations = [
+    body('productName').notEmpty().withMessage('Por favor ingresa un nombre del producto a agregar para continuar')
+    .isLength({min: 5}).withMessage('El nombre debe contener mínimo 5 caracteres'),
+    body('productDescription').notEmpty().withMessage('Por favor ingresa una descripción del producto para continuar')
+    .isLength({min: 5}).withMessage('La descripción debe contener mínimo 20 caracteres'),
+    body('productUnitPrice').notEmpty().withMessage('Por favor ingresa un precio del producto (precio unintario)')
+    .isFloat().withMessage('El precio debe ser un número'),
+    body('productMainImage').custom((value , { req }) => {
+        let file = req.file;
+        let acceptedExtensions = ['.jpg', '.png', '.jpeg'];
+        if (!file) {
+            throw new Error('Por favor sube una imagen para continuar')
+        } else {
+            let fileExtension = path.extname(file.originalname);
+            if (!acceptedExtensions.includes(fileExtension)) {
+                throw new Error('Las extensiones de archivo permitidas son ".jpg", ".png" o ".jpeg"')
+            } else {
+                return true;
+            }    
+        }
+    })
+];
+
 //Listado de productos, vista home.
 router.get('/', controller.index);
 
 //Formulario de creación, vista productCreate.
 router.get('/create', guestMiddleware, controller.create);
-router.post('/',upload.single('productMainImage'), controller.store);
+router.post('/',upload.single('productMainImage'), validations, controller.store);
 
 //ruta de busqueda de productos
 router.get('/search', controller.search)

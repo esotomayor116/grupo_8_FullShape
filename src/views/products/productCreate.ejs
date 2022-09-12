@@ -13,15 +13,24 @@
                         <!-- Aquí van los campos -->
                             <div class="NombreNuevoProducto">
                                 <label for="NombreProducto">Nombre del producto</label><label class="requerido">  *</label><br>
-                                <input type="text" name="productName" required oninvalid="this.setCustomValidity('Por favor ingresa un nombre del producto a agregar para continuar')"><br>
+                                <input type="text" name="productName"><br>
+                                <% if(locals.errors && errors.productName) { %>
+                                    <p class="requerido"><%= errors.productName.msg %></p>
+                                <% } %>
                             </div>
                             <div class="DescripcionNuevoProducto">
                                 <label for="ProductDescripcion">Descripción del producto</label><label class="requerido">  *</label><br>
-                                <input type="text" name="productDescription" required oninvalid="this.setCustomValidity('Por favor ingresa una descripción del producto para continuar')"><br>
+                                <input type="text" name="productDescription"><br>
+                                <% if(locals.errors && errors.productDescription) { %>
+                                    <p class="requerido"><%= errors.productDescription.msg %></p>
+                                <% } %>
                             </div>
                             <div class="imagenProducto">
                                 <label>Agrega una o más imagenes de tu producto</label>
-                                <input type="file" name="productMainImage" accept=".jpg,.png,.peg" multiple>
+                                <input type="file" name="productMainImage" multiple>
+                                <% if(locals.errors && errors.productMainImage) { %>
+                                    <p class="requerido"><%= errors.productMainImage.msg %></p>
+                                <% } %>
                             </div>
                             <div class="ClasificacionNuevoProducto">
                                 <div class="NuevoUsadoRadios">
@@ -81,7 +90,10 @@
                             </div>
                             <div class="PrecioNuevoProducto">
                                 <label for="PrecioUnitario">Precio por Unidad (u$s)</label><label class="requerido">  *</label><br>
-                                <input type="text" name="productUnitPrice" required oninvalid="this.setCustomValidity('Por favor ingresa un precio del producto (precio unintario)')"><br>
+                                <input type="text" name="productUnitPrice"><br>
+                                <% if(locals.errors && errors.productUnitPrice) { %>
+                                    <p class="requerido"><%= errors.productUnitPrice.msg %></p>
+                                <% } %>
                             </div>
                             <div class="GuardarNuevoProducto">
                                 <div class="botones">
