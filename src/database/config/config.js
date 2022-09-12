@@ -13,7 +13,7 @@ module.exports = {
   /* Configuracion de Edy
   "development": {
     "username": "root",
-    "password": 'Twingoarr876.',
+    "password": '',
     "database": "fullshape_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
