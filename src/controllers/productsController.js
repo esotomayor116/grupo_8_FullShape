@@ -40,7 +40,11 @@ const controller = {
     store: (req, res) => {
       const validation = validationResult(req);
       if (validation.errors.length > 0) {
-          return res.render('./products/productCreate', { user: req.session.userLogged, errors: validation.mapped()})
+          return res.render('./products/productCreate', {
+            user: req.session.userLogged, 
+            errors: validation.mapped(),
+            oldData: req.body
+          })
       } else {
         if(req.file != undefined) {
           req.body.productMainImage = req.file.filename;
