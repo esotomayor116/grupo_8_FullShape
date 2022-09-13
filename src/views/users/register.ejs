@@ -21,36 +21,66 @@
         
                         <div>
                             <label for="userNames">Nombres</label><label class="requerido">  *</label><br>
-                            <input type="text" name="userNames"><br>
+                            <input type="text" name="userNames"
+                            value="<%= locals.oldData ? oldData.userNames : null %>"
+                            ><br>
+                            <% if(locals.errors && errors.userNames) { %>
+                                <p class="requerido"><%= errors.userNames.msg %></p>
+                            <% } %>
                         </div>
                         <div>
                             <label for="userLastNames">Apellidos</label><label class="requerido">  *</label><br>
-                            <input type="text" name="userLastNames"><br>
+                            <input type="text" name="userLastNames"
+                            value="<%= locals.oldData ? oldData.userLastNames : null %>"
+                            ><br>
+                            <% if(locals.errors && errors.userLastNames) { %>
+                                <p class="requerido"><%= errors.userLastNames.msg %></p>
+                            <% } %>
                         </div>
                         <div>
-                            <label for="userPhone">Número de teléfono</label><label class="requerido">  *</label><br>
-                            <input type="number" name="userPhone"><br>
+                            <label for="userPhone">Número de teléfono</label><br>
+                            <input type="number" name="userPhone"
+                            value="<%= locals.oldData ? oldData.userPhone : null %>"
+                            ><br>
                         </div>
                         <div>
                             <label for="userEmail">Email</label><label class="requerido">  *</label><br>
-                            <input type="email" name="userEmail"><br>
+                            <input type="email" name="userEmail"
+                            value="<%= locals.oldData ? oldData.userEmail : null %>"
+                            ><br>
+                            <% if(locals.errors && errors.userEmail) { %>
+                                <p class="requerido"><%= errors.userEmail.msg %></p>
+                            <% } %>
                         </div>
                         <div class="recibir-ofertas">
                             <label class="recibir-ofertas">Recibir ofertas y novedades</label>
-                            <input class="radio" type="radio" name="userReceiveOffersAndNews"><br>
+                            <input class="radio" type="radio" name="userReceiveOffersAndNews"
+                            checked
+                            ><br>
                         </div>
                         <div>
                             <label for="userPassword">Crear Contraseña</label><label class="requerido">  *</label><br>
-                            <input type="password" name="userPassword"><br>
+                            <input type="password" name="userPassword"
+                            value="<%= locals.oldData ? oldData.userPassword : null %>"
+                            ><br>
                             <h6>(?) la contraseña debe poseer al menos 6 caracteres</h6>
+                            <% if(locals.errors && errors.userPassword) { %>
+                                <p class="requerido"><%= errors.userPassword.msg %></p>
+                            <% } %>
                         </div>
                         <div>
-                            <label for="contraseña">Repetir Contraseña</label><label class="requerido">  *</label><br>
-                            <input type="password"><br>
+                            <label for="PasswordConfirmation">Repetir Contraseña</label><label class="requerido">  *</label><br>
+                            <input type="password" name="PasswordConfirmation"><br>
+                            <% if(locals.errors && errors.PasswordConfirmation) { %>
+                                <p class="requerido"><%= errors.PasswordConfirmation.msg %></p>
+                            <% } %>
                         </div>
                         <div>
-                            <label for="userImage">Imagen del usuario</label><br>
+                            <label for="userImage">Imagen del usuario</label><label class="requerido">  *</label><br>
                             <input type="file" name="userImage" id="userImage"><br>
+                            <% if(locals.errors && errors.userImage) { %>
+                                <p class="requerido"><%= errors.userImage.msg %></p>
+                            <% } %>
                         </div>
                             <div class="botones">
                             <p><button type="submit">Registrarse e iniciar sesión</button></p> 

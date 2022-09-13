@@ -4,6 +4,8 @@ const bcrypt = require('bcryptjs');
 const db = require('../database/models');
 const usersFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const { validationResult } = require('express-validator');
+
 
 const controller = {
     login: (req, res) => {
@@ -69,7 +71,13 @@ const controller = {
       }*/
       store2: (req, res) => {
         let userBody = req.body;
-
+        const validation = validationResult(req);
+        if (validation.errors.length > 0) {
+          return res.render('./users/register', {
+            errors: validation.mapped(),
+            oldData: req.body
+          });
+      } else {
         if (req.file) {
           userBody.userImage = req.file.filename;
         } else{
@@ -99,7 +107,7 @@ const controller = {
           .then(function () {
             res.redirect('/users')
           })
-
+        }
       },
       edit: (req, res) => {
         let id = req.params.id;
