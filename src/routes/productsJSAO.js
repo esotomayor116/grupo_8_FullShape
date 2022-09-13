@@ -24,8 +24,8 @@ const validations = [
     body('productName').notEmpty().withMessage('Por favor ingresa un nombre del producto a agregar para continuar')
     .isLength({min: 5}).withMessage('El nombre debe contener mínimo 5 caracteres'),
     body('productDescription').notEmpty().withMessage('Por favor ingresa una descripción del producto para continuar')
-    .isLength({min: 5}).withMessage('La descripción debe contener mínimo 20 caracteres'),
-    body('productUnitPrice').notEmpty().withMessage('Por favor ingresa un precio del producto (precio unintario)')
+    .isLength({min: 20}).withMessage('La descripción debe contener mínimo 20 caracteres'),
+    body('productUnitPrice').notEmpty().withMessage('Por favor ingresa un precio del producto (precio unitario)')
     .isFloat().withMessage('El precio debe ser un número'),
     body('productMainImage').custom((value , { req }) => {
         let file = req.file;
