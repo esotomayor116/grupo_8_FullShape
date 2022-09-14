@@ -32,8 +32,18 @@
                 <% if (locals.errors && errors.log) { %>
                     <p style="color:red; text-align:center; font-size:18px"> <%= errors.log.msg %> </p>
                 <% } %>
-                <div class="login"><input type="text" name="userEmail" placeholder="Email"></div>
-                <div class="login"><input type="password" name="userPassword" placeholder="Contraseña"></div>
+                <div class="login"><input type="text" name="userEmail" placeholder="Email">
+                //validacion backend  login usuarios
+                    <!-- <% if (locals.errors && errors.userEmail) { %>
+                    <%= errors.userEmail.msg %>
+                %> } %> -->
+                </div>
+                <div class="login"><input type="password" name="userPassword" placeholder="Contraseña">
+                   //validacion backend login usuarios
+                    <!-- <% if (locals.errors && errors.userPassword) { %>
+                        <%= errors.userPassword.msg %>
+                    %> } %> -->
+                </div>
                 <div class="recordarme"> 
                     <div>
                         <label>Recordarme</label>

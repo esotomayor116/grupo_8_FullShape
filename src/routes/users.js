@@ -58,15 +58,18 @@ const validations = [
         }
     })
 ];
-
-
+ // Validacion backend login usuarios
+// const validationLogin = [
+//     body('userEmail').notEmpty().withMessage('Por favor ingresa un email para continuar'), 
+//     body('userEmail').notEmpty().withMessage('Por favor ingresa tu contraseña para continuar'), 
+// ]
 
 
 
 //aqui comienzan las rutas. 
 //Las siguientes son rutas del login
 router.get('/login', authMiddleware, controller.login);
-router.post('/login', controller.access);
+router.post('/login', validationLogin, controller.access);
 router.post('/', controller.logout);
 
 //Ruta para ver todos los usuarios funciona OK
