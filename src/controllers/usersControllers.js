@@ -10,18 +10,19 @@ const { validationResult } = require('express-validator');
 const controller = {
     login: (req, res) => {
         res.render('./users/login');
-        //Validacion backend login usuarios
-        //const validationLog = validationResult (req);
-
-        //if (validationLog.errors.length > 0){
-         // return res.render ('./users/login', {
-          //  errors: validationLog.mapped() ,
-         // });
-       // }
     },
     
 
     access: (req, res) => {
+        //Validacion backend login usuarios
+        const validationLog = validationResult(req);
+
+        if (validationLog.errors.length > 0){
+          return res.render ('./users/login', {
+          errors: validationLog.mapped() ,
+          });
+        }
+
       db.User.findOne({where: {
         userEmail: req.body.userEmail
       }})
