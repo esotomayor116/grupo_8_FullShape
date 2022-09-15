@@ -11,7 +11,18 @@ const controller = {
     login: (req, res) => {
         res.render('./users/login');
     },
+    
+
     access: (req, res) => {
+        //Validacion backend login usuarios
+        const validationLog = validationResult(req);
+
+        if (validationLog.errors.length > 0){
+          return res.render ('./users/login', {
+          errors: validationLog.mapped() ,
+          });
+        } else{
+
       db.User.findOne({where: {
         userEmail: req.body.userEmail
       }})
@@ -37,6 +48,7 @@ const controller = {
         } else {
           res.render('./users/login', { errors: { log:{ msg: 'Credenciales no válidas ' } } });
         }*/
+      }
     },
     logout: (req, res) => {
       req.session.destroy();

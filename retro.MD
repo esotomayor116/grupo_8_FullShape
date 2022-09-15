@@ -139,3 +139,28 @@
 ### **•** En segundo lugar nos comprometimos en realizar un refuerzo constante de los temas vistos para evitar bloqueos que debamos solucionar a última hora.
 ### **•** Por último debatimos sobre la distribución de tareas ya que deberíamos estimarlas mejor al principio del sprint.
 
+# 
+### **----------------------------**
+#
+# Retrospectiva grupo8/Sprint6
+
+
+### Durante esta ceremonia nos dispusimos todos a hacer las siguientes actividades:
+
+### **1. Armado del tablero de Trello con 4 columnas:**
+#### **a.** ¿Qué problemas tuvimos?
+#### **b.** ¿Qué hicimos bien?
+#### **c.** ¿Qué queremos mejorar?
+#### **d.** Items de acción.
+
+### **2. Cada uno incluyó una tarjeta con su aporte a cada columna.**
+
+### **3. Votamos por las tarjetas que nos parecía que tenían la información más precisa para incluir en las conclusiones.**
+
+### **4. Debatimos de manera grupal el resultado de la votación.**
+
+### **5. Se concluyeron los siguientes items de acción.**
+
+### **•** Decidimos implementar checkpoints de progreso a partir del próximo sprint.
+### **•** En segundo lugar nos comprometimos en seguir mejorando la administración de tiempo y la identificación de bloqueos.
+### **•** Por último determinamos la importancia de definir al principio del sprint cada tarea a realizar, y a partir de ello identificar las clases en vivo que nos servirán a modo de referencia para poder concretar de manera certera dichas tareas.

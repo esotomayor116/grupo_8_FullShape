@@ -6,18 +6,18 @@ module.exports = {
     "password": null,
     "database": "fullshape_db",
     "host": "127.0.0.1",
-    "port": "8889",
+    "port": "3306",
     "dialect": "mysql"
  },
 
 //    Configuracion de Edy
-//     "development": {
-//     "username": "root",
-//     "password": '',
-//     "database": "fullshape_db",
-//     "host": "127.0.0.1",
-//     "dialect": "mysql"
-//   },
+  //   "development": {
+  //   "username": "root",
+  //   "password": '',
+  //   "database": "fullshape_db",
+  //   "host": "127.0.0.1",
+  //   "dialect": "mysql"
+  // },
 //  Fin de configuracion Edy
 
 

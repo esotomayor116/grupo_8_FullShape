@@ -193,6 +193,10 @@ footer p {
     width: 100%;
 }
 
+.requerido{
+    color: red;
+}
+
 
 @media (max-width: 768px){
 

@@ -13,7 +13,9 @@
                         <!-- Aquí van los campos -->
                             <div class="NombreNuevoProducto">
                                 <label for="NombreProducto">Nombre del producto</label><label class="requerido">  *</label><br>
-                                <input type="text" name="productName" id="name"><br>
+                                <input type="text" name="productName" id="name"
+                                value="<%= locals.oldData ? oldData.productName : null %>"
+                                ><br>
                                     <p id="wrongName"></p>
                                 <% if(locals.errors && errors.productName) { %>
                                     <p class="requerido"><%= errors.productName.msg %></p>
@@ -21,7 +23,9 @@
                             </div>
                             <div class="DescripcionNuevoProducto">
                                 <label for="ProductDescripcion">Descripción del producto</label><label class="requerido">  *</label><br>
-                                <input type="text" name="productDescription" id="description"><br>
+                                <input type="text" name="productDescription" id="description"
+                                value="<%= locals.oldData ? oldData.productDescription : null %>"
+                                ><br>
                                 <p id="wrongDescription"></p>
                                 <% if(locals.errors && errors.productDescription) { %>
                                     <p class="requerido"><%= errors.productDescription.msg %></p>
@@ -84,7 +88,7 @@
                             <div class="CodigoUniversal">
                                 <div>
                                     <label for="ProductUniversal">Código Universal del producto</label>
-                                    <input type="text" name="productCode" ><br>
+                                    <input type="text" name="productCode" value="<%= locals.oldData ? oldData.productCode : null %>"><br>
                                     <p>Es un numero que se encuentra junto al código de barras, en la caja del producto o en su etiqueta. </p>
                                 </div>
                                 <div class="referenciaUniversal"> 
@@ -93,7 +97,9 @@
                             </div>
                             <div class="PrecioNuevoProducto">
                                 <label for="PrecioUnitario">Precio por Unidad (u$s)</label><label class="requerido">  *</label><br>
-                                <input type="text" name="productUnitPrice" id="price"><br>
+                                <input type="text" name="productUnitPrice" id="price"
+                                value="<%= locals.oldData ? oldData.productUnitPrice : null %>"
+                                ><br>
                                 <p id="wrongPrice"></p>
                                 <% if(locals.errors && errors.productUnitPrice) { %>
                                     <p class="requerido"><%= errors.productUnitPrice.msg %></p>
