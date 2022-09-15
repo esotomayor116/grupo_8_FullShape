@@ -21,7 +21,7 @@ const controller = {
           return res.render ('./users/login', {
           errors: validationLog.mapped() ,
           });
-        }
+        } else{
 
       db.User.findOne({where: {
         userEmail: req.body.userEmail
@@ -48,6 +48,7 @@ const controller = {
         } else {
           res.render('./users/login', { errors: { log:{ msg: 'Credenciales no válidas ' } } });
         }*/
+      }
     },
     logout: (req, res) => {
       req.session.destroy();
