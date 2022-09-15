@@ -58,7 +58,7 @@ router.get('/:id', controller.detail);
 
 //Formulario de edición, vista productEdit.
 router.get('/:id/edit', guestMiddleware,  controller.edit);
-router.put('/:id', upload.single('productMainImage') , controller.update);
+router.put('/:id', upload.single('productMainImage'), validations , controller.update);
 
 //botón de borrado, en vista productDetail.
 

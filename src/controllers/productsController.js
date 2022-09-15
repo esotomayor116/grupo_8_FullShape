@@ -99,6 +99,25 @@ const controller = {
       })
 		},
     update: (req, res) => {
+      const validation = validationResult(req);
+      if (validation.errors.length > 0) {
+        let id = req.params.id;
+        let allStatus;
+        let allCategories; 
+        let allColors;
+        let allSizes;
+    db.Product.findByPk(id)
+      .then(function(productToEdit) {
+        allStatus = db.ProductStatus.findAll();
+        allCategories = db.ProductCategory.findAll();
+        allColors = db.ProductColor.findAll();
+        allSizes = db.ProductSize.findAll();
+          Promise.all([allStatus, allCategories, allColors, allSizes])
+            .then(([aStatus, aCategories, aColors, aSizes]) => {
+              res.render("./products/productEdit", { productToEdit, aStatus, aCategories, aColors, aSizes , user: req.session.userLogged, errors: validation.mapped() })
+            })
+      })
+    } else {
       if(req.file != undefined) {
         req.body.productMainImage = req.file.filename;
       }
@@ -130,6 +149,7 @@ const controller = {
             })
           res.redirect('/products')
           })
+    }
     },
     delete: (req, res) =>{
       db.Product.destroy({

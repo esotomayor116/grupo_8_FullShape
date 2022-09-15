@@ -13,15 +13,27 @@
                         <!-- Aquí van los campos -->
                             <div class="NombreNuevoProducto">
                                 <label for="NombreProducto">Nombre del producto</label><label class="requerido">  *</label><br>
-                                <input type="text" name="productName" placeholder="<%= productToEdit.productName %>" required oninvalid="this.setCustomValidity('Por favor ingresa un nombre del producto a agregar para continuar')"><br>
+                                <input type="text" name="productName" placeholder="<%= productToEdit.productName %>" id="name"><br>
+                                <p id="wrongName"></p>
+                                <% if(locals.errors && errors.productName) { %>
+                                    <p class="requerido"><%= errors.productName.msg %></p>
+                                <% } %>
                             </div>
                             <div class="DescripcionNuevoProducto">
                                 <label for="ProductDescription">Descripción del producto</label><label class="requerido">  *</label><br>
-                                <textarea name="productDescription" id="ProductDescription" class="form-input"><%= productToEdit.productDescription %></textarea><br>
+                                <input type="text" name="productDescription" id="description" value="<%= productToEdit.productDescription %>"><br>
+                                <p id="wrongDescription"></p>
+                                <% if(locals.errors && errors.productDescription) { %>
+                                    <p class="requerido"><%= errors.productDescription.msg %></p>
+                                <% } %>
                             </div>
                             <div class="imagenProducto">
                                 <label>Agrega una o más imagenes de tu producto</label>
-                                <input type="file" name="productMainImage" accept=".jpg,.png,.peg" multiple>
+                                <input type="file" name="productMainImage" accept=".jpg,.png,.peg" multiple id="image">
+                                <p id="wrongImage"></p>
+                                <% if(locals.errors && errors.productMainImage) { %>
+                                    <p class="requerido"><%= errors.productMainImage.msg %></p>
+                                <% } %>
                             </div>
                             <div class="ClasificacionNuevoProducto">
                                 <div class="NuevoUsadoRadios">
@@ -88,7 +100,11 @@
                             </div>
                             <div class="PrecioNuevoProducto">
                                 <label for="PrecioUnitario">Precio por Unidad (u$s)</label><label class="requerido">  *</label><br>
-                                <input type="text" name="productUnitPrice" placeholder="<%= productToEdit.productUnitPrice %>" required oninvalid="this.setCustomValidity('Por favor ingresa un precio del producto (precio unintario)')"><br>
+                                <input type="text" name="productUnitPrice" placeholder="<%= productToEdit.productUnitPrice %>" id="price"><br>
+                                <p id="wrongPrice"></p>
+                                <% if(locals.errors && errors.productUnitPrice) { %>
+                                    <p class="requerido"><%= errors.productUnitPrice.msg %></p>
+                                <% } %>
                             </div>
                             <div class="GuardarNuevoProducto">
                                 <div class="botones">
@@ -105,5 +121,6 @@
             </main>
             <%- include("../partials/footer") %>
         </div>
+        <script src="/js/productsValidations.js"></script>
     </body>
 </html>
