@@ -24,7 +24,11 @@ window.addEventListener('load', function() {
     password.addEventListener('mouseout', function (){
         if(password.value == ''){
             wrongPassword.innerHTML = 'Por favor ingresa un password para continuar'
-            wrongPassword.classList.add('requerido')}
+            wrongPassword.classList.add('requerido')
+        } else {
+            wrongPassword.innerHTML = ''
+            wrongPassword.classList.remove('requerido')
+        }
     })
 
 })
