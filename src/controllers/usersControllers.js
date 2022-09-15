@@ -51,8 +51,8 @@ const controller = {
       }
     },
     logout: (req, res) => {
-      req.session.destroy();
       res.clearCookie('userLogData');
+      req.session.destroy();
       res.redirect('/products');
     },
     index: (req, res) => {
