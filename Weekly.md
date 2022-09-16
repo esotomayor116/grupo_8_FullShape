@@ -221,166 +221,166 @@ Weekly 22/08/2022
 
 ### 1. ¿Que Hicimos en la semana?
 
-Eddy:
+    Eddy:
 
-- Ponerme al día con las clases virtuales de playground.
+    - Ponerme al día con las clases virtuales de playground.
 
-Pablo:
+    Pablo:
 
-- Avancé con las clases virtuales de playground. Practiqué con los modelos CRUD.
+    - Avancé con las clases virtuales de playground. Practiqué con los modelos CRUD.
 
-Luciano:
+    Luciano:
 
-- Estuve poniendome al día con los ejercicios del playground.
+    - Estuve poniendome al día con los ejercicios del playground.
 
-Sebastian:
+    Sebastian:
 
-- Terminé mi parte del Sprint, la del CRUD de Productos.
+    - Terminé mi parte del Sprint, la del CRUD de Productos.
 
 ### 2.   ¿Qué bloqueos tenemos?
 
-Eddy:
+    Eddy:
 
-- Ninguno al momento.
+    - Ninguno al momento.
 
-Pablo:
+    Pablo:
 
-- Ningún bloqueo al momento, estoy pendiente de probar el CRUD.
+    - Ningún bloqueo al momento, estoy pendiente de probar el CRUD.
 
-Luciano:
+    Luciano:
 
-- Algunos ejercicios me costaron.
+    - Algunos ejercicios me costaron.
 
-Sebastián:
+    Sebastián:
 
-- No tengo bloqueos al momento.
+    - No tengo bloqueos al momento.
 
 ### 3. ¿Qué haremos mañana?
 
-Eddy:
+    Eddy:
 
-- Me dedicaré a terminar las tareas asignadas del sprint.
+    - Me dedicaré a terminar las tareas asignadas del sprint.
 
-Pablo:
+    Pablo:
 
-- Poner en práctica lo modelado con el CRUD.
+    - Poner en práctica lo modelado con el CRUD.
 
-Luciano:
+    Luciano:
 
- - Terminar las tareas asignadas para este sprint junto con Pablo.
+    - Terminar las tareas asignadas para este sprint junto con Pablo.
 
-Sebastián:
+    Sebastián:
 
-- Asistiré a mis compañeros a revisar o corregir lo que necesiten.
+    - Asistiré a mis compañeros a revisar o corregir lo que necesiten.
 
 Weekly 08/09/2022
 
 ### 1. ¿Que Hicimos en la semana?
 
-Eddy:
+    Eddy:
 
-- Repaso teoria en validaciones..
+    - Repaso teoria en validaciones..
 
-Pablo:
+    Pablo:
 
-- Repaso teoria en validaciones..
+    - Repaso teoria en validaciones..
 
-Luciano:
+    Luciano:
 
-- Repaso teoria en validaciones..
+    - Repaso teoria en validaciones..
 
-Sebastian:
+    Sebastian:
 
-- Terminé de implementar Express Validator de backend para creacion de productos
+    - Terminé de implementar Express Validator de backend para creacion de productos
 
 ### 2.   ¿Qué bloqueos tenemos?
 
-Eddy:
+    Eddy:
 
-- Ninguno al momento.
+    - Ninguno al momento.
 
-Pablo:
+    Pablo:
 
-- Ningún bloqueo al momento.
+    - Ningún bloqueo al momento.
 
-Luciano:
+    Luciano:
 
-- Por el momento ningun bloqueo.
+    - Por el momento ningun bloqueo.
 
-Sebastián:
+    Sebastián:
 
-- Error de Funcionamiento en la validacion custom, aprentemente error de modulo.
+    - Error de Funcionamiento en la validacion custom, aprentemente error de modulo.
 
 ### 3. ¿Qué haremos mañana?
 
-Eddy:
+    Eddy:
 
-- Me dedicaré a terminar las tareas asignadas del sprint.
+    - Me dedicaré a terminar las tareas asignadas del sprint.
 
-Pablo:
+    Pablo:
 
-- Me dedicaré a terminar las tareas asignadas del sprint.
+    - Me dedicaré a terminar las tareas asignadas del sprint.
 
-Luciano:
+    Luciano:
 
- - Me dedicaré a terminar las tareas asignadas del sprint.
+    - Me dedicaré a terminar las tareas asignadas del sprint.
 
-Sebastián:
+    Sebastián:
 
-- Terminar la validacion del front end para creacion y modificacion de productos.
+    - Terminar la validacion del front end para creacion y modificacion de productos.
 
 Weekly 14/09/2022
 
 ### 1. ¿Que Hicimos en la semana?
 
-Eddy:
+    Eddy:
 
-- Implemente validaciones back-end en registro de usuarios
+    - Implemente validaciones back-end en registro de usuarios
 
-Pablo:
+    Pablo:
 
-- Realice la validación por front  de loguin de usuarios
+    - Realice la validación por front  de loguin de usuarios
 
-Luciano:
+    Luciano:
 
-- Realice la validación por back end de loguin de usuarios
+    - Realice la validación por back end de loguin de usuarios
 
-Sebastian:
+    Sebastian:
 
-- Terminar mi parte de validar la Creación/Modificación de productos, mediante Back y Front End;
+    - Terminar mi parte de validar la Creación/Modificación de productos, mediante Back y Front End;
 
 ### 2.   ¿Qué bloqueos tenemos?
 
-Eddy:
+    Eddy:
 
-- Tuve algunos problemas tratando de incluir la validación que verifica si la confirmación de la contraseña es correcta.
+    - Tuve algunos problemas tratando de incluir la validación que verifica si la confirmación de la contraseña es correcta.
 
-Pablo:
+    Pablo:
 
-- implementando la teoría y práctica del playground  
+    - implementando la teoría y práctica del playground  
 
-Luciano:
+    Luciano:
 
-- Tuve problemas con la vista de Login de Usuarios
+    - Tuve problemas con la vista de Login de Usuarios
 
-Sebastián:
+    Sebastián:
 
-- Descubriendo la manera de prevenir el default, a través de la validación del vivo (no del submit)
+    - Descubriendo la manera de prevenir el default, a través de la validación del vivo (no del submit)
 
 ### 3. ¿Qué haremos mañana?
 
-Eddy:
+    Eddy:
 
-- Implementaré validaciones de front en registro de usuarios y ayudare a Lucho a destrabar su tarea.
+    - Implementaré validaciones de front en registro de usuarios y ayudare a Lucho a destrabar su tarea.
 
-Pablo:
+    Pablo:
 
-- Ayudar en el front que necesiten mis compañeros.
+    - Ayudar en el front que necesiten mis compañeros.
 
-Luciano:
+    Luciano:
 
- - Terminar la validación por back end de login de usuarios.
+    - Terminar la validación por back end de login de usuarios.
 
-Sebastián:
+    Sebastián:
 
-- Asistir a mis compañeros si lo necesitan, para hacer la entrega del sprint.
+    - Asistir a mis compañeros si lo necesitan, para hacer la entrega del sprint.
