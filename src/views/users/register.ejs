@@ -13,6 +13,9 @@
         </header>
         <div class="cuerpo-registro">
         <main>
+            <div class="errores" style="color:red; text-align:center; font-size:18px">
+                <ul></ul>
+            </div>
                 <form class="registro-popup" action="/users/guardar" method="POST" enctype="multipart/form-data">  
                     <div class="formRegistro-izquierdo">
                         <h1 class="registrate">Registrate</h1> 
@@ -21,7 +24,7 @@
         
                         <div>
                             <label for="userNames">Nombres</label><label class="requerido">  *</label><br>
-                            <input type="text" name="userNames"
+                            <input type="text" name="userNames" id="userNames"
                             value="<%= locals.oldData ? oldData.userNames : null %>"
                             ><br>
                             <% if(locals.errors && errors.userNames) { %>
@@ -30,7 +33,7 @@
                         </div>
                         <div>
                             <label for="userLastNames">Apellidos</label><label class="requerido">  *</label><br>
-                            <input type="text" name="userLastNames"
+                            <input type="text" name="userLastNames" id="userLastNames"
                             value="<%= locals.oldData ? oldData.userLastNames : null %>"
                             ><br>
                             <% if(locals.errors && errors.userLastNames) { %>
@@ -45,7 +48,7 @@
                         </div>
                         <div>
                             <label for="userEmail">Email</label><label class="requerido">  *</label><br>
-                            <input type="email" name="userEmail"
+                            <input type="email" name="userEmail" id="userEmail"
                             value="<%= locals.oldData ? oldData.userEmail : null %>"
                             ><br>
                             <% if(locals.errors && errors.userEmail) { %>
@@ -60,7 +63,7 @@
                         </div>
                         <div>
                             <label for="userPassword">Crear Contraseña</label><label class="requerido">  *</label><br>
-                            <input type="password" name="userPassword"
+                            <input type="password" name="userPassword" id="userPassword"
                             value="<%= locals.oldData ? oldData.userPassword : null %>"
                             ><br>
                             <h6>(?) la contraseña debe poseer al menos 6 caracteres</h6>
@@ -131,5 +134,6 @@
         </main>
         <%- include("../partials/footer") %>
         </div>
+        <script src="/js/registerValidations.js"></script>
     </body>
 </html>

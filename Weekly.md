@@ -272,3 +272,115 @@ Luciano:
 Sebastián:
 
 - Asistiré a mis compañeros a revisar o corregir lo que necesiten.
+
+Weekly 08/09/2022
+
+### 1. ¿Que Hicimos en la semana?
+
+Eddy:
+
+- Repaso teoria en validaciones..
+
+Pablo:
+
+- Repaso teoria en validaciones..
+
+Luciano:
+
+- Repaso teoria en validaciones..
+
+Sebastian:
+
+- Terminé de implementar Express Validator de backend para creacion de productos
+
+### 2.   ¿Qué bloqueos tenemos?
+
+Eddy:
+
+- Ninguno al momento.
+
+Pablo:
+
+- Ningún bloqueo al momento.
+
+Luciano:
+
+- Por el momento ningun bloqueo.
+
+Sebastián:
+
+- Error de Funcionamiento en la validacion custom, aprentemente error de modulo.
+
+### 3. ¿Qué haremos mañana?
+
+Eddy:
+
+- Me dedicaré a terminar las tareas asignadas del sprint.
+
+Pablo:
+
+- Me dedicaré a terminar las tareas asignadas del sprint.
+
+Luciano:
+
+ - Me dedicaré a terminar las tareas asignadas del sprint.
+
+Sebastián:
+
+- Terminar la validacion del front end para creacion y modificacion de productos.
+
+Weekly 14/09/2022
+
+### 1. ¿Que Hicimos en la semana?
+
+Eddy:
+
+- Implemente validaciones back-end en registro de usuarios
+
+Pablo:
+
+- Realice la validación por front  de loguin de usuarios
+
+Luciano:
+
+- Realice la validación por back end de loguin de usuarios
+
+Sebastian:
+
+- Terminar mi parte de validar la Creación/Modificación de productos, mediante Back y Front End;
+
+### 2.   ¿Qué bloqueos tenemos?
+
+Eddy:
+
+- Tuve algunos problemas tratando de incluir la validación que verifica si la confirmación de la contraseña es correcta.
+
+Pablo:
+
+- implementando la teoría y práctica del playground  
+
+Luciano:
+
+- Tuve problemas con la vista de Login de Usuarios
+
+Sebastián:
+
+- Descubriendo la manera de prevenir el default, a través de la validación del vivo (no del submit)
+
+### 3. ¿Qué haremos mañana?
+
+Eddy:
+
+- Implementaré validaciones de front en registro de usuarios y ayudare a Lucho a destrabar su tarea.
+
+Pablo:
+
+- Ayudar en el front que necesiten mis compañeros.
+
+Luciano:
+
+ - Terminar la validación por back end de login de usuarios.
+
+Sebastián:
+
+- Asistir a mis compañeros si lo necesitan, para hacer la entrega del sprint.
