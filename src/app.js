@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const productsRouter = require('./routes/products');
+const productsApiRouter = require('./routes/api/products');
 const mainRouter =require('./routes/main');
 const usersRouter = require('./routes/users');
 const methodOverride =  require('method-override');
@@ -23,6 +24,7 @@ app.use(session({
 app.use(cookies());
 app.use(userLoggedCookie);
 app.use('/products', productsRouter);
+app.use('/productsapi', productsApiRouter);
 app.use('/', mainRouter);
 app.use('/users', usersRouter);
 
