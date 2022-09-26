@@ -1,0 +1,34 @@
+body {
+    margin: 0px;
+}
+
+.navDiv {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    border: 1px solid black;
+    background-color: #83FACF;
+}
+
+.logo {
+    height: 100%;
+    width: 125px;
+}
+
+a {
+    margin: auto;
+}
+
+.pages {
+    width:858.6px;
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+span {
+    font-weight: bold;
+    margin-left:2px;
+}
