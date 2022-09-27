@@ -13,7 +13,7 @@ module.exports = {
             // ESTO ES PARA INCLUIR EL URL PARA DETALLE DEL PRODUCTO.
             products.map(product => {
               product.dataValues.productDetail = `http://localhost:3000/productsapi/${product.productId}`
-              })
+              }) 
             // ESTO ES SOLO PARA MOSTRAR EL NOMBRE DE LAS CATEGORÍAS, COLORES, ETC... SEGÚN SU ID, NO ES ESENCIAL.  
             const ProductCategories = DB.ProductCategory.findAll()
             const ProductColors = DB.ProductColor.findAll()
