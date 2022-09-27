@@ -25,7 +25,7 @@ function NavBar () {
                    <LastInput />
                 </Route>
             </Switch>  
-            </React.Fragment>
+        </React.Fragment>
     )
 }
 
