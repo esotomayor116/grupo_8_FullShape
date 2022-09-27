@@ -5,6 +5,7 @@ const productsRouter = require('./routes/products');
 const productsApiRouter = require('./routes/api/products');
 const mainRouter =require('./routes/main');
 const usersRouter = require('./routes/users');
+const usersApiRouter = require('./routes/api/users');
 const methodOverride =  require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
@@ -24,9 +25,10 @@ app.use(session({
 app.use(cookies());
 app.use(userLoggedCookie);
 app.use('/products', productsRouter);
-app.use('/productsapi', productsApiRouter);
+app.use('/api/products', productsApiRouter);
 app.use('/', mainRouter);
 app.use('/users', usersRouter);
+app.use('/api/users', usersApiRouter);
 
 app.set('view engine', 'ejs');
 

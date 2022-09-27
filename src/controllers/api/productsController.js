@@ -11,7 +11,7 @@ module.exports = {
                 return `${category.categoryName}: ${categoryCount}`
               })
               products.map(product => {
-                product.dataValues.productDetail = `http://localhost:3000/productsapi/${product.productId}`
+                product.dataValues.productDetail = `http://localhost:3000/api/products/${product.productId}`
                 product.dataValues.productMainImage = `http://localhost:3000/images/products/${product.productMainImage}`
                 delete product.dataValues.productStatusId;
                 delete product.dataValues.productCategoryId;
