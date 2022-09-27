@@ -45,11 +45,25 @@ module.exports = {
                   "Sumplementos": suplementos.length,
                   "Boxeo": boxeo.length
                 },
+                
                 data: products
               })
             })
            
               
+          })
+        },
+
+        show: (req, res) => {
+          DB.Product
+          .findByPk(req.params.id)
+          .then(product => {
+            product.dataValues.productMainImage = `http://localhost:3000/images/products/${product.productMainImage}`
+              
+            return res.status(200).json({
+              data: product,
+              status: 200
+            })
           })
         }
       }
