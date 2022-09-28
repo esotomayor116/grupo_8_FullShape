@@ -28,10 +28,13 @@ module.exports = {
 
         show: (req, res) => {
           DB.Product
-          .findByPk(req.params.id)
+          .findByPk(req.params.id, {include: ['status','categories', 'colors', 'sizes', ] })
           .then(product => {
             product.dataValues.productMainImage = `http://localhost:3000/images/products/${product.productMainImage}`
-              
+            delete product.dataValues.productStatusId;
+            delete product.dataValues.productCategoryId;
+            delete product.dataValues.productColorId;
+            delete product.dataValues.productSizeId;  
             return res.status(200).json({
               data: product,
               status: 200

@@ -11,6 +11,7 @@ const session = require('express-session');
 const cookies = require('cookie-parser');
 const userLoggedCookie = require('./middlewares/userLoggedCookie');
 const guestMiddleware = require('./middlewares/guestMiddleware');
+const cors = require('cors')
 
 app.use(express.static(path.join(__dirname, "../public")));
 
@@ -24,6 +25,7 @@ app.use(session({
 }));
 app.use(cookies());
 app.use(userLoggedCookie);
+app.use(cors())
 app.use('/products', productsRouter);
 app.use('/api/products', productsApiRouter);
 app.use('/', mainRouter);
