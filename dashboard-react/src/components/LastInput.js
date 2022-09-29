@@ -1,19 +1,11 @@
 import React from 'react';
-import { useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 
-function LastInput () {
-    const [products, setProducts] = useState([]);
-    
-    useEffect(() => {
-        fetch('http://localhost:3000/api/products')
-          .then(response => {return response.json()})
-            .then(data => {
-                setProducts(data.data)
-            })
-            .catch(error => console.log(error ))
-    }, [])
-    
+
+function LastInput (props) {
+
+    const products = props.products;
     let lastProductName = <p>Cargando...</p>;
     let lastProductImage = <p>Cargando...</p>;
     let lastProductDescription = <p>Cargando...</p>;

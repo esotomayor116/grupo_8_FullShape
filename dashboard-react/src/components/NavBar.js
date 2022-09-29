@@ -4,8 +4,31 @@ import {Link, Route, Switch} from 'react-router-dom';
 import LastInput from './LastInput';
 import ContentWrapper from './ContentWrapper'
 import LastInputDetail from './LastInputDetail';
+import Tables from './Tables'
+import {useState, useEffect} from 'react';
 
 function NavBar () {
+
+const [products, setProducts] = useState([]);
+const [users, setUsers] = useState([]);
+    
+    useEffect(() => {
+        fetch('http://localhost:3000/api/products')
+        .then(response => {return response.json()})
+            .then(data => {
+                setProducts(data)
+            })
+            .catch(error => console.log(error ))
+
+        fetch('http://localhost:3000/api/users')
+        .then(response => {return response.json()})
+            .then(data => {
+                setUsers(data.data)
+            })
+            .catch(error => console.log(error ))
+
+    }, [])
+
     return (
         <React.Fragment>
         <div className='navDiv'>
@@ -23,10 +46,13 @@ function NavBar () {
                    <ContentWrapper />
                 </Route>
                 <Route exact path='/lastinput'>
-                   <LastInput />
+                   <LastInput products = {products.data}/>
                 </Route>
                 <Route path='/lastinput/detail'> 
-                <LastInputDetail /> 
+                <LastInputDetail products = {products.data}/> 
+                </Route>
+                <Route path='/totals'> 
+                <Tables products = {products} users = {users}/> 
                 </Route>
             </Switch>  
         </React.Fragment>
