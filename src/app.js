@@ -10,7 +10,6 @@ const methodOverride =  require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const userLoggedCookie = require('./middlewares/userLoggedCookie');
-const guestMiddleware = require('./middlewares/guestMiddleware');
 const cors = require('cors')
 
 app.use(express.static(path.join(__dirname, "../public")));
@@ -25,18 +24,14 @@ app.use(session({
 }));
 app.use(cookies());
 app.use(userLoggedCookie);
-app.use(cors())
+app.use(cors());
+app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/api/products', productsApiRouter);
-app.use('/', mainRouter);
 app.use('/users', usersRouter);
 app.use('/api/users', usersApiRouter);
 
 app.set('view engine', 'ejs');
-
-app.get("/shoppingcart", guestMiddleware, (req, res) => {
-    res.render("./products/carritoCompras", { user: req.session.userLogged })
-})
 
 app.listen(process.env.PORT || 3000, () => {
     console.log("Aplicación iniciada y escuchando en el puerto 3000");
