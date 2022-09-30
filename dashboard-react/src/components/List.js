@@ -4,11 +4,11 @@ function List (props) {
     const products = props.products
     const productsList = products.map(product => {
         
-        return <li>
-            {product.productName}
+        return <li className='listP'>
+           <div>{product.productName}</div> 
         </li>
     })
-    return (<ul>
+    return (<ul className='products'>
                 {productsList}
             </ul>)
     
