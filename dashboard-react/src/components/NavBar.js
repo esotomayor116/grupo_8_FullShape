@@ -4,9 +4,11 @@ import {Link, Route, Switch} from 'react-router-dom';
 import LastInput from './LastInput';
 import ContentWrapper from './ContentWrapper'
 import LastInputDetail from './LastInputDetail';
+import Ctotals from './Ctotals';
 import Tables from './Tables'
 import {useState, useEffect} from 'react';
 import List from './List';
+
 
 function NavBar () {
 
