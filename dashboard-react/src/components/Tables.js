@@ -2,11 +2,14 @@ import React from 'react';
 import { useState, useEffect} from 'react';
 
 function Tables (props) {
-
-    const products = props.products.data;
-    const users = props.users;
-    const categories = props.products.countByCategory
-
+    let products = [];
+    let users = [];
+    let categories = [];
+    if (props.products != undefined && props.users != undefined && props.products.countByCategory != undefined) {
+        products = props.products.data;
+        users = props.users;
+        categories = props.products.countByCategory    
+    }
     return (
         <div className='totalsDiv'>
             <div className='totals'><h1>Total de Productos: {products.length}</h1></div>

@@ -4,8 +4,10 @@ import {Link} from 'react-router-dom';
 
 
 function LastInput (props) {
-
-    const products = props.products;
+    let products = [];
+    if (props.products != undefined) {
+        products = props.products;
+    }
     let lastProductName = <p>Cargando...</p>;
     let lastProductImage = <p>Cargando...</p>;
     let lastProductDescription = <p>Cargando...</p>;
