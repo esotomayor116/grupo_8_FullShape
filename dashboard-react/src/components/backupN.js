@@ -6,7 +6,6 @@ import ContentWrapper from './ContentWrapper'
 import LastInputDetail from './LastInputDetail';
 import Tables from './Tables'
 import {useState, useEffect} from 'react';
-import List from './List';
 
 function NavBar () {
 
@@ -55,11 +54,8 @@ const [users, setUsers] = useState([]);
                 <Route path='/totals'> 
                 <Tables products = {products} users = {users}/> 
                 </Route>
-                <Route path='/productslist'> 
-                <List products = {products.data}/> 
-                </Route>
-                <Route path='/categorytotals'> 
-                <Ctotals products = {products}/> 
+                <Route path='/totals'> 
+                <Tables products = {products} users = {users}/> 
                 </Route>
             </Switch>  
         </React.Fragment>

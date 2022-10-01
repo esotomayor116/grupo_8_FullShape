@@ -3,7 +3,7 @@ module.exports = {
 
   "development": {
     "username": "root",
-    "password": null,
+    "password": "Twingoarr876.",
     "database": "fullshape_db",
     "host": "127.0.0.1",
     "port": "3306",

@@ -8,10 +8,10 @@ function Tables (props) {
     const categories = props.products.countByCategory
 
     return (
-        <div>
-            <h1>{products.length}</h1>
-            <h1>{users.length}</h1>
-            <h1>{categories.length}</h1>
+        <div className='totalsDiv'>
+            <div className='totals'><h1>Total de Productos: {products.length}</h1></div>
+            <div className='totals'><h1>Total de Usuarios: {users.length}</h1></div>
+            <div className='totals'><h1>Total de Categorías: {categories.length}</h1></div>
         </div>
 
     )

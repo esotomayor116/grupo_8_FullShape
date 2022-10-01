@@ -47,7 +47,7 @@ window.addEventListener('load', function() {
             for (i=0; i<acceptedExtensions.length; i++){
                 if (image.value.includes(acceptedExtensions[i])) {
                     errorextension = 0
-                   break;
+                break;
                 } 
             }
             if (errorextension == 1){error.push ('Las extensiones de archivo permitidas son ".jpg", ".png" o ".jpeg"')}
@@ -61,8 +61,8 @@ window.addEventListener('load', function() {
                 //listaError += error[i] + '\n'
                 ulErrores.innerHTML += "<li>" + error[i] + "</li>"
             }
+        
             //alert(listaError)
-
         }
         
     });
