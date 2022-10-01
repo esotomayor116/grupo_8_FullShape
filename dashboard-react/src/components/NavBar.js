@@ -45,7 +45,10 @@ const [users, setUsers] = useState([]);
         </div>
             <Switch>
                 <Route exact path='/'>
-                   <ContentWrapper />
+                  <Tables products = {products} users = {users}/>
+                  <Ctotals products = {products}/>
+                  <List products = {products.data}/>
+                  <LastInput products = {products.data}/>
                 </Route>
                 <Route exact path='/lastinput'>
                    <LastInput products = {products.data}/>
