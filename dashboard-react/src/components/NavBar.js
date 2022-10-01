@@ -5,10 +5,9 @@ import LastInput from './LastInput';
 import ContentWrapper from './ContentWrapper'
 import LastInputDetail from './LastInputDetail';
 import Ctotals from './Ctotals';
-import Tables from './Tables'
-import {useState, useEffect} from 'react';
+import Tables from './Tables';
 import List from './List';
-
+import {useState, useEffect} from 'react';
 
 function NavBar () {
 
