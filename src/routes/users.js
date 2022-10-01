@@ -89,7 +89,7 @@ router.post('/guardar', upload.single('userImage'), validations, controller.stor
 router.get('/:id', guestMiddleware, controller.show);
 
 //Actualizacion de usuario
-router.put('/prueba/:id', upload.single('userImage'), controller.update)
+router.put('/editsubmit/:id', upload.single('userImage'), controller.update)
 
 
 module.exports = router;

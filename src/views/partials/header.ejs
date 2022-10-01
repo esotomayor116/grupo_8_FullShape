@@ -1,21 +1,21 @@
 <header>
     <nav>
         <ul>
-            <a href="/products/create"><li style="font-weight:bold">Vender</li></a>
-            <a href="#"><li>Ayuda</li></a>
+            <li style="font-weight:bold"><a href="/products/create">Vender</a></li>
+            <li><a href="#">Ayuda</a></li>
             <% if (user) { %>
              <li class="user-menu"><%= user.userNames %>
                 <ul>
-                    <a href="/users/<%= user.userId %>"><li>Ver perfil</li></a>
-                    <a href="/users/edit/<%= user.userId %>"><li>Editar perfil</li></a>
-                    <form action="/users" method="POST">
-                        <button type="submit"><li>Cerrar Sesión</li></button>
-                    </form>
+                    <li class="user-option"><a href="/users/<%= user.userId %>">Ver perfil</a></li>
+                    <li class="user-option"><a href="/users/edit/<%= user.userId %>">Editar perfil</a></li>
+                    <li class="user-option"><form action="/users" method="POST">
+                        <button type="submit">Cerrar Sesión</button>
+                    </form></li>
                 </ul>
             </li>
             <% } else { %>
-              <a href="/users/login"><li>Iniciar sesión</li></a>
-              <a href="/users/register"><li>Registrate</li></a>
+                <li><a href="/users/login">Iniciar sesión</a></li>
+                <li><a href="/users/register">Registrate</a></li>
             <% } %>
         </ul>
     </nav>

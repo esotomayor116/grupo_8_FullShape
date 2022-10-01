@@ -172,6 +172,9 @@ const controller = {
       // .then(product => res.redirect(`/products/${product.productId}`))
 
     },
+    shoppingCart: (req, res) => {
+        res.render("./products/carritoCompras", { user: req.session.userLogged })
+    }
 
 };
 

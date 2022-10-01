@@ -39,6 +39,7 @@ li {
 }
 
 .barra-busqueda {
+    width: 43%;
     display: flex;
     background-color: white;
     border: 1px solid #03264C;
@@ -47,12 +48,12 @@ li {
 }
 
 form {
-    width: 90%;
+    width: 100%;
     height: 22px;
 }
 
 .busqueda {
-    width: 100%;
+    width: 88%;
     height: 22px;
     padding: 0px;
     border: 0px;
@@ -124,30 +125,28 @@ select {
     background-color: #83FACF;
 }
 
-.user-menu:hover ul a {
+.user-menu:hover ul li {
     color: black;
-    text-decoration: none
+    text-decoration: none;
+    text-align: center;
+    width: 80px;
+    border: 1px solid black;
+    margin: 0px;
 }
 
-.user-menu:hover ul a li {
-    border: 1px black solid;
-    margin: 0px;
-    padding: 5px;
-    text-align: center;
+.user-menu:hover ul li a {
+    width: 100%;
     font-size: 15px;
 }
 
-.user-menu:hover ul form, .user-menu:hover ul form button {
+.user-menu:hover ul li form, .user-menu:hover ul li form button {
     width: 100%;
     height: 100%;
     background-color: #83FACF;
+    border: 0px;
 }
 
-.user-menu:hover ul form button {
-    border: 1px solid black;
-} 
-
-.user-menu:hover ul form button li {
+.user-menu:hover ul li form button {
     font-size: 15px;
 }
 
@@ -180,7 +179,7 @@ main {
 }
 
 li#foto0, li#foto1, li#foto2, li#foto3, li#foto4 {
-    width: 50%;
+    width: 200px;
     border: 1px solid black;
 }
 
@@ -241,8 +240,6 @@ p.pp {
 }
 
 .detalle {
-    display: flex;
-    flex-wrap: wrap;
     border: 1px solid black;
     width: 90%;
     margin-bottom: 5%;
@@ -297,10 +294,22 @@ li.specs {
     background-color: #83FACF;
 }
 
+main a#Add {
+    width: 120px;
+    margin: 0% 6% 5% 6%; 
+}
+
+main a#Add button {
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+}
+
 main a#edit {
     width: 120px;
     margin: 0% 6% 5% 6%;
 }
+
 
 main form#delete {
     width: 120px;
@@ -387,10 +396,11 @@ footer p {
         left: 17.5%;
     }
     form {
-        width:92.5%;
+        width:100%;
         height: 30px;
     }
     .busqueda {
+        width:91.8%;
         height: 30px;
     }
     button {

@@ -2,7 +2,7 @@ const express = require('express');
 const controller = require('../controllers/productsController');
 const router = express.Router();
 const multer = require('multer');
-const path = require ('path')
+const path = require ('path');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const { body } = require('express-validator');
 
@@ -62,7 +62,7 @@ router.put('/:id', upload.single('productMainImage'), validations , controller.u
 
 //botón de borrado, en vista productDetail.
 
-router.delete ('/:id', controller.delete)
+router.delete ('/:id', guestMiddleware, controller.delete)
 
 
 module.exports = router;

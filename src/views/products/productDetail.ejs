@@ -3,6 +3,7 @@
     <%- include("../partials/head") %>
     <link href="/css/stylesPD.css" rel="stylesheet">
     <title>Full Shape</title>
+    </head>
     <body>
         <%- include("../partials/header") %>
         <main>
@@ -26,6 +27,7 @@
                 <p id="descripcion"><%= product.productDescription %></p>
                 <p id="resenas">Reseñas - <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 25 Reseñas</p>
             </div>
+            <a id="Add" href="http://localhost:3000/shoppingcart"><button>¡Agregar al carrito!</button></a>
             <div class="detalle">
                 <h3>DESCRIPCIÓN DETALLADA</h3>
                 <p class="detail"><%= product.productDescription %></p>
