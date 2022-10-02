@@ -2,7 +2,6 @@ import React from 'react';
 import fullShapeLogo from '../assets/images/Shapepng.svg'
 import {Link, Route, Switch} from 'react-router-dom';
 import LastInput from './LastInput';
-import ContentWrapper from './ContentWrapper'
 import LastInputDetail from './LastInputDetail';
 import Ctotals from './Ctotals';
 import Tables from './Tables';
