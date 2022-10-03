@@ -384,3 +384,32 @@ Weekly 14/09/2022
     Sebastián:
 
     - Asistir a mis compañeros si lo necesitan, para hacer la entrega del sprint.
+
+## 28/09/2022
+### 1. ¿Que Hicimos Hoy?
+
+    Seba:  Hice la API de de products (lista general).
+    
+    Eddy: Hice la API de buscar usuarios por ID y repasar sprint 1 y 2.
+    
+    Lucho: Hice la API de usuarios
+    
+    Pablo:   Hice la API de product:id y ejercicios de playground.
+
+### 2.   ¿Qué bloqueos tenemos?
+    Seba: No comprendi teoría de arrays (relacion uno a muchos).
+
+    Eddy: No tuve bloqueos
+
+    Lucho: Tuve bloqueos pertinentes a la teoria de APIs.
+
+    Pablo: No comprendi teoria y ejercicios relacionados a arrays.
+
+### 3. ¿Qué haremos mañana? 
+    Seba: Trabajar con react.
+
+    Eddy: Repasar a fondo teoría de react.
+
+    Lucho: Repasar conceptos de react y repasar modulos 3, 4, 5 y 6.
+
+    Pablo: Repasar teoría de react.
