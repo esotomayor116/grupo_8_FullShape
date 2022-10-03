@@ -93,6 +93,11 @@ form.registro-popup{
     height: 800px
 }
 
+form.registro-popup1 {
+  height: 950px;
+  width: 50%;
+}
+
 
 .formRegistro-derecho, .formRegistro-izquierdo{
     width: 50%;
@@ -214,7 +219,14 @@ div.recibir-ofertas{
 
 form.registro-popup{
     flex-direction: column;
+    height: 835px;
 }
+
+form.registro-popup1 {
+    width: 100%;
+    height: 800px;   
+}
+
 .formRegistro-izquierdo div {
 border-right:none;
 }
