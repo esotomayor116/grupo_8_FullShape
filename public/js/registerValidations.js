@@ -53,9 +53,12 @@ window.addEventListener('load', function() {
             if (errorextension == 1){error.push ('Las extensiones de archivo permitidas son ".jpg", ".png" o ".jpeg"')}
         }
 
+        let ulErrores = document.querySelector("div.errores ul");
+
         if (error.length > 0){
             e.preventDefault();
-            let ulErrores = document.querySelector("div.errores ul")
+            ulErrores.innerHTML = "";
+            ulErrores.style.display = "block";
             //let listaError = ""
             for (let i = 0; i < error.length; i++) {
                 //listaError += error[i] + '\n'

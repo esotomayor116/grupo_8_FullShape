@@ -214,6 +214,22 @@ div.recibir-ofertas{
     padding-top: 0%;
 }
 
+div.errores {
+    width: 33%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+div.errores ul {
+    display: none;
+    padding: 10px 0px;
+}
+
+div.errores ul li {
+    margin-bottom: 2px;
+}
+
 
 @media (max-width: 768px){
 
