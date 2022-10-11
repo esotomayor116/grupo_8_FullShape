@@ -26,18 +26,27 @@
                         <div style="border-right: 0px;">
                             <label for="userNames">Nombres</label><label class="requerido">  *</label><br>
                             <input type="text" name="userNames" value="<%= userToEdit.userNames %>" ><br>
+                            <% if(locals.errors && errors.userNames) { %>
+                                <p class="requerido"><%= errors.userNames.msg %></p>
+                            <% } %>
                         </div>
                         <div style="border-right: 0px;">
                             <label for="userLastNames">Apellidos</label><label class="requerido">  *</label><br>
                             <input type="text" name="userLastNames" value="<%= userToEdit.userLastNames %>"><br>
+                            <% if(locals.errors && errors.userLastNames) { %>
+                                <p class="requerido"><%= errors.userLastNames.msg %></p>
+                            <% } %>
                         </div>
                         <div style="border-right: 0px;">
-                            <label for="userPhone">Número de teléfono</label><label class="requerido">  *</label><br>
+                            <label for="userPhone">Número de teléfono</label><br>
                             <input type="number" name="userPhone" value="<%= userToEdit.userPhone %>"><br>
                         </div>
                         <div style="border-right: 0px;">
                             <label for="userEmail">Email</label><label class="requerido">  *</label><br>
-                            <input type="email" name="userEmail" value="<%= userToEdit.userEmail %>"><br>
+                            <input type="text" name="userEmail" value="<%= userToEdit.userEmail %>"><br>
+                            <% if(locals.errors && errors.userEmail) { %>
+                                <p class="requerido"><%= errors.userEmail.msg %></p>
+                            <% } %>
                         </div>
                         <div class="recibir-ofertas" style="border-right: 0px;">
                             <label class="recibir-ofertas">Recibir ofertas y novedades</label>
@@ -52,11 +61,17 @@
                         </div>
                         <div style="border-right: 0px;">
                             <label for="contraseña">Confirmar nueva Contraseña</label> (Opcional)<br>
-                            <input type="password"><br>
+                            <input type="password" name="PasswordConfirmation"><br>
+                            <% if(locals.errors && errors.PasswordConfirmation) { %>
+                                <p class="requerido"><%= errors.PasswordConfirmation.msg %></p>
+                            <% } %>
                         </div>
                         <div style="border-right: 0px;">
-                            <label for="userImage">Imagen del usuario</label><br>
+                            <label for="userImage">Cambiar Imagen del usuario</label> (Opcional)<br>
                             <input type="file" name="userImage" id="userImage"><br>
+                            <% if(locals.errors && errors.userImage) { %>
+                                <p class="requerido"><%= errors.userImage.msg %></p>
+                            <% } %>
                         </div>
                         <div class="logo-registro" style="border-right: 0px;"> 
                             <a href="/"><img src="/images/users/<%= userToEdit.userImage %>" alt="Logo a Color Full Shape" style="width:35%;"></a>

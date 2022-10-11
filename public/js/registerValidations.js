@@ -9,6 +9,7 @@ window.addEventListener('load', function() {
         let fieldLastName = document.querySelector("input#userLastNames");
         let fieldEmail = document.querySelector("input#userEmail");
         let fieldPassword = document.querySelector("input#userPassword");
+        let fieldPasswordConfirmation = document.querySelector("input#userPasswordConfirmation");
         let image = document.querySelector('input#userImage');
 
         let error = [];
@@ -35,6 +36,12 @@ window.addEventListener('load', function() {
             error.push(" Por favor cree una contraseña para continuar. ")
         } else if (fieldPassword.value.length < 8 ) {
             error.push(" La contraseña debera tener al menos 8 carácteres")
+        }
+
+        if(fieldPasswordConfirmation.value == "") {
+            error.push(" Por favor confirme la contraseña para continuar. ")
+        } else if (fieldPasswordConfirmation.value != fieldPassword.value) {
+            error.push(" Las contraseñas no coinciden ")
         }
 
         if(image.value == ""){

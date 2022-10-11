@@ -10,19 +10,50 @@ window.addEventListener('load', function() {
         if(email.value == ''){
             wrongEmail.innerHTML = 'Por favor ingresa un email para continuar'
             wrongEmail.classList.add('requerido')
-            } else{
-                if(!email.value.includes("@")||(!email.value.includes("."))){
-                    wrongEmail.innerHTML = 'El correo debe incluir un @ y un servidor'
-                    wrongEmail.classList.add('requerido')
-                }else{
+            } else if (email.value.includes("@")&&email.value.includes(".")) {
                     wrongEmail.innerHTML = ''
                     wrongEmail.classList.remove('requerido')
                 }
             }
+    )
+    
+    email.addEventListener('keypress', function (e) {
+        currentValue = e.target.value + e.key
+        console.log(currentValue)
+        if(!currentValue.includes("@")||!currentValue.includes(".")){
+            wrongEmail.innerHTML = 'El correo debe incluir un @ y un servidor'
+            wrongEmail.classList.add('requerido')
+        } else {
+            wrongEmail.innerHTML = ''
+            wrongEmail.classList.remove('requerido')
+        }
+    })
+
+    email.addEventListener('change', function (e) {
+        currentValue = e.target.value + e.key
+        console.log(currentValue)
+        if(!currentValue.includes("@")||!currentValue.includes(".")){
+            wrongEmail.innerHTML = 'El correo debe incluir un @ y un servidor'
+            wrongEmail.classList.add('requerido')
+        } else {
+            wrongEmail.innerHTML = ''
+            wrongEmail.classList.remove('requerido')
+        }
     })
 
     password.addEventListener('mouseout', function (){
         if(password.value == ''){
+            wrongPassword.innerHTML = 'Por favor ingresa un password para continuar'
+            wrongPassword.classList.add('requerido')
+        } else {
+            wrongPassword.innerHTML = ''
+            wrongPassword.classList.remove('requerido')
+        }
+    })
+
+    password.addEventListener('keypress', function (e){
+        currentValue = e.target.value + e.key
+        if(currentValue == ''){
             wrongPassword.innerHTML = 'Por favor ingresa un password para continuar'
             wrongPassword.classList.add('requerido')
         } else {

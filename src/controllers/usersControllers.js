@@ -37,8 +37,10 @@ const controller = {
           } else {
             res.render('./users/login', { errors: { log:{ msg: 'Credenciales no válidas ' } } });
           }
+        } else {
+          res.render('./users/login', { errors: { log:{ msg: 'Credenciales no válidas ' } } });
         }
-        })
+        } )
         /*if (userFound.userPassword == req.body.userPassword) {
           req.session.userLogged = userFound;
           if (req.body.rememberMe) {
@@ -131,7 +133,14 @@ const controller = {
 
       update: (req, res) => {
         let id = req.params.id;
-        db.User.findByPk(id)
+        const validationEdit= validationResult(req);
+        if (validationEdit.errors.length > 0) {
+          db.User.findByPk(id, {raw: true})
+          .then(function(userToEdit){
+            res.render("./users/userEdit", {userToEdit, errors: validationEdit.mapped()});
+          })
+        } else {
+          db.User.findByPk(id)
         .then (function(user){
           if (req.body.userReceiveOffersAndNews == "on"){
             req.body.userReceiveOffersAndNews = true
@@ -140,7 +149,7 @@ const controller = {
           }
           if(req.body.userPassword == ''){
           req.body.userPassword = user.userPassword
-        } else {
+        } else if (req.body.userPassword == req.body.PasswordConfirmation) {
           req.body.userPassword = bcrypt.hashSync(req.body.userPassword, 10);
         }
         if (req.file) {
@@ -163,6 +172,7 @@ const controller = {
           res.redirect('/users/' + user.userId)
         })
         }) 
+        }
       },
       show: (req, res) => {
         let idUser = req.params.id;

@@ -14,43 +14,55 @@ window.addEventListener('load', function() {
 
     name.addEventListener('mouseout', function() {
 
-
         if (name.value == "") {
             wrongName.innerHTML = 'Por favor ingresa un nombre del producto a agregar para continuar'
             wrongName.classList.add('requerido')
             errors.error1 = 'error';
-        } else {
-            if (name.value.length < 5) {
-                wrongName.innerHTML = 'El nombre debe contener mínimo 5 caracteres'
-                wrongName.classList.add('requerido')
-                errors.error2 = 'error';
-            } else {
+        } else if (name.value.length >= 5 ){
                 wrongName.innerHTML = ''
                 wrongName.classList.remove('requerido')
                 delete errors.error1;
-                delete errors.error2;
             }
-        }
-    })
+        })
+
+    name.addEventListener('keypress', function(e) {
+        currentValue = e.target.value + e.key
+        if (currentValue.length < 5) {
+            wrongName.innerHTML = 'El nombre debe contener mínimo 5 caracteres'
+            wrongName.classList.add('requerido')
+            errors.error2 = 'error';
+    } else {
+            wrongName.innerHTML = ''
+            wrongName.classList.remove('requerido')
+            delete errors.error2;
+    }
+})
     description.addEventListener('mouseout', function() {
 
         if (description.value == "") {
             wrongDescription.innerHTML = 'Por favor ingresa una descripción del producto para continuar'
             wrongDescription.classList.add('requerido')
             errors.error3 = 'error';
-        } else {
-            if (description.value.length < 20) {
-                wrongDescription.innerHTML = 'La descripción debe contener mínimo 20 caracteres'
-                wrongDescription.classList.add('requerido')
-                errors.error4 = 'error';
-            } else {
+        } else if (description.value.length >= 20) {
                 wrongDescription.innerHTML = ''
                 wrongDescription.classList.remove('requerido')
                 delete errors.error3;
-                delete errors.error4;
-            }  
         }
     })
+
+    description.addEventListener('keypress', function(e) {
+        currentValue = e.target.value + e.key
+        if (currentValue.length < 20) {
+            wrongDescription.innerHTML = 'La descripción debe contener mínimo 20 caracteres'
+            wrongDescription.classList.add('requerido')
+            errors.error4 = 'error';
+        } else {
+            wrongDescription.innerHTML = ''
+                wrongDescription.classList.remove('requerido')
+                delete errors.error4;
+        }
+    })
+
     image.addEventListener('mouseout', function() {
 
         if (image.value == "") {
@@ -75,25 +87,32 @@ window.addEventListener('load', function() {
         }
     })
     price.addEventListener('mouseout', function() {
-
+        result = parseFloat(price.value);
         if (price.value == "") {
             wrongPrice.innerHTML = 'Por favor ingresa un precio del producto (precio unitario)'
             wrongPrice.classList.add('requerido')
             errors.error7 = 'error';
-        } else {
-            result = parseFloat(price.value);
-            if (isNaN(result)) {
-                wrongPrice.innerHTML = 'El precio debe ser un número'
-                wrongPrice.classList.add('requerido')
-                errors.error8 = 'error';     
-            } else {
+        }  else if (isNaN(result) == false) {
                 wrongPrice.innerHTML = ''
                 wrongPrice.classList.remove('requerido')
                 delete errors.error7;
-                delete errors.error8;
             }
         }
-    })
+    )
+    price.addEventListener('keypress', function(e) {
+        currentValue = e.target.value + e.key;
+        result = parseFloat(currentValue);
+        console.log(currentValue);
+        if (isNaN(result) == true) {
+            wrongPrice.innerHTML = 'El precio debe ser un número'
+            wrongPrice.classList.add('requerido')
+            errors.error8 = 'error';
+    } else {
+        wrongPrice.innerHTML = ''
+        wrongPrice.classList.remove('requerido')
+        delete errors.error8;
+    }
+})
     form.addEventListener('submit', function(e) {
         if (Object.keys(errors).length > 0) {
             e.preventDefault()

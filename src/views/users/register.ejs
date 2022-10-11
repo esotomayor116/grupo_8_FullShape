@@ -73,7 +73,7 @@
                         </div>
                         <div>
                             <label for="PasswordConfirmation">Repetir Contraseña</label><label class="requerido">  *</label><br>
-                            <input type="password" name="PasswordConfirmation"><br>
+                            <input type="password" name="PasswordConfirmation" id="userPasswordConfirmation"><br>
                             <% if(locals.errors && errors.PasswordConfirmation) { %>
                                 <p class="requerido"><%= errors.PasswordConfirmation.msg %></p>
                             <% } %>
