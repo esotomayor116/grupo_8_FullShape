@@ -120,7 +120,8 @@
                     <p><%= product.productName %></p>
                     <p  class="price">$<%= product.productUnitPrice %></p>
                     <p class="discount"></p>
-                    <h4 class="description"><%=product.productDescription %></h4>
+                    <!--Ajustado a mostrar solo los primeros 50 caracteres-->
+                    <h4 class="description"><%=product.productDescription.slice(0,50) %></h4>
                     </div>
                 </article>
                 <% } %>

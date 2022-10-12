@@ -11,8 +11,7 @@ header {
     width: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: #13D493;
-    /*background-color: #83FACF;*/
+    background-color: #83FACF;
 }
 
 nav {
@@ -24,8 +23,7 @@ ul {
     width: 100%;
     justify-content: space-around;
     padding: 10px 0px;
-    border-bottom: 2px solid #00B276;
-    /*border-bottom: 1px solid #03264C;*/
+    border-bottom: 1px solid #03264C;
     list-style-type: none;
 }
 
@@ -47,8 +45,7 @@ li {
     width: 43%;
     display: flex;
     background-color: white;
-    border: 1px solid #00B276;
-    /*border: 1px solid #03264C;*/
+    border: 1px solid #03264C;
     height: 22px;
     align-self: center;
 }
@@ -90,10 +87,8 @@ header a#cart {
 
 .seleccionar-categoria {
     text-align: center;
-    border-top: 2px solid #00B276;
-    padding: 2px;
-    /*border-top: 1px solid #03264C;
-    border-bottom: 1px solid #03264C;*/
+    border-top: 1px solid #03264C;
+    border-bottom: 1px solid #03264C;
     width: 100%;
     font-size: 18px;
 }
@@ -165,7 +160,7 @@ select {
 main.home{
     width: 100%;
     margin: 0 auto;
-    /*background-color: #D9D9D9;*/
+    background-color: #D9D9D9;
 }
 
 
@@ -201,15 +196,14 @@ main.home{
 .destacados{
     display: flex;
     justify-content: center;
-    border: 30px solid #FFD300;
-    background-color: #FFD300;
+    margin: 30px;
 }
 .contenedor-padre{
     display: flex;
     background-color: #FFF;
     justify-content: space-around;
-    width: 100%;
-    /*background: linear-gradient(#83FACF, #00204D)*/;
+    margin: 0px 10px;
+    background: linear-gradient(#83FACF, #0a2929);
 }
 
 .products {
@@ -218,8 +212,7 @@ main.home{
     /* flex-direction: column;*/
     justify-content: center;
     /* border: 1px solid black; */
-    background-color: #13D493;
-    /*background: linear-gradient(#83FACF, #0a2929);*/
+    background: linear-gradient(#83FACF, #0a2929);
     /* width: 75%;  */
     padding: 30px;
     /* margin-bottom: 30px; */
@@ -231,20 +224,14 @@ main.home{
 .filtros {
     display: flex;
     flex-direction: column;
-    background-color: #13D493;
-    /*background-color: #83FACF;*/
-    border-right: 2px solid #00B276;
-    width: 35%;
-    /*width: 30%;*/
+    border: 1px solid black;
+    background-color: #83FACF;
+    width: 30%;
     align-items: center;
     padding-top: 30px;
     justify-content: flex-start;
     /* margin-bottom: 30px; */
-    /*background: linear-gradient(#83FACF, #0a2929)*/;
-}
-/*Centrado de texto añadido*/
-.filtros div p {
-    text-align: center;
+    background: linear-gradient(#83FACF, #0a2929);
 }
 .filtro-item{
     align-items: flex-start;
@@ -255,22 +242,16 @@ main.home{
 .product{
     margin: 10px;
     border: 1px solid black;
-    /*aquí agregué radio de borde*/
-    border-radius: 10px;
+    background-color: black;
     display: flex;
     flex-direction: column;
     width: 224px;
-    /*Se cambió el color del article, a product*/
-    background-color: #0a2929;
 
 }
 
 .imagen-home{
     width: 224px;
     height: 224px;
-    /*Aquí agregué radio de borde a la imagen*/
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
 
@@ -297,18 +278,16 @@ main.home section h3{
     margin: 20px 0px;
 }
 
-.main-article {
+.main-article{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
-    /*background-color: black;*/
-     /*Ajustes de texto y radio de borde inferior*/
-    text-align: center;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    background-color: black;
+    
 }
+
 
 
 @media (max-width: 768px){
@@ -369,14 +348,11 @@ footer p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /*border-top: 1px solid black;*/
-    background-color: #13D493; 
-    /*background-color: #83FACF;*/
+    border-top: 1px solid black; 
+    background-color: #83FACF;
     width: 100%;
-    border-top: 2px solid #00B276;
 }
 .footer2 {
-    /*Añadí un borde mejor*/
     justify-content: space-around;
 }
 .footer1 a {
@@ -386,10 +362,8 @@ footer p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    border-top: 2px solid #00B276;
-    /*border-top: 1px solid black;*/
-    background-color: #13D493; 
-    /*background-color: #83FACF;*/
+    border-top: 1px solid black; 
+    background-color: #83FACF;
     width: 100%;
 }
 .redes p {
@@ -420,9 +394,7 @@ footer p {
 
     div.redes {
         width: 100%;
-        border-width: 0px 1px;
-        border:  solid #00B276;
-        /*border: 0px 1px solid black;*/
+        border: 0px 1px solid black;
     }
 
     div.redes p{
