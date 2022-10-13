@@ -218,9 +218,10 @@ main.home{
     /* flex-direction: column;*/
     justify-content: center;
     /* border: 1px solid black; */
-    background-color: #13D493;
+    background-color: #DBDDEA;
+    /*background-color: #13D493*/
     /*background: linear-gradient(#83FACF, #0a2929);*/
-    /* width: 75%;  */
+    width: 95%;  
     padding: 30px;
     /* margin-bottom: 30px; */
     /*align-items: center;*/
@@ -233,8 +234,8 @@ main.home{
     flex-direction: column;
     background-color: #13D493;
     /*background-color: #83FACF;*/
-    border-right: 2px solid #00B276;
-    width: 35%;
+    /*border-right: 2px solid #00B276*/
+    width: 20%;
     /*width: 30%;*/
     align-items: center;
     padding-top: 30px;
