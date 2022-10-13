@@ -14,7 +14,7 @@ main.home{
     background-color: #FFF;
     justify-content: space-around;
     margin: 0px 10px;
-    background-color: #0E9266;
+    background: linear-gradient(#83FACF, #0a2929);
 }
 
 .usuarios{
@@ -30,16 +30,11 @@ main.home{
 .imagen-index{
     width: 336px;
     height: 336px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
 article.user{
 text-align: center;
 margin:30px;
-border: 1px solid black;
-background-color: #0a2929;
-border-radius: 10px;
 }
 
 
@@ -49,10 +44,8 @@ border-radius: 10px;
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: #0a2929;
+    background-color: black;
     text-align: center; 
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 
 .main-article p {
@@ -64,7 +57,7 @@ border-radius: 10px;
     text-decoration: none;
     width: 336px;
     height: 24px;
-    background-color: #0a2929;
+    background-color: black;
     border: 1px solid white;
     margin-bottom: 10px;
     font-size: 18px;
@@ -79,7 +72,7 @@ border-radius: 10px;
     width: 336px;
     height: 24px;
     color: white;
-    background-color: #0a2929;
+    background-color: black;
     border: 1px solid white;
     font-size: 18px;
 }
@@ -103,14 +96,11 @@ footer p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /*border-top: 1px solid black;*/
-    background-color: #13D493; 
-    /*background-color: #83FACF;*/
+    border-top: 1px solid black; 
+    background-color: #83FACF;
     width: 100%;
-    border-top: 2px solid #00B276;
 }
 .footer2 {
-    /*Añadí un borde mejor*/
     justify-content: space-around;
 }
 .footer1 a {
@@ -120,10 +110,8 @@ footer p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    border-top: 2px solid #00B276;
-    /*border-top: 1px solid black;*/
-    background-color: #13D493; 
-    /*background-color: #83FACF;*/
+    border-top: 1px solid black; 
+    background-color: #83FACF;
     width: 100%;
 }
 .redes p {

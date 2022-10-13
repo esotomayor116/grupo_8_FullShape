@@ -14,7 +14,7 @@ main.home{
     background-color: #FFF;
     justify-content: space-around;
     margin: 0px 10px;
-    background: linear-gradient(#83FACF, #0a2929);
+    background-color: #0E9266;
 }
 
 .usuarios{
@@ -69,11 +69,14 @@ footer p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border-top: 1px solid black; 
-    background-color: #83FACF;
+    /*border-top: 1px solid black;*/
+    background-color: #13D493; 
+    /*background-color: #83FACF;*/
     width: 100%;
+    border-top: 2px solid #00B276;
 }
 .footer2 {
+    /*Añadí un borde mejor*/
     justify-content: space-around;
 }
 .footer1 a {
@@ -83,8 +86,10 @@ footer p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    border-top: 1px solid black; 
-    background-color: #83FACF;
+    border-top: 2px solid #00B276;
+    /*border-top: 1px solid black;*/
+    background-color: #13D493; 
+    /*background-color: #83FACF;*/
     width: 100%;
 }
 .redes p {

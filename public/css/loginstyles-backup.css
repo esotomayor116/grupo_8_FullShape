@@ -26,7 +26,7 @@ body.login{
 
 
 div.cuerpo-login{
-    background-color: #13D493;
+    background-color: aquamarine;
     opacity: 80%;
     margin: 5%;
     border-radius: 5%;
@@ -155,32 +155,30 @@ footer p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /*border-top: 1px solid black;*/
-    background-color: #13D493; 
-    /*background-color: #83FACF;*/
+    border-top: 1px solid black; 
+    background-color: #83FACF;
     width: 100%;
-    border-top: 2px solid #00B276;
 }
 .footer2 {
-    /*Añadí un borde mejor*/
     justify-content: space-around;
 }
 .footer1 a {
     width: 50%;
 }
+
 .redes {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    border-top: 2px solid #00B276;
-    /*border-top: 1px solid black;*/
-    background-color: #13D493; 
-    /*background-color: #83FACF;*/
+    border-top: 1px solid black; 
+    background-color: #83FACF;
     width: 100%;
 }
+
 .redes p {
     margin: 0px auto;
 }
+
 #c6, #c7 {
     border-radius: 10px;
 }
@@ -188,7 +186,7 @@ footer p {
 #c6, #c7, #c8 {
     width: 8%;
     margin: 10px;
-    margin-left:auto;
+    margin-left: auto;
 }
 
 #c6 img, #c7 img, #c8 img {
@@ -222,14 +220,15 @@ footer p {
         justify-content: space-between;
     }
     .footer1 {
-        width: 50%;
+        width: 55%;
     }
     .footer1 a {
-        width: 44%;
+        width: 50%;
         padding-left: 10px;
+        padding-right: 0px;
     }
     .redes {
-        width: 50%;
+        width: 45%;
     }
     .redes p {
         margin: 0px;
