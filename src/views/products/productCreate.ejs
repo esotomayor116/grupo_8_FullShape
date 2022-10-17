@@ -8,7 +8,7 @@
             <%- include("../partials/header") %>
             <main class="product_creation">
                     <form class="product_creation" action="/products" method="POST" enctype="multipart/form-data">  
-                            <h1 class="creaTuProducto">Crea un nuevo producto!</h1> 
+                            <h1 class="creaTuProducto">¡Crea un nuevo producto!</h1> 
                             <h6 class="requerido">los campos con asterisco son necesarios para la creción del producto</h6>
                         <!-- Aquí van los campos -->
                             <div class="NombreNuevoProducto">
@@ -23,9 +23,9 @@
                             </div>
                             <div class="DescripcionNuevoProducto">
                                 <label for="ProductDescripcion">Descripción del producto</label><label class="requerido">  *</label><br>
-                                <input type="text" name="productDescription" id="description"
+                                <textarea name="productDescription" id="description"
                                 value="<%= locals.oldData ? oldData.productDescription : null %>"
-                                ><br>
+                                ></textarea><br>
                                 <p id="wrongDescription"></p>
                                 <% if(locals.errors && errors.productDescription) { %>
                                     <p class="requerido"><%= errors.productDescription.msg %></p>

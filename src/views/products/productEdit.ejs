@@ -21,7 +21,7 @@
                             </div>
                             <div class="DescripcionNuevoProducto">
                                 <label for="ProductDescription">Descripción del producto</label><label class="requerido">  *</label><br>
-                                <input type="text" name="productDescription" id="description" value="<%= productToEdit.productDescription %>"><br>
+                                <textarea name="productDescription" id="description"><%= productToEdit.productDescription %></textarea><br>
                                 <p id="wrongDescription"></p>
                                 <% if(locals.errors && errors.productDescription) { %>
                                     <p class="requerido"><%= errors.productDescription.msg %></p>
@@ -37,14 +37,14 @@
                             </div>
                             <div class="ClasificacionNuevoProducto">
                                 <div class="NuevoUsadoRadios">
-                                    <div class="NuevoUsado">
                                         <% aStatus.forEach(status => { %>
-                                        <input class="radio" type="radio" name="productStatus" value="<%= status.statusName %>" <% if(productToEdit.productStatusId == status.statusId ) { %>
-                                            checked
-                                            <% } %>>
-                                        <label>Producto <%= status.statusName %></label>
+                                        <div class="NuevoUsado">
+                                            <input class="radio" type="radio" name="productStatus" value="<%= status.statusName %>" <% if(productToEdit.productStatusId == status.statusId ) { %>
+                                                checked
+                                                <% } %>>
+                                            <label>Producto <%= status.statusName %></label>
+                                        </div>
                                         <% }) %>
-                                    </div>
                                 </div>
                                 <div class="DetallesProducto">
                                     <div class="nuevoProductoCategoria">
