@@ -201,7 +201,7 @@ div.botones button{
 }
 
 form.product_creation{
-
+    margin: 25px auto;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -214,17 +214,18 @@ form.product_creation{
     background-color: #13D493;
     opacity: 85%;
     border-radius: 5%;
-    height: 800px
+    height: 800px;
+    width: 433px;
 }
 
 form.product_creation div {margin-top: 10px;}
 
 
 form.product_creation div input, form.product_creation div textarea{
+    width: 90%;
     vertical-align: middle;
     padding-top: 5px;
     border-radius: 5px;
-    width: 60%;
     height: 30px;
 }
 
@@ -238,8 +239,8 @@ div.imagenProducto{
 padding: 5px;
 align-self: center ;
 }
-div.imagenProducto input{
-
+div.imagenProducto input#image{
+    width: 60%;
     padding: 5px;
     text-align: center ;
     }
@@ -273,16 +274,7 @@ text-align: left;
 
 }
 
-div.CodigoUniversal{
-
-    display: flex;
-    justify-content: space-around;
-}
-
-
 form.product_creation div.ClasificacionNuevoProducto{
-    display: flex;
-    justify-content: space-around;
     align-items: center;
     margin-top: 0px;
 }
@@ -290,7 +282,6 @@ form.product_creation div.ClasificacionNuevoProducto{
 div.NuevoUsadoRadios{
 
     display: flex;
-    width: 50%;
     justify-content: space-evenly;
     align-items: stretch;
 }
@@ -298,20 +289,17 @@ div.NuevoUsadoRadios{
 div.DetallesProducto{
 
     display: flex;
-    width: 50%;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
 }
 
 div.PrecioNuevoProducto{
-
-    width: max-content;
     align-self: center;
 }
 
-form.product_creation div.PrecioNuevoProducto input{
-
+form.product_creation div.PrecioNuevoProducto input#price{
+    width: 100px;
     height:40px;
 }
 
@@ -334,11 +322,6 @@ display: contents;
 
         display: none;
     }
-    div.CodigoUniversal {
-        display: flex;
-        justify-content: center;
-    }
-
 
 }
 
@@ -424,7 +407,11 @@ footer p {
         width: 50%;
         font-size: 12px;
     }
-
+    
+    form.product_creation {
+        width: 360px;
+        height: 90%;
+    }
     
 }
 

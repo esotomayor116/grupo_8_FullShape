@@ -2,7 +2,7 @@ window.addEventListener('load', function() {
 
     let name = document.querySelector('input#name');
     let wrongName = document.querySelector('p#wrongName');
-    let description = document.querySelector('input#description');
+    let description = document.querySelector('textarea#description');
     let wrongDescription = document.querySelector('p#wrongDescription');
     let image = document.querySelector('input#image');
     let wrongImage = document.querySelector('p#wrongImage');

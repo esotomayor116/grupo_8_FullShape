@@ -9,7 +9,7 @@ resto al incorporarlo en un unico archivo de estilo. */
 }
 
 main{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     padding: 5% 5%;
 }
@@ -94,7 +94,7 @@ form.registro-popup{
 }
 
 form.registro-popup1 {
-  height: 1000px;
+  height: 90%;
   width: 50%;
 }
 
@@ -239,8 +239,8 @@ form.registro-popup{
 }
 
 form.registro-popup1 {
-    width: 100%;
-    height: 800px;   
+    width: 320px;
+    height: 90%;   
 }
 
 .formRegistro-izquierdo div {
