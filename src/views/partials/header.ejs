@@ -26,7 +26,11 @@
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
     </div>
-    <a id="cart" href="/shoppingcart"><i class="fa-solid fa-cart-shopping"></i></a>
+    <a id="cart" <% if (user) { %>
+        href="/shoppingcart/<%= user.userId %>"
+    <% } else { %>
+        href="/shoppingcart/guest" 
+        <% } %>><i class="fa-solid fa-cart-shopping"></i></a>
     <div class="seleccionar-categoria">
         <p>Gimnasio</p>
         <p>Suplementos</p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
         <%- include("../partials/head") %>
-        <link rel="stylesheet" href="css/stylesCC.css">
+        <link rel="stylesheet" href="/css/stylesCC.css">
     </head>
     <body>
         <%- include("../partials/header") %>
@@ -9,103 +9,104 @@
                 <section class="last-visit">
                     <a id="volver" href="/"><button class="volver"><i class="fas fa-arrow-left"></i><h3>Volver a Comprar</h3></button></a>
                 </section>
-                
-                <section>
-                    <div class="products">
-                        <article>
-                            <section class="uno">
-                            <img src="images/PelotadeBasket.jpg" alt="Molten" class="product_img">
-                            </section>
-                        </article>
-                        <section class="dos">
-                            <div class="informacion">
-                            <h4 class="description">Pelota Molten Oficial</h4>
-                            <p class="price">$26.770</p>
-                            <p class="discount">5% off</p>
-                            </div>
-                        </section>
-                        
-                        <section class="tres">
-                            <form class="c">
-                            <label></label>
-                            <select class="colorproducto" style="font-size:16px;" name="Color">
-                            <option value="Opcion">Color</option>
-                            </select></form>
-                            
-                            <form class="t">
-                            <label></label>
-                            <select class="tamañoproducto" style="font-size:16px;" name="Tamaño">
-                            <option value="Opcion">Tamaño</option>
-                            </select></form>
-
-                            <form class="o"> 
-                            <label></label>
-                            <select class="cantidadproducto" style="font-size:16px;" name="Cantidad">
-                            <option value="Opcion">Cantidad</option>
-                            </select></form>
-                        </section>
-
-                        <section class="cuatro">  
-                            <h2>Aceptamos</h2>
-                        <div class="tarjetaslinea"><h4 class="tc">Tarjetas de Credito</h4></div>
-                        <img src="images/Credito.jpg" alt="Tarjetas" class="credito">
-                        <div class="imagentarjetalinea">
-                        </section>
-                        <section class="cinco">
-                        <div class="tarjetaslinea"></div><h4 class="td"> Tarjeta de Debito</h4>
-                        <img src="images/Debito.jpg" alt="Tarjetas" class="debito"></div>
-                        </section>
-                 </div>
-                </section>
-                <section>
-                    <div class="products">
-                        <article>
-                            <section class="uno">
-                            <img src="images/KickBoxing.jpg" alt="Kick" class="product_img">
-                            </section>
-                        </article>
-                        <section class="dos">
-                            <div class="informacion">
-                            <h4 class="description">Combo KickBoxing</h4>
-                            <p class="price">$7.770</p>
-                            <p class="discount">10% off</p>
-                            </div>
-                        </section>
-                        
-                        <section class="tres">
-                            <section class="c">
-                            <label></label>
-                            <select class="colorproducto" style="font-size:16px;" name="Color">
-                            <option value="Opcion">Color</option>
-                            </select></section>
-                            
-                            <section class="t">
-                            <label></label>
-                            <select class="tamañoproducto" style="font-size:16px;" name="Tamaño">
-                            <option value="Opcion">Tamaño</option>
-                            </select></section>
-
-                            <section class="o"> 
-                            <label></label>
-                            <select class="cantidadproducto" style="font-size:16px;" name="Cantidad">
-                            <option value="Opcion">Cantidad</option>
-                            </select></section>
-                        </section>
-
-                        <section class="cuatro">  
-                            <h2>Aceptamos</h2>
-                        <div class="tarjetaslinea"><h4 class="tc">Tarjetas de Credito</h4></div>
-                        <img src="images/Credito.jpg" alt="Tarjetas" class="credito">
-                        <div class="imagentarjetalinea">
-                        </section>
-                        <section class="cinco">
-                        <div class="tarjetaslinea"></div><h4 class="td"> Tarjeta de Debito</h4>
-                        <img src="images/Debito.jpg" alt="Tarjetas" class="debito"></div>
-                        </section>
-                    </div>
-                </section>   
+                        <% let idRepeat = [] %>
+                        <% productIds.forEach(productId => { %>
+                            <% for (let i=0; i < products.length; i++) { %>
+                                <% let Ids = productIds.filter(id => {return id.productId == products[i].productId}) %>
+                            <% if (productId.productId == products[i].productId  && !idRepeat.includes(products[i].productId)) { %>
+                                <% idRepeat.push(products[i].productId) %>
+                                <section id="<%= `product${i}` %>">
+                                <div class="products">
+                                    <article>
+                                        <section class="uno">
+                                        <img src="/images/products/<%= products[i].productMainImage %>" alt="Molten" class="product_img">
+                                        </section>
+                                    </article>
+                                    <section class="dos">
+                                        <div class="informacion">
+                                        <h4 class="description"><%= products[i].productName %></h4>
+                                        <p class="price">$ <%= products[i].productUnitPrice %></p>
+                                        <p class="discount">5% off</p>
+                                        </div>
+                                    </section>
+                                    
+                                    <section class="tres">
+                                        <form class="c">
+                                        <select class="colorproducto" style="font-size:16px;" name="Color">
+                                            <% colors.forEach(color => { %>
+                                                <% if(products[i].productColorId != null) { %>
+                                                <option value="<%= color.colorName %>" <% if (products[i].productColorId == color.colorId) { %>
+                                                      selected
+                                                    <% } %>><%= color.colorName %>
+                                                </option>
+                                                <% } %>
+                                            <% }) %>
+                                            <% if(products[i].productColorId == null) { %>
+                                            <option value='' selected>No aplica</option>
+                                            <% } %>
+                                        </select></form>
+                                        
+                                        <form class="t">
+                                        <select class="tamañoproducto" style="font-size:16px;" name="Tamaño">
+                                            <% sizes.forEach(size => { %>
+                                                <% if(products[i].productSizeId != null) { %>
+                                                <option value="<%= size.sizeName %>" <% if (products[i].productSizeId == size.sizeId) { %>
+                                                      selected
+                                                    <% } %>><%= size.sizeName %>
+                                                </option>
+                                                <% } %>
+                                            <% }) %>
+                                            <% if(products[i].productSizeId == null) { %>
+                                            <option value='' selected>No aplica</option>
+                                            <% } %>
+                                        </select></form>
+            
+                                        <form class="o <%= i %>" action="/shoppingcart/<%= products[i].productId %>/update?_method=PUT" method="POST"> 
+                                        <select class="cantidadproducto <%= i %>" style="font-size:16px;" name="Cantidad">
+                                            <option id="amount" value="<%= Ids.length %>" selected><%= Ids.length %></option>
+                                            <% for (let i=1; i<=3; i++) { %>
+                                                <% if (i != Ids.length ) { %>
+                                                    <option id="amount" value="<%= i %>"><%= i %></option>
+                                                <% } %>    
+                                            <% } %>
+                                        </select></form>
+                                    </section>
+            
+                                    <section class="cuatro">  
+                                        <h2>Aceptamos</h2>
+                                    <div class="tarjetaslinea"><h4 class="tc">Tarjetas de Credito</h4></div>
+                                    <img src="/images/Credito.jpg" alt="Tarjetas" class="credito">
+                                    </section>
+                                    <section class="cinco">
+                                    <div class="tarjetaslinea"><h4 class="td"> Tarjeta de Debito</h4></div>
+                                    <img src="/images/Debito.jpg" alt="Tarjetas" class="debito">
+                                    </section>
+                                    <form id="delete" action="/shoppingcart/<%= products[i].productId %>/delete?_method=DELETE" method="POST">
+                                        <button class="volverx" type="submit"><h3>ELIMINAR</h3></button>
+                                    </form>
+                                </div>
+                            </section>     
+                            <% } else if (productId.productId == products[i].productId) { %>
+                                <% idRepeat.push(products[i].productId) %>   
+                            <% } %>
+                            <% } %>
+                        <% }) %>
+                <div id="cartTotal"><h3>Total: $<%=shoppingCart.CartTotalPrice %></h3></div>        
                 <a id="volver" href="/"><button class="volver"><h3>PAGAR</h3></button></a>
         </main>
-        <%- include("../partials/footer") %> 
+        <%- include("../partials/footer") %>
+        <script>
+            window.addEventListener('load', function() {
+                let amount = document.querySelectorAll('select.cantidadproducto');
+                let form = document.querySelectorAll('form.o');
+                console.log(amount);
+                console.log(form);
+                for (let i=0; i<form.length; i++) {
+                    amount[i].addEventListener("change", function(e) {
+                    form[i].submit()
+                })
+                }
+            })
+        </script>
     </body>
 </html>

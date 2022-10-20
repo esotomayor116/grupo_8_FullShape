@@ -237,6 +237,19 @@ p.pp {
     flex-basis: 100%;
 }
 
+#amountC {
+    background-color:white;
+    border-radius:10px;
+    border: 1px solid black;
+    height: 32px;
+    margin-bottom: 5px;
+}
+
+#amount {
+    height: 30px;
+    margin-top: 1px;
+}
+
 #descripcion {
     margin: 10px 0px;
     text-align: justify;
@@ -305,12 +318,12 @@ li.specs {
     background-color: #83FACF;
 }
 
-main a#Add {
-    width: 120px;
+main form#Add {
+    width: 180px;
     margin: 0% 6% 5% 6%; 
 }
 
-main a#Add button {
+main form#Add button {
     width: 100%;
     font-weight: bold;
     font-size: 16px;
@@ -318,7 +331,7 @@ main a#Add button {
     color: #00204D ;
 }
 
-main a#Add button:hover {
+main form#Add button:hover {
     background-color:#ffd300;
 }
 

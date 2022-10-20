@@ -4,17 +4,17 @@ module.exports = (sequelize, DataTypes) => {
        shoppingCartId: {type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true},
-       cartNumberOfItems: {type: DataTypes.INTEGER},
-       cartTotalPrice: {type: DataTypes.STRING(10,2)}    
+       CartNumberOfItems: {type: DataTypes.INTEGER},
+       CartTotalPrice: {type: DataTypes.DECIMAL(10,2)}    
    }, {
-        tableName: 'shopping_carts',
+        tableName: 'shoppingcart',
         timestamps: false
    });
    
    ShoppingCart.associate = function(models) {
         ShoppingCart.belongsToMany(models.Product, {
             as: 'products',
-            through: 'productCart',
+            through: 'ProductCart',
             foreignKey: 'shoppingCartId',
             otherKey: 'productId',
             timestamps: false

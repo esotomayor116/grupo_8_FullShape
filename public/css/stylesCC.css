@@ -170,7 +170,7 @@ main {
 main section div.products {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: flex-start;
     margin-bottom: 3%;
     justify-content: space-between;
@@ -197,7 +197,25 @@ h4{
     margin-bottom: 2%;
     background-color: #13D493;
     color: #00204D;
+    justify-content: center;
 }
+
+
+form#delete {
+    margin-bottom: 1%;
+}
+
+.volverx {
+    display: flex;
+    text-align: center;
+    width: 20%;
+    padding: 0%;
+    margin: auto;
+    background-color: #13D493;
+    color: #00204D;
+    justify-content: center;
+}
+
 .tarjetaslinea{
     display: flex;
 }
@@ -240,10 +258,6 @@ h4{
     flex-direction: column;
     align-items: flex-start;
     margin-left: 20%;
-}
-
-.volver{
-    display: flex;
 }
 
 .tres{
@@ -320,22 +334,19 @@ h3{
 .fa-arrow-left{
     width: 20%;
 }
-.volver{
-    display: flex;
-    text-align: center;
-    width: 25%;
-    padding: 0%;
-    margin-bottom: 2%;
-    align-items: center;
-}
+
 .volver:hover {
     background-color: #ffd300;
 }
 #volver {
     text-decoration: none;
 }
-button.volver{
-    justify-content: center;
+
+.volverx:hover {
+    background-color: #ffd300;
+}
+#volverx {
+    text-decoration: none;
 }
 
 article div.main-article{
@@ -367,8 +378,8 @@ main section article{
 }
 
 main section div article img{
-    width: 100%;
-    
+    width: 285px;
+    height: 285px;
 }
 
 div.main-article{
@@ -466,6 +477,14 @@ footer p {
     width: 100%;
 }
 
+#cartTotal {
+  background-color: white;
+  border-radius: 10px;
+  width: 203.35px;
+  text-align: center;
+  padding: 1px 0px;
+  border: 1px solid black;
+}
 
 /* MEDIA */
 @media (max-width: 768px){
@@ -496,6 +515,15 @@ footer p {
         margin-top: 5%;
         align-items: center;
     }
+
+    .volverx {
+        display: flex;
+        text-align: center;
+        width: 48%;
+        padding: 0%;
+        align-items: center;
+    }
+
     main section div article img {
         width: 90%;
         margin-top: 3%;
@@ -573,8 +601,20 @@ footer p {
     margin-top: 3%;
     align-items: center;
 }
+
+.volverx {
+    display: flex;
+    text-align: center;
+    width: 20%;
+    padding: 0%;
+    background-color: #13D493;
+    color: #00204D;
+    align-items: center;
+}
+
 main section div article img {
-    width: 100%;
+    width: 285px;
+    height: 285px;
     margin-top: 3%;
     margin-bottom: 3%;
     margin-left: 7%;

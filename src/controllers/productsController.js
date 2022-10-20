@@ -173,9 +173,111 @@ const controller = {
 
     },
     shoppingCart: (req, res) => {
-        res.render("./products/carritoCompras", { user: req.session.userLogged })
-    }
-
+        db.ShoppingCart.findOne({
+          where: {
+            userId: req.params.id
+          }
+        })
+        .then(shoppingCart => {
+          const productIds = db.ProductCart.findAll({
+            where: {
+              shoppingCartId: shoppingCart.shoppingCartId
+            }
+          })
+          const products = db.Product.findAll();
+          const allColors = db.ProductColor.findAll();
+          const allSizes = db.ProductSize.findAll();
+          Promise.all([productIds, products, allColors, allSizes])
+            .then(([productIds, products, colors, sizes]) => {
+              res.render("./products/carritoCompras", { user: req.session.userLogged, productIds, products, colors, sizes, shoppingCart })
+            })    
+        })
+    },
+    addToCart: (req, res) => {
+       id = req.params.id;
+       user = req.session.userLogged;
+       amount = req.body.amount;
+       db.Product.findByPk(id)
+         .then(async product => {
+            const cart = await db.ShoppingCart.findOne({where: {userId: user.userId}})
+            totalItems = parseInt(cart.CartNumberOfItems) + parseInt(amount);
+            totalPrice = parseFloat(cart.CartTotalPrice) + (product.productUnitPrice * amount);
+            await db.ShoppingCart.update({
+             CartNumberOfItems: totalItems,
+             CartTotalPrice: totalPrice
+            }, {
+             where: {
+               userId: user.userId
+             }
+            })  
+            for (let i=1; i<=amount; i++) {
+              await db.ProductCart.create({
+                productId: product.productId,
+                shoppingCartId : 2
+              })
+            }
+            res.redirect(`/shoppingcart/${user.userId}`)     
+         })
+    },
+    updateCart: async (req, res) => {
+       id = req.params.id;
+       user = req.session.userLogged;
+       Cantidad = req.body.Cantidad;
+       const CantidadPrevia = await db.ProductCart.findAll({where: {
+        productId: id
+       }})
+       db.Product.findByPk(id)
+         .then(async product => {
+            const cart = await db.ShoppingCart.findOne({where: {userId: user.userId}})
+            totalItems = parseInt(cart.CartNumberOfItems) - parseInt(CantidadPrevia.length) + parseInt(Cantidad);
+            totalPrice = parseFloat(cart.CartTotalPrice) - (product.productUnitPrice * CantidadPrevia.length) + (product.productUnitPrice * Cantidad);
+            await db.ShoppingCart.update({
+             CartNumberOfItems: totalItems,
+             CartTotalPrice: totalPrice
+            }, {
+             where: {
+               userId: user.userId
+             }
+            })
+            await db.ProductCart.destroy({
+              where: {
+                  productId: id
+              },
+            })
+            for (let i=1; i<=Cantidad; i++) {
+              await db.ProductCart.create({
+                productId: product.productId,
+                shoppingCartId : 2
+              })
+            }
+            res.redirect(`/shoppingcart/${user.userId}`)        
+         })
+    },
+    DelFromCart:  (req, res) => {
+        id = req.params.id;
+        user = req.session.userLogged;
+        db.Product.findByPk(id)
+          .then(async product => {
+            const cart = await db.ShoppingCart.findOne({where: {userId: user.userId}})
+            totalItems = parseInt(cart.CartNumberOfItems) - 1;
+            totalPrice = parseFloat(cart.CartTotalPrice) - product.productUnitPrice;
+            await db.ShoppingCart.update({
+             CartNumberOfItems: totalItems,
+             CartTotalPrice: totalPrice
+            }, {
+         where: {
+           userId: user.userId
+         }
+        })
+        db.ProductCart.destroy({
+          where: {
+              productId: req.params.id
+          },
+          limit: 1
+        })
+          .then(() => res.redirect(`/shoppingcart/${user.userId}`))
+        })
+        }
 };
 
 module.exports = controller; 
