@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { devNull } = require('os');
 const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -213,7 +212,7 @@ const controller = {
             for (let i=1; i<=amount; i++) {
               await db.ProductCart.create({
                 productId: product.productId,
-                shoppingCartId : 2
+                shoppingCartId : cart.shoppingCartId
               })
             }
             res.redirect(`/shoppingcart/${user.userId}`)     
@@ -247,7 +246,7 @@ const controller = {
             for (let i=1; i<=Cantidad; i++) {
               await db.ProductCart.create({
                 productId: product.productId,
-                shoppingCartId : 2
+                shoppingCartId : cart.shoppingCartId
               })
             }
             res.redirect(`/shoppingcart/${user.userId}`)        

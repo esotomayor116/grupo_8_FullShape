@@ -83,7 +83,7 @@ const controller = {
       fs.writeFileSync(usersFilePath, JSON.stringify(users), 'utf-8');
       res.redirect('/users')
       }*/
-      store2: (req, res) => {
+      store2: async (req, res) => {
         let userBody = req.body;
         const validation = validationResult(req);
         if (validation.errors.length > 0) {
@@ -91,7 +91,7 @@ const controller = {
             errors: validation.mapped(),
             oldData: req.body
           });
-      } else {
+        } else {
         if (req.file) {
           userBody.userImage = req.file.filename;
         } else{
@@ -106,8 +106,8 @@ const controller = {
         }
         userBody.userPassword = bcrypt.hashSync(userBody.userPassword, 10)
   
-//Información que sera capturada por el metodo Create para crear usuario
-        db.User.create({
+
+        const user = await db.User.create({
           userEmail: req.body.userEmail,
           userImage: userBody.userImage,
           userNames: req.body.userNames,
@@ -118,10 +118,13 @@ const controller = {
           userType: 'comprador',
 
         })
-          .then(function () {
-            res.redirect('/users')
-          })
-        }
+        const cart = await db.ShoppingCart.create({
+          userId: user.userId,
+          CartNumberOfItems: 0,
+          CartTotalPrice: 0
+        })
+        res.redirect('/users')
+      }
       },
       edit: (req, res) => {
         let id = req.params.id;

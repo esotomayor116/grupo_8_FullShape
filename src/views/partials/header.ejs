@@ -4,15 +4,17 @@
             <li style="font-weight:bold"><a href="/products/create">Vender</a></li>
             <li><a href="#">Ayuda</a></li>
             <% if (user) { %>
-             <li class="user-menu"><%= user.userNames %>
-                <ul>
-                    <li class="user-option"><a href="/users/<%= user.userId %>">Ver perfil</a></li>
-                    <li class="user-option"><a href="/users/edit/<%= user.userId %>">Editar perfil</a></li>
-                    <li class="user-option"><form action="/users" method="POST">
-                        <button type="submit">Cerrar Sesión</button>
-                    </form></li>
-                </ul>
-            </li>
+                <li class="user-menu"><%= user.userNames %>
+                    <ul>
+                        <li class="user-option"><a href="/users/<%= user.userId %>">Ver perfil</a></li>
+                        <li class="user-option"><a href="/users/edit/<%= user.userId %>">Editar perfil</a></li>
+                        <li class="user-option">
+                            <form action="/users" method="POST">
+                                <button type="submit">Cerrar Sesión</button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
             <% } else { %>
                 <li><a href="/users/login">Iniciar sesión</a></li>
                 <li><a href="/users/register">Registrate</a></li>
@@ -38,14 +40,14 @@
         <p>Boxeo</p>
         <p>Kineseología</p>
         <form action="/" method="POST">
-        <label>Seleccionar categoría</label>
-        <select style="font-size:18px;" name="Categoría">
-            <option value="gimnasio">Gimnasio</option>
-            <option value="gimnasio">Suplementos</option>
-            <option value="gimnasio">Fútbol</option>
-            <option value="gimnasio">Boxeo</option>
-            <option value="gimnasio">Kineseología</option>
-        </select>
+            <label>Seleccionar categoría</label>
+            <select style="font-size:18px;" name="Categoría">
+                <option value="gimnasio">Gimnasio</option>
+                <option value="gimnasio">Suplementos</option>
+                <option value="gimnasio">Fútbol</option>
+                <option value="gimnasio">Boxeo</option>
+                <option value="gimnasio">Kineseología</option>
+            </select>
         </form>
     </div>
 </header>

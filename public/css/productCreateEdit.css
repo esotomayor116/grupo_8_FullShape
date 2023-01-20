@@ -239,6 +239,7 @@ div.imagenProducto{
 padding: 5px;
 align-self: center ;
 }
+
 div.imagenProducto input#image{
     width: 60%;
     padding: 5px;
@@ -256,7 +257,6 @@ div.NuevoUsado{
     width: 50%;
 
 }
-
 
 .botones button:hover{
     background-color: #0022AA;
@@ -314,8 +314,6 @@ display: contents;
 
 }
 
-
-
 @media (min-width: 768px){
 
     form.product_creation div.logo{
@@ -350,13 +348,16 @@ footer p {
     width: 100%;
     border-top: 2px solid #00B276;
 }
+
 .footer2 {
     /*Añadí un borde mejor*/
     justify-content: space-around;
 }
+
 .footer1 a {
     width: 50%;
 }
+
 .redes {
     display: flex;
     flex-wrap: wrap;
@@ -367,9 +368,11 @@ footer p {
     /*background-color: #83FACF;*/
     width: 100%;
 }
+
 .redes p {
     margin: 0px auto;
 }
+
 #c6, #c7 {
     border-radius: 10px;
 }
@@ -385,7 +388,6 @@ footer p {
 }
 
 @media (max-width: 768px){
-
 
     div.footer1 a, div.footerbottom a{
         font-size: 14px;
