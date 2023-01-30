@@ -109,10 +109,10 @@ const controller = {
           let color = await db.ProductColor.findOne({where: {colorName: req.body.productColor} });
           let size = await db.ProductSize.findOne({where: {sizeName: req.body.productSize} });
           if (color != null) {
-            colorId = color.colorId;
+            color = color.colorId;
           }
           if (size != null) {
-            sizeId = size.sizeId;
+            size = size.sizeId;
           }
           db.Product.update({
             productName: req.body.productName,
@@ -120,8 +120,8 @@ const controller = {
             productMainImage: req.body.productMainImage,
             productStatusId: status.statusId,
             productCategoryId: category.categoryId,
-            productColorId: colorId,
-            productSizeId: sizeId,
+            productColorId: color,
+            productSizeId: size,
             productCode: req.body.productCode,
             productUnitPrice: req.body.productUnitPrice
           }, {
