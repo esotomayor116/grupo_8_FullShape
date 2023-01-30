@@ -104,7 +104,7 @@ const validationsEdit = [
 //Las siguientes son rutas del login
 router.get('/login', authMiddleware, controller.login);
 router.post('/login', validationLogin, controller.access);
-router.post('/', controller.logout);
+router.delete('/:id', controller.logout);
 
 //Ruta para ver todos los usuarios funciona OK
 router.get('/', guestMiddleware, controller.index);

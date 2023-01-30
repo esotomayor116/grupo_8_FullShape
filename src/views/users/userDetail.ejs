@@ -20,7 +20,7 @@
                         </div>
                     </article>
                     <a href="/"><button>Volver a Home</button></a>
-                    <form action="/users" method="POST">
+                    <form action="/users/<%= user.userId %>?_method=DELETE" method="POST">
                         <button type="submit">Cerrar Sesión</button>
                     </form>
                 </div>
