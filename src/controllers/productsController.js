@@ -14,23 +14,20 @@ const controller = {
         .then(products => res.render('./products/home', { products,  user: req.session.userLogged}))
       },
     detail: (req, res) => {
-      let idProducto = req.params.id;
-      let related;
-      let productStatus;
-      let productCategory;
-      let productColor;
-      let productSize;
-      db.Product.findByPk(idProducto)
-        .then(product => {
-          related =  db.Product.findAll({ where: {productCategoryId: product.productCategoryId} })
-          productStatus = db.ProductStatus.findOne({where: {statusId: product.productStatusId}});
-          productCategory = db.ProductCategory.findOne({where: {categoryId: product.productCategoryId}});
-          productColor = db.ProductColor.findOne({where: {colorId: product.productColorId}});
-          productSize = db.ProductSize.findOne({where: {sizeId: product.productSizeId}});
-          Promise.all([related, productStatus, productCategory, productColor, productSize])
-            .then(([relatedProducts, status, category, color, size ]) => {
-              res.render('./products/productDetail', { product, relatedProducts, status, category, color, size, user: req.session.userLogged })
-            })
+      let id = req.params.id
+      let relatedProducts;
+      let status;
+      let category;
+      let color;
+      let size;
+      db.Product.findByPk(id, {include: ['status','categories', 'colors', 'sizes', ] })
+        .then(async product => {
+          relatedProducts = await db.Product.findAll({where: {productCategoryId: product.productCategoryId}});
+          status = product.status;
+          category = product.categories;
+          color = product.colors;
+          size = product.sizes;
+          res.render('./products/productDetail', { user: req.session.userLogged, product, relatedProducts, status, category, color, size})
         })
     },
     create: (req, res) => {
@@ -80,75 +77,59 @@ const controller = {
       }
       },
     edit: (req, res) => {
-        let id = req.params.id;
-        let allStatus;
-        let allCategories; 
-        let allColors;
-        let allSizes;
-    db.Product.findByPk(id)
-      .then(function(productToEdit) {
-        allStatus = db.ProductStatus.findAll();
-        allCategories = db.ProductCategory.findAll();
-        allColors = db.ProductColor.findAll();
-        allSizes = db.ProductSize.findAll();
-          Promise.all([allStatus, allCategories, allColors, allSizes])
-            .then(([aStatus, aCategories, aColors, aSizes]) => {
-              res.render("./products/productEdit", { productToEdit, aStatus, aCategories, aColors, aSizes , user: req.session.userLogged })
-            })
-      })
-		},
+      let id = req.params.id;
+      let aStatus;
+      let aCategories;
+      let aColors;
+      let aSizes;
+      db.Product.findByPk(id)
+        .then(async productToEdit => {
+          aStatus = await db.ProductStatus.findAll();
+          aCategories = await db.ProductCategory.findAll();
+          aColors = await db.ProductColor.findAll();
+          aSizes = await db.ProductSize.findAll();
+          res.render('./products/productEdit', { user:req.session.userLogged, productToEdit, aStatus, aCategories, aColors, aSizes})
+        })
+    },
     update: (req, res) => {
+      let id = req.params.id;
       const validation = validationResult(req);
-      if (validation.errors.length > 0) {
-        let id = req.params.id;
-        let allStatus;
-        let allCategories; 
-        let allColors;
-        let allSizes;
-    db.Product.findByPk(id)
-      .then(function(productToEdit) {
-        allStatus = db.ProductStatus.findAll();
-        allCategories = db.ProductCategory.findAll();
-        allColors = db.ProductColor.findAll();
-        allSizes = db.ProductSize.findAll();
-          Promise.all([allStatus, allCategories, allColors, allSizes])
-            .then(([aStatus, aCategories, aColors, aSizes]) => {
-              res.render("./products/productEdit", { productToEdit, aStatus, aCategories, aColors, aSizes , user: req.session.userLogged, errors: validation.mapped() })
-            })
-      })
-    } else {
-      if(req.file != undefined) {
-        req.body.productMainImage = req.file.filename;
-      }
-      let productStatus = db.ProductStatus.findOne({where: {statusName: req.body.productStatus}});
-      let productCategory = db.ProductCategory.findOne({where: {categoryName: req.body.productCategory}});
-      let productColor = db.ProductColor.findOne({where: {colorName: req.body.productColor}});
-      let productSize = db.ProductSize.findOne({where: {sizeName: req.body.productSize}});
-      let productSearch = db.Product.findByPk(req.params.id);
-      Promise.all([productStatus, productCategory, productColor, productSize, productSearch])
-          .then(([status, category, color, size, product]) => {
+      db.Product.findByPk(id)
+      .then(async productToEdit => {
+        if (validation.errors.length > 0) {
+          let aStatus = await db.ProductStatus.findAll();
+          let aCategories = await db.ProductCategory.findAll();
+          let aColors = await db.ProductColor.findAll();
+          let aSizes = await db.ProductSize.findAll();
+          res.render('./products/productEdit', { user:req.session.userLogged, productToEdit, aStatus, aCategories, aColors, aSizes, errors: validation.mapped() })            
+        } else {
+          req.body.productMainImage = req.file.filename;
+          let status = await db.ProductStatus.findOne({where: {statusName: req.body.productStatus} });
+          let category = await db.ProductCategory.findOne({where: {categoryName: req.body.productCategory} });
+          let color = await db.ProductColor.findOne({where: {colorName: req.body.productColor} });
+          let size = await db.ProductSize.findOne({where: {sizeName: req.body.productSize} });
           if (color != null) {
-              color = color.colorId;
+            colorId = color.colorId;
           }
           if (size != null) {
-            size = size.sizeId;
+            sizeId = size.sizeId;
           }
-            db.Product.update({
-              productName: req.body.productName,
-              productDescription: req.body.productDescription,
-              productMainImage: req.body.productMainImage,
-              productStatusId: status.statusId,
-              productCategoryId: category.categoryId,
-              productColorId: color,
-              productSizeId: size,
-              productCode: req.body.productCode,
-              productUnitPrice: req.body.productUnitPrice
-            }, {
-              where: {productId : product.productId}
-            })
+          db.Product.update({
+            productName: req.body.productName,
+            productDescription: req.body.productDescription,
+            productMainImage: req.body.productMainImage,
+            productStatusId: status.statusId,
+            productCategoryId: category.categoryId,
+            productColorId: colorId,
+            productSizeId: sizeId,
+            productCode: req.body.productCode,
+            productUnitPrice: req.body.productUnitPrice
+          }, {
+            where: {productId: productToEdit.productId}
+          }),
           res.redirect('/products')
-          })
-    }
+        }
+      })
     },
     delete: (req, res) =>{
       db.Product.destroy({

@@ -264,6 +264,7 @@ div p.banner-notification{
     display: flex;
     flex-direction: column;
     width: 224px;
+    height: 324px;
     /*Se cambió el color del article, a product*/
     background-color: #0a2929;
 

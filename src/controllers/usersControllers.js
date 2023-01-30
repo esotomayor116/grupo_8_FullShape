@@ -10,9 +10,7 @@ const { validationResult } = require('express-validator');
 const controller = {
     login: (req, res) => {
         res.render('./users/login');
-    },
-    
-
+    }, 
     access: (req, res) => {
         //Validacion backend login usuarios
         const validationLog = validationResult(req);
@@ -178,17 +176,14 @@ const controller = {
         }
       },
       show: (req, res) => {
-        let idUser = req.params.id;
-        let sessionUser = req.session.userLogged; 
-        if (idUser == sessionUser.userId) {
-          db.User.findByPk(idUser)
-            .then(user =>{
-            res.render('./users/userDetail', {user})
-            })
-        } else {
-          res.redirect('/users/' + sessionUser.userId);
+        id = req.params.id;
+        sessionUser = req.session.userLogged;
+        if (id == sessionUser.userId) {
+              res.render('./users/userDetail', { user: sessionUser });
+          } else {
+            res.redirect(`/users/${sessionUser.userId}`);
+          }
         }
-      }
     }
 
 module.exports = controller;
