@@ -50,14 +50,20 @@
                         </div>
                         <div class="recibir-ofertas" style="border-right: 0px;">
                             <label class="recibir-ofertas">Recibir ofertas y novedades</label>
-                            <input class="radio" type="radio" name="userReceiveOffersAndNews" <% if(userToEdit.userReceiveOffersAndNews == 1 ) { %>
-                                checked
-                                <% } %>><br>
+                            <input class="radio" type="radio" name="userReceiveOffersAndNews"
+                            value="1" <% if (userToEdit.userReceiveOffersAndNews == 1) { %> checked <% } %>
+                            ><label>Sí</label>
+                            <input class="radio" type="radio" name="userReceiveOffersAndNews"
+                            value="0" <% if (userToEdit.userReceiveOffersAndNews == 0) { %> checked <% } %>
+                            ><label>No</label><br>
                         </div>
                         <div style="border-right: 0px;">
                             <label for="userPassword">Cambiar Contraseña</label> (Opcional)<br>
                             <input type="password" name="userPassword"><br>
-                            <h6>(?) la contraseña debe poseer al menos 6 caracteres</h6>
+                            <h6>(?) la contraseña debe poseer al menos 8 caracteres</h6>
+                            <% if(locals.errors && errors.userPassword) { %>
+                                <p class="requerido"><%= errors.userPassword.msg %></p>
+                            <% } %>
                         </div>
                         <div style="border-right: 0px;">
                             <label for="contraseña">Confirmar nueva Contraseña</label> (Opcional)<br>

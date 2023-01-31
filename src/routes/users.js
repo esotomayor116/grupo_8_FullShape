@@ -68,35 +68,43 @@ const validationLogin = [
 
 // Validacion backend edicion usuarios
 const validationsEdit = [
-    body('userNames').notEmpty().withMessage('Debes dejar un nombre para continuar')
+    body('userNames').notEmpty().withMessage('Por favor registra un nombre para continuar')
     .isLength({min: 2}).withMessage('El nombre debe contener mínimo 2 caracteres'),
-    body('userLastNames').notEmpty().withMessage('Debes dejar un apellido para continuar')
+    body('userLastNames').notEmpty().withMessage('Por favor registra un apellido para continuar')
     .isLength({min: 2}).withMessage('El apellido debe contener mínimo 2 caracteres'),
-    body('userEmail').notEmpty().withMessage('Debes dejar un email para continuar')
+    body('userEmail').notEmpty().withMessage('Por favor ingresa un email para continuar')
     .isEmail().withMessage('Por favor ingresa un email válido'),
-    body('PasswordConfirmation').custom((value, { req }) => {
-        if (value !== req.body.userPassword) {
-        throw new Error('Las contraseñas no coinciden');
-        }
-    
-        // Indicates the success of this synchronous custom validator
-        return true;
+    body('userPassword').custom((value, { req }) => {
+      if (value != '' && value.length < 8) {
+        throw new Error('La contraseña debe contener mínimo 8 caracteres');
+      }
+  
+      return true;
     }),
-    body('userImage').custom((value , { req }) => {
-        let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png', '.jpeg']
-        if (file != undefined) {
-            let fileExtension = path.extname(file.originalname);
-            if (!acceptedExtensions.includes(fileExtension)) {
-                throw new Error('Las extensiones de archivo permitidas son ".jpg", ".png" o ".jpeg"')
-            } else {
-                return true;
-             } 
-        }   else {
-            return true;
+  
+    body('PasswordConfirmation').custom((value, { req }) => {
+      if (req.body.password != '' && value != req.body.userPassword) {
+          throw new Error("Las contraseñas no coinciden");
+      }
+  
+      return true;
+    }),
+  
+    body('userImage').custom((value, { req }) => {
+      let file = req.file;
+      let acceptedExtensions = ['.jpg', '.png', '.jpeg']
+      if (file) {
+        let fileExtension = path.extname(file.originalname);
+        if (!acceptedExtensions.includes(fileExtension)) {
+          throw new Error('Las extensiones de archivo permitidas son ".jpg", ".png" o ".jpeg"')
+        } else {
+          return true;
         }
+      } else {
+        return true;
+      }
     })
-]
+  ];
 
 
 

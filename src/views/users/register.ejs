@@ -58,15 +58,27 @@
                         <div class="recibir-ofertas">
                             <label class="recibir-ofertas">Recibir ofertas y novedades</label>
                             <input class="radio" type="radio" name="userReceiveOffersAndNews"
-                            checked
-                            ><br>
+                            value="1" checked
+                            ><label>Sí</label>
+                            <input class="radio" type="radio" name="userReceiveOffersAndNews"
+                            value="0"
+                            ><label>No</label><br>
+                        </div>
+                        <div class="recibir-ofertas">
+                            <label class="recibir-ofertas">Tipo de usuario</label>
+                            <input class="radio" type="radio" name="userType"
+                            value="Seller" checked
+                            ><label>Vendedor</label>
+                            <input class="radio" type="radio" name="userType"
+                            value="Shopper"
+                            ><label>Comprador</label><br>
                         </div>
                         <div>
                             <label for="userPassword">Crear Contraseña</label><label class="requerido">  *</label><br>
                             <input type="password" name="userPassword" id="userPassword"
                             value="<%= locals.oldData ? oldData.userPassword : null %>"
                             ><br>
-                            <h6>(?) la contraseña debe poseer al menos 6 caracteres</h6>
+                            <h6>(?) la contraseña debe poseer al menos 8 caracteres</h6>
                             <% if(locals.errors && errors.userPassword) { %>
                                 <p class="requerido"><%= errors.userPassword.msg %></p>
                             <% } %>

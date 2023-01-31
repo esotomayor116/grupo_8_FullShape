@@ -113,7 +113,7 @@ const controller = {
           userPassword: userBody.userPassword,
           userPhone: req.body.userPhone,
           userReceiveOffersAndNews: userBody.userReceiveOffersAndNews,
-          userType: 'comprador',
+          userType: req.body.userType,
 
         })
         const cart = await db.ShoppingCart.create({
@@ -125,65 +125,62 @@ const controller = {
       }
       },
       edit: (req, res) => {
-        let id = req.params.id;
-        db.User.findByPk(id, {raw: true})
-          .then(function(userToEdit){
-            res.render("./users/userEdit", {userToEdit});
-          })
-      },
-
-      update: (req, res) => {
-        let id = req.params.id;
-        const validationEdit= validationResult(req);
-        if (validationEdit.errors.length > 0) {
-          db.User.findByPk(id, {raw: true})
-          .then(function(userToEdit){
-            res.render("./users/userEdit", {userToEdit, errors: validationEdit.mapped()});
-          })
-        } else {
+        id = req.params.id;
+        sessionUser = req.session.userLogged;
+        if (id == sessionUser.userId) {
           db.User.findByPk(id)
-        .then (function(user){
-          if (req.body.userReceiveOffersAndNews == "on"){
-            req.body.userReceiveOffersAndNews = true
-          } else{
-            req.body.userReceiveOffersAndNews = false
+            .then(user => {
+              res.render('./users/userEdit', { userToEdit: user });
+            })
+        } else {
+          res.redirect(`/users/${sessionUser.userId}/edit`);
+        }
+      },
+      update: (req, res) => {
+        id = req.params.id;
+        sessionUser = req.session.userLogged;
+        const validations = validationResult(req);
+        if (validations.errors.length > 0) {
+          res.render('./users/userEdit', { userToEdit: sessionUser, errors: validations.mapped() })
+        } else {
+          if (req.body.userPassword) {
+            req.body.userPassword = bcrypt.hashSync(req.body.userPassword, 10);
+          } else {
+            req.body.userPassword = sessionUser.userPassword;
           }
-          if(req.body.userPassword == ''){
-          req.body.userPassword = user.userPassword
-        } else if (req.body.userPassword == req.body.PasswordConfirmation) {
-          req.body.userPassword = bcrypt.hashSync(req.body.userPassword, 10);
-        }
-        if (req.file) {
-          req.body.userImage = req.file.filename;
-        } else{
-          req.body.userImage = user.userImage;
-        }
-        db.User.update({
-          userNames: req.body.userNames,
-          userLastNames: req.body.userLastNames,
-          userPhone: req.body.userPhone,
-          userEmail: req.body.userEmail,
-          userReceiveOffersAndNews: req.body.userReceiveOffersAndNews,
-          userPassword: req.body.userPassword,
-          userImage:req.body.userImage
-        }, {
-          where: {userId : user.userId}
-        })
-        .then(function(){
-          res.redirect('/users/' + user.userId)
-        })
-        }) 
+          if (req.file) {
+            req.body.userImage = req.file.filename;
+          } else {
+            req.body.userImage = sessionUser.userImage;
+          }
+          db.User.update({
+            userEmail: req.body.userEmail,
+            userImage: req.body.userImage,
+            userNames: req.body.userNames,
+            userLastNames: req.body.userLastNames,
+            userPassword: req.body.userPassword,
+            userPhone: req.body.userPhone,
+            userReceiveOffersAndNews: req.body.userReceiveOffersAndNews,
+          }, {
+            where: {userId: id}
+          })
+            .then(() => {
+              res.redirect(`/users/${id}`);
+            })
         }
       },
       show: (req, res) => {
         id = req.params.id;
         sessionUser = req.session.userLogged;
         if (id == sessionUser.userId) {
-              res.render('./users/userDetail', { user: sessionUser });
-          } else {
-            res.redirect(`/users/${sessionUser.userId}`);
-          }
+          db.User.findByPk(id)
+            .then(user => {
+              res.render('./users/userDetail', { user: user });
+            })
+        } else {
+          res.redirect(`/users/${sessionUser.userId}`);
         }
+      }
     }
 
 module.exports = controller;
