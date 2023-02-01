@@ -90,20 +90,12 @@ const controller = {
             oldData: req.body
           });
         } else {
-        if (req.file) {
+        // if (req.file) {
           userBody.userImage = req.file.filename;
-        } else{
-          userBody.userImage = "User_Avatar.jpeg"
-        };
-
-        userBody.userId = (users.length + 1);
-        if (userBody.userReceiveOffersAndNews == "on"){
-          userBody.userReceiveOffersAndNews = true
-        } else{
-          userBody.userReceiveOffersAndNews = false
-        }
+        // } else{
+        //   userBody.userImage = "User_Avatar.jpeg"
+        // };
         userBody.userPassword = bcrypt.hashSync(userBody.userPassword, 10)
-  
 
         const user = await db.User.create({
           userEmail: req.body.userEmail,

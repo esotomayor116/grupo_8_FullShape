@@ -68,11 +68,11 @@ const validationLogin = [
 
 // Validacion backend edicion usuarios
 const validationsEdit = [
-    body('userNames').notEmpty().withMessage('Por favor registra un nombre para continuar')
+    body('userNames').notEmpty().withMessage('Debes dejar un nombre para continuar')
     .isLength({min: 2}).withMessage('El nombre debe contener mínimo 2 caracteres'),
-    body('userLastNames').notEmpty().withMessage('Por favor registra un apellido para continuar')
+    body('userLastNames').notEmpty().withMessage('Debes dejar un apellido para continuar')
     .isLength({min: 2}).withMessage('El apellido debe contener mínimo 2 caracteres'),
-    body('userEmail').notEmpty().withMessage('Por favor ingresa un email para continuar')
+    body('userEmail').notEmpty().withMessage('Debes dejar un email para continuar')
     .isEmail().withMessage('Por favor ingresa un email válido'),
     body('userPassword').custom((value, { req }) => {
       if (value != '' && value.length < 8) {

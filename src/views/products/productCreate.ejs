@@ -54,32 +54,26 @@
                             <div class="nuevoProductoCategoria">
                                 <label>Seleccionar categoría:</label>
                                 <select style="font-size:18px;" name="productCategory">
-                                    <option value="Gimnasio">Gimnasio</option>
-                                    <option value="Suplementos">Suplementos</option>
-                                    <option value="Fútbol">Fútbol</option>
-                                    <option value="Boxeo">Boxeo</option>
-                                    <option value="Kineseología">Kineseología</option>
+                                    <% aCategories.forEach(category => { %>
+                                        <option value=<%= category.categoryName %>> <%= category.categoryName %></option>
+                                    <% }) %>
                                 </select>
                             </div>
                             <div class="nuevoProductoColores">
                                 <label>Seleccione un color:</label>
                                 <select name="productColor">
-                                    <option value="Rojo">Rojo</option>
-                                    <option value="Verde">Verde</option>
-                                    <option value="Azul">Azul</option>
-                                    <option value="Morado">Morado</option>
+                                    <% aColors.forEach(color => { %>
+                                    <option value=<%= color.colorName %>><%= color.colorName %></option>
+                                    <% }) %>
                                     <option value="">No aplica</option>
                                 </select>
                             </div>
                             <div class="nuevoProdyctoTalles">
                                 <label>Seleccione un talle:</label>
                                 <select name="productSize">
-                                    <option value="XS">XS</option>
-                                    <option value="S">S</option>
-                                    <option value="M">M</option>
-                                    <option value="L">L</option>
-                                    <option value="XL">XL</option>
-                                    <option value="XXL">XXL</option>
+                                    <% aSizes.forEach(size => { %> 
+                                    <option value=<%= size.sizeName %>><%= size.sizeName %></option>
+                                    <% }) %>
                                     <option value="">No aplica</option>
                                 </select>
                             </div>  

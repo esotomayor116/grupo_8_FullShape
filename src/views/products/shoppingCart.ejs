@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
         <%- include("../partials/head") %>
-        <link rel="stylesheet" href="/css/stylesCC.css">
+        <link rel="stylesheet" href="/css/stylesSC.css">
     </head>
     <body>
         <%- include("../partials/header") %>
@@ -62,7 +62,7 @@
                                         </select></form>
             
                                         <form class="o <%= i %>" action="/shoppingcart/<%= products[i].productId %>/update?_method=PUT" method="POST"> 
-                                        <select class="cantidadproducto <%= i %>" style="font-size:16px;" name="Cantidad">
+                                        <select class="cantidadproducto <%= i %>" style="font-size:16px;" name="amount">
                                             <option id="amount" value="<%= Ids.length %>" selected><%= Ids.length %></option>
                                             <% for (let i=1; i<=3; i++) { %>
                                                 <% if (i != Ids.length ) { %>
