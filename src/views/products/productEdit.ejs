@@ -9,22 +9,22 @@
             <main class="product_creation">
                     <form class="product_creation" action="/products/<%= productToEdit.productId %>?_method=PUT" method="POST" enctype="multipart/form-data">  
                             <h1 class="creaTuProducto">Edita tu publicacion</h1> 
-                            <h6 class="requerido">los campos con asterisco son necesarios para la creción del producto</h6>
+                            <h6 class="required">los campos con asterisco son necesarios para la creción del producto</h6>
                         <!-- Aquí van los campos -->
                             <div class="NombreNuevoProducto">
-                                <label for="NombreProducto">Nombre del producto</label><label class="requerido">  *</label><br>
+                                <label for="NombreProducto">Nombre del producto</label><label class="required">  *</label><br>
                                 <input type="text" name="productName" placeholder="<%= productToEdit.productName %>" id="name"><br>
                                 <p id="wrongName"></p>
                                 <% if(locals.errors && errors.productName) { %>
-                                    <p class="requerido"><%= errors.productName.msg %></p>
+                                    <p class="required"><%= errors.productName.msg %></p>
                                 <% } %>
                             </div>
                             <div class="DescripcionNuevoProducto">
-                                <label for="ProductDescription">Descripción del producto</label><label class="requerido">  *</label><br>
+                                <label for="ProductDescription">Descripción del producto</label><label class="required">  *</label><br>
                                 <textarea name="productDescription" id="description"><%= productToEdit.productDescription %></textarea><br>
                                 <p id="wrongDescription"></p>
                                 <% if(locals.errors && errors.productDescription) { %>
-                                    <p class="requerido"><%= errors.productDescription.msg %></p>
+                                    <p class="required"><%= errors.productDescription.msg %></p>
                                 <% } %>
                             </div>
                             <div class="imagenProducto">
@@ -32,7 +32,7 @@
                                 <input type="file" name="productMainImage" accept=".jpg,.png,.peg" multiple id="image">
                                 <p id="wrongImage"></p>
                                 <% if(locals.errors && errors.productMainImage) { %>
-                                    <p class="requerido"><%= errors.productMainImage.msg %></p>
+                                    <p class="required"><%= errors.productMainImage.msg %></p>
                                 <% } %>
                             </div>
                             <div class="ClasificacionNuevoProducto">
@@ -99,11 +99,11 @@
                                 </div> 
                             </div>
                             <div class="PrecioNuevoProducto">
-                                <label for="PrecioUnitario">Precio por Unidad (u$s)</label><label class="requerido">  *</label><br>
+                                <label for="PrecioUnitario">Precio por Unidad (u$s)</label><label class="required">  *</label><br>
                                 <input type="text" name="productUnitPrice" placeholder="<%= productToEdit.productUnitPrice %>" id="price"><br>
                                 <p id="wrongPrice"></p>
                                 <% if(locals.errors && errors.productUnitPrice) { %>
-                                    <p class="requerido"><%= errors.productUnitPrice.msg %></p>
+                                    <p class="required"><%= errors.productUnitPrice.msg %></p>
                                 <% } %>
                             </div>
                             <div class="GuardarNuevoProducto">

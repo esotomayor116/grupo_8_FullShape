@@ -26,11 +26,7 @@
                 <p id="descripcion"><%= product.productDescription %></p>
                 <p id="resenas">Reseñas - <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 25 Reseñas</p>
             </div>
-            <form id="Add"  <% if (user) { %> 
-                    method="POST" action="/shoppingcart/<%= product.productId %>/add">
-                <% } else { %>
-                    method="GET" action="/users/login"> 
-                <% } %>
+            <form id="Add" method="POST" action="/shoppingcart/<%= product.productId %>/add">
                 <div id="amountC">
                 <p>Añadir <select id="amount" name="amount">
                     <option value="1">1</option>

@@ -110,23 +110,23 @@ const validationsEdit = [
 
 //aqui comienzan las rutas. 
 //Las siguientes son rutas del login
-router.get('/login', authMiddleware, controller.login);
+router.get('/login', guestMiddleware, controller.login);
 router.post('/login', validationLogin, controller.access);
 router.delete('/:id', controller.logout);
 
 //Ruta para ver todos los usuarios funciona OK
-router.get('/', guestMiddleware, controller.index);
+router.get('/', authMiddleware, controller.index);
 
 //Ruta para ver el formulario de registro funciona OK
-router.get('/register', authMiddleware, controller.create);
+router.get('/register', guestMiddleware, controller.create);
 
-router.get('/edit/:id', guestMiddleware, controller.edit);
+router.get('/edit/:id', authMiddleware, controller.edit);
 
 //Procesamiento del formulario de creación
 router.post('/guardar', upload.single('userImage'), validations, controller.store2);
 
 //Detalle del Usuario
-router.get('/:id', guestMiddleware, controller.show);
+router.get('/:id', authMiddleware, controller.show);
 
 //Actualizacion de usuario
 router.put('/editsubmit/:id', upload.single('userImage'), validationsEdit, controller.update)

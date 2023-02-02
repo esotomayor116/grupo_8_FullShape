@@ -1,14 +1,14 @@
 const express = require('express');
 const controller = require('../controllers/productsController');
 const router = express.Router();
-const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 //Listado de productos, vista home.
 router.get('/', controller.index);
 
-router.get("/shoppingcart/:id", guestMiddleware, controller.shoppingCart);
+router.get("/shoppingcart/:id", authMiddleware, controller.shoppingCart);
 
-router.post("/shoppingcart/:id/add", controller.addToCart);
+router.post("/shoppingcart/:id/add", authMiddleware, controller.addToCart);
 
 router.put("/shoppingcart/:id/update", controller.updateCart);
 

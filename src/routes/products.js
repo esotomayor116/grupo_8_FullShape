@@ -3,7 +3,7 @@ const controller = require('../controllers/productsController');
 const router = express.Router();
 const multer = require('multer');
 const path = require ('path');
-const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 const { body } = require('express-validator');
 
 const storage = multer.diskStorage({
@@ -47,7 +47,7 @@ const validations = [
 router.get('/', controller.index);
 
 //Formulario de creación, vista productCreate.
-router.get('/create', guestMiddleware, controller.create);
+router.get('/create', authMiddleware, controller.create);
 router.post('/',upload.single('productMainImage'), validations, controller.store);
 
 //ruta de busqueda de productos
@@ -57,12 +57,12 @@ router.get('/search', controller.search)
 router.get('/:id', controller.detail);
 
 //Formulario de edición, vista productEdit.
-router.get('/:id/edit', guestMiddleware,  controller.edit);
+router.get('/:id/edit', authMiddleware,  controller.edit);
 router.put('/:id', upload.single('productMainImage'), validations , controller.update);
 
 //botón de borrado, en vista productDetail.
 
-router.delete ('/:id', guestMiddleware, controller.delete)
+router.delete ('/:id', authMiddleware, controller.delete)
 
 
 module.exports = router;
