@@ -1,65 +1,65 @@
 window.addEventListener('load', function() {
-    console.log('Estoy aqui')
-    let formulario = document.querySelector('form.login');
+
+    let form = document.querySelector('form.login');
     let email = document.querySelector('input#email');
-    let password = document.querySelector('input#password');
     let wrongEmail = document.querySelector('p#wrongEmail');
+    let password = document.querySelector('input#password');
     let wrongPassword = document.querySelector('p#wrongPassword');
-
-    email.addEventListener('mouseout', function (){
-        if(email.value == ''){
-            wrongEmail.innerHTML = 'Por favor ingresa un email para continuar'
-            wrongEmail.classList.add('requerido')
-            } else if (email.value.includes("@")&&email.value.includes(".")) {
-                    wrongEmail.innerHTML = ''
-                    wrongEmail.classList.remove('requerido')
-                }
-            }
-    )
-    
-    email.addEventListener('keypress', function (e) {
-        currentValue = e.target.value + e.key
-        console.log(currentValue)
-        if(!currentValue.includes("@")||!currentValue.includes(".")){
-            wrongEmail.innerHTML = 'El correo debe incluir un @ y un servidor'
-            wrongEmail.classList.add('requerido')
-        } else {
-            wrongEmail.innerHTML = ''
-            wrongEmail.classList.remove('requerido')
-        }
+  
+    let errors = {};
+  
+    email.addEventListener('mouseout', () => {
+      if (email.value == '') {
+        wrongEmail.innerHTML = "Please enter an email before continuing";
+        wrongEmail.classList.add('required');
+        errors.email1 = "error";
+      } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
+        wrongEmail.innerHTML = "";
+        wrongEmail.classList.remove('required');
+        delete errors.email1;
+      }
     })
-
-    email.addEventListener('change', function (e) {
-        currentValue = e.target.value + e.key
-        console.log(currentValue)
-        if(!currentValue.includes("@")||!currentValue.includes(".")){
-            wrongEmail.innerHTML = 'El correo debe incluir un @ y un servidor'
-            wrongEmail.classList.add('requerido')
-        } else {
-            wrongEmail.innerHTML = ''
-            wrongEmail.classList.remove('requerido')
-        }
+  
+    email.addEventListener('keypress', (e) => {
+      currentValue = e.target.value + e.key;
+  
+      if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
+        wrongEmail.innerHTML = "Please enter a valid email";
+        wrongEmail.classList.add('required');
+        errors.email2 = "error";
+      } else {
+        wrongEmail.innerHTML = "";
+        wrongEmail.classList.remove('required');
+        delete errors.email2;
+      }
     })
-
-    password.addEventListener('mouseout', function (){
-        if(password.value == ''){
-            wrongPassword.innerHTML = 'Por favor ingresa un password para continuar'
-            wrongPassword.classList.add('requerido')
-        } else {
-            wrongPassword.innerHTML = ''
-            wrongPassword.classList.remove('requerido')
-        }
+  
+    password.addEventListener('mouseout', () => {
+      if (password.value == '') {
+        wrongPassword.innerHTML = "Please enter your password before continuing";
+        wrongPassword.classList.add('required');
+        errors.password1 = "error";
+      } else {
+        wrongPassword.innerHTML = "";
+        wrongPassword.classList.remove('required');
+        delete errors.password1
+      }
     })
-
-    password.addEventListener('keypress', function (e){
-        currentValue = e.target.value + e.key
-        if(currentValue == ''){
-            wrongPassword.innerHTML = 'Por favor ingresa un password para continuar'
-            wrongPassword.classList.add('requerido')
-        } else {
-            wrongPassword.innerHTML = ''
-            wrongPassword.classList.remove('requerido')
-        }
+  
+    password.addEventListener('keypress', (e) => {
+      currentValue = e.target.value + e.key;
+      if (currentValue != "") {
+        wrongPassword.innerHTML = "";
+        wrongPassword.classList.remove('required');
+        delete errors.password1
+      }
+  
     })
-
-})
+  
+    form.addEventListener('submit', (e) => {
+      if (Object.keys(errors).length > 0) {
+        e.preventDefault();
+        console.log(errors);
+      }
+    })
+  })

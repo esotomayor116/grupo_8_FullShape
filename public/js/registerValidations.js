@@ -1,79 +1,70 @@
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
 
-    let formulario = document.querySelector("form.registro-popup");
-
-    formulario.addEventListener("submit", function(e) {
-
-
-        let fieldName = document.querySelector("input#userNames");
-        let fieldLastName = document.querySelector("input#userLastNames");
-        let fieldEmail = document.querySelector("input#userEmail");
-        let fieldPassword = document.querySelector("input#userPassword");
-        let fieldPasswordConfirmation = document.querySelector("input#userPasswordConfirmation");
-        let image = document.querySelector('input#userImage');
-
-        let error = [];
-
-        if(fieldName.value == ""){
-            error.push(" Por favor ingrese un Nombre para continuar. ")
-        } else if (fieldName.value.length < 2 ) {
-            error.push(" El Nombre debera tener al menos 2 carácteres")
+    let form = document.querySelector("form.registro-popup");
+    let names = document.querySelector("input#userNames");
+    let lastNames = document.querySelector("input#userLastNames");
+    let email = document.querySelector("input#userEmail");
+    let password = document.querySelector("input#userPassword");
+    let passwordConfirmation = document.querySelector("input#userPasswordConfirmation");
+    let image = document.querySelector("input#userImage");
+    let ulErrores = document.querySelector("div.errores ul");
+  
+    form.addEventListener("submit", function(e) {
+  
+      let error = [];
+  
+      if (names.value == "") {
+        error.push("Please register a name before continuing");
+      } else if (names.value.length < 2) {
+        error.push('Name must contain a minimum of two characters')
+      }
+    
+      if (lastNames.value == "") {
+        error.push("Please register a last name before continuing");
+      } else if (lastNames.value.length < 2) {
+        error.push('Last name must contain a minimum of two characters')
+      }
+    
+      if (email.value == "") {
+        error.push("Please enter an email before continuing")
+      } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value) == false) {
+        error.push("Please enter a valid email")
+      }
+  
+      if (password.value == "") {
+        error.push("Please create the password before continuing");
+      } else if (password.value.length < 8) {
+        error.push('Password must contain at least eight characters')
+      }
+  
+      if (passwordConfirmation.value == "") {
+        error.push("Please repeat the password before continuing");
+      } else if (passwordConfirmation.value != password.value) {
+        error.push("Passwords don't match")
+      }
+  
+      if (image.value == "") {
+        error.push("Please upload an image before continuing")
+      } else {
+        let acceptedExtensions = [".jpg", ".png", ".jpeg"];
+  
+        for (let i= 0; i<acceptedExtensions.length; i++) {
+          if (!image.value.includes(acceptedExtensions[i])) {
+            error.push("The permitted extensions are '.jpg', '.png', and '.jpeg'");
+            break;
+          }
         }
-
-        if(fieldLastName.value == ""){
-            error.push(" Por favor ingrese un Apellido para continuar. ")
-        } else if (fieldLastName.value.length < 2 ) {
-            error.push(" El Apellido debera tener al menos 2 carácteres")
+      }
+  
+      if (error.length > 0) {
+  
+        e.preventDefault();
+        ulErrores.innerHTML = "";
+        ulErrores.style.display = "block";
+        for (let i=0; i< error.length ; i++) {
+          ulErrores.innerHTML += "<li>" + error[i] + "</li>"
         }
-
-        if(fieldEmail.value == ""){
-            error.push(" Por favor ingrese un email para continuar. ")
-        } else if(!fieldEmail.value.includes("@")||(!fieldEmail.value.includes("."))){
-            error.push(" Por favor ingrese un email válido para continuar. (debe contener @ y .) ")
-        }
-
-        if(fieldPassword.value == ""){
-            error.push(" Por favor cree una contraseña para continuar. ")
-        } else if (fieldPassword.value.length < 8 ) {
-            error.push(" La contraseña debera tener al menos 8 carácteres")
-        }
-
-        if(fieldPasswordConfirmation.value == "") {
-            error.push(" Por favor confirme la contraseña para continuar. ")
-        } else if (fieldPasswordConfirmation.value != fieldPassword.value) {
-            error.push(" Las contraseñas no coinciden ")
-        }
-
-        if(image.value == ""){
-            error.push(" Por favor ingrese una imagen para continuar. ")
-        } 
-        
-        else {
-            let errorextension = 1
-            let acceptedExtensions = ['.jpg', '.png', '.jpeg'];
-            for (i=0; i<acceptedExtensions.length; i++){
-                if (image.value.includes(acceptedExtensions[i])) {
-                    errorextension = 0
-                break;
-                } 
-            }
-            if (errorextension == 1){error.push ('Las extensiones de archivo permitidas son ".jpg", ".png" o ".jpeg"')}
-        }
-
-        let ulErrores = document.querySelector("div.errores ul");
-
-        if (error.length > 0){
-            e.preventDefault();
-            ulErrores.innerHTML = "";
-            ulErrores.style.display = "block";
-            //let listaError = ""
-            for (let i = 0; i < error.length; i++) {
-                //listaError += error[i] + '\n'
-                ulErrores.innerHTML += "<li>" + error[i] + "</li>"
-            }
-        
-            //alert(listaError)
-        }
-        
-    });
-})
+        console.log(ulErrores.innerHTML);
+      }
+    })
+  })
