@@ -25,8 +25,8 @@ window.addEventListener('load', function() {
       }
     })
   
-    name.addEventListener('keypress', (e) => {
-      currentValue = e.target.value + e.key;
+    name.addEventListener('input', (e) => {
+      currentValue = e.target.value;
       if (currentValue.length < 5) {
         wrongName.innerHTML = "Name shall contain a minimum of 5 characters";
         wrongName.classList.add('required');
@@ -34,6 +34,7 @@ window.addEventListener('load', function() {
       } else {
         wrongName.innerHTML = "";
         wrongName.classList.remove('required');
+        delete errors.name1;
         delete errors.name2;
       }
     })
@@ -60,6 +61,7 @@ window.addEventListener('load', function() {
       } else {
         wrongDescription.innerHTML = "";
         wrongDescription.classList.remove('required');
+        delete errors.description1;
         delete errors.description2;
       }
     })
@@ -69,7 +71,7 @@ window.addEventListener('load', function() {
       if (image.value == "") {
         wrongImage.innerHTML = "Please upload an image to continue";
         wrongImage.classList.add('required');
-        errors.image1 = error;
+        errors.image1 = 'error';
       } else {
         let acceptedExtensions = ['.jpg', '.png', '.jpeg'];
         for (let i= 0; i<acceptedExtensions.length; i++) {
@@ -77,12 +79,12 @@ window.addEventListener('load', function() {
             wrongImage.innerHTML = "";
             wrongImage.classList.remove('required');
             delete errors.image1;
-            if (errors.image2) {delete errors.image2};
+            delete errors.image2;
             break;
           } else {
             wrongImage.innerHTML = 'The permitted extensions are ".jpg", ".png" and ".jpeg"'
             wrongImage.classList.add('required');
-            errors.image2 = error;
+            errors.image2 = 'error';
           }
         }
       }
@@ -95,25 +97,27 @@ window.addEventListener('load', function() {
         wrongPrice.classList.add('required');
         errors.price1 = 'error';
       } else if (price.value.length >= 20) {
+        valueArray= [];
         wrongPrice.innerHTML = "";
         wrongPrice.classList.remove('required');
         delete errors.price1;
       }
     })
   
-    price.addEventListener('keypress', (e) => {
-      currentValue = e.target.value + e.key;
+    price.addEventListener('input', (e) => {
+      currentValue = e.target.value;
       valueArray = currentValue.split('');
-      console.log(valueArray);
-      result = valueArray.map(value => parseFloat(value));
+      result = valueArray.map(value => { if (value != ".") { return parseFloat(value) }});
       console.log(result);
       if (result.includes(NaN)) {
         wrongPrice.innerHTML = "Price shall be a number";
         wrongPrice.classList.add('required');
         errors.price2 = 'error';
       } else {
+        valueArray = [];
         wrongPrice.innerHTML = "";
         wrongPrice.classList.remove('required');
+        delete errors.price1;
         delete errors.price2;
       }
     })

@@ -20,8 +20,8 @@ window.addEventListener('load', function() {
       }
     })
   
-    email.addEventListener('keypress', (e) => {
-      currentValue = e.target.value + e.key;
+    email.addEventListener('input', (e) => {
+      currentValue = e.target.value;
   
       if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
         wrongEmail.innerHTML = "Please enter a valid email";
@@ -30,6 +30,7 @@ window.addEventListener('load', function() {
       } else {
         wrongEmail.innerHTML = "";
         wrongEmail.classList.remove('required');
+        delete errors.email1;
         delete errors.email2;
       }
     })
@@ -46,12 +47,12 @@ window.addEventListener('load', function() {
       }
     })
   
-    password.addEventListener('keypress', (e) => {
-      currentValue = e.target.value + e.key;
+    password.addEventListener('input', (e) => {
+      currentValue = e.target.value;
       if (currentValue != "") {
         wrongPassword.innerHTML = "";
         wrongPassword.classList.remove('required');
-        delete errors.password1
+        delete errors.password1;
       }
   
     })
