@@ -20,15 +20,15 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'productStatusId'
         }),
         Product.belongsTo(models.ProductCategory, {
-            as: 'categories',
+            as: 'category',
             foreignKey: 'productCategoryId'
         }),
         Product.belongsTo(models.ProductColor, {
-            as: 'colors',
+            as: 'color',
             foreignKey: 'productColorId'
         }),
         Product.belongsTo(models.ProductSize, {
-            as: 'sizes',
+            as: 'size',
             foreignKey: 'productSizeId'
         }),
         Product.belongsToMany(models.ShoppingCart , {

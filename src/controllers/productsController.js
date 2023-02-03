@@ -20,13 +20,13 @@ const controller = {
       let category;
       let color;
       let size;
-      db.Product.findByPk(id, {include: ['status','categories', 'colors', 'sizes', ] })
+      db.Product.findByPk(id, {include: ['status','category', 'color', 'size', ] })
         .then(async product => {
           relatedProducts = await db.Product.findAll({where: {productCategoryId: product.productCategoryId}});
           status = product.status;
-          category = product.categories;
-          color = product.colors;
-          size = product.sizes;
+          category = product.category;
+          color = product.color;
+          size = product.size;
           res.render('./products/productDetail', { user: req.session.userLogged, product, relatedProducts, status, category, color, size})
         })
     },

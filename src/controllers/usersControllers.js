@@ -55,7 +55,8 @@ const controller = {
       res.clearCookie('userLogData');
       res.redirect('/products');
     },
-    index: (req, res) => {
+    index: async (req, res) => {
+      const users = await db.User.findAll();
       res.render('./users/index', { users });
     },
     create: (req, res) => {
