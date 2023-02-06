@@ -1,38 +1,10 @@
 import React from 'react';
-import fullShapeLogo from '../assets/images/Shapepng.svg'
-import {Link, Route, Switch} from 'react-router-dom';
-import LastInput from './LastInput';
-import LastInputDetail from './LastInputDetail';
-import Ctotals from './Ctotals';
-import Tables from './Tables';
-import List from './List';
-import {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
+import fullShapeLogo from '../assets/images/Shapepng.svg';
 
 function NavBar () {
-
-const [products, setProducts] = useState([]);
-const [users, setUsers] = useState([]);
-    
-    useEffect(() => {
-        fetch('http://localhost:3000/api/products')
-        .then(response => {return response.json()})
-            .then(data => {
-                setProducts(data)
-            })
-            .catch(error => console.log(error ))
-
-        fetch('http://localhost:3000/api/users')
-        .then(response => {return response.json()})
-            .then(data => {
-                setUsers(data.data)
-            })
-            .catch(error => console.log(error ))
-
-    }, [])
-
-    return (
-        <React.Fragment>
-        <div className='navDiv'>
+  return (
+    <div className='navDiv'>
             <img className="logo" src={fullShapeLogo} alt="Full Shape"/>
             <Link className='main' to='/'><i className="fa-solid fa-chart-pie"></i><span>Dashboard - FullShape</span></Link>
             <ul className='pages'>
@@ -42,31 +14,7 @@ const [users, setUsers] = useState([]);
                 <li><Link to="/lastinput"><i className="fa-solid fa-chart-column"></i><span>Ultimo ingreso</span></Link></li>
             </ul>
         </div>
-            <Switch>
-                <Route exact path='/'>
-                  <Tables products = {products} users = {users}/>
-                  <Ctotals products = {products}/>
-                  <List products = {products.data}/>
-                  <LastInput products = {products.data}/>
-                </Route>
-                <Route exact path='/lastinput'>
-                   <LastInput products = {products.data}/>
-                </Route>
-                <Route path='/lastinput/detail'> 
-                <LastInputDetail products = {products.data}/> 
-                </Route>
-                <Route path='/totals'> 
-                <Tables products = {products} users = {users}/> 
-                </Route>
-                <Route path='/productslist'> 
-                <List products = {products.data}/> 
-                </Route>
-                <Route path='/categorytotals'> 
-                <Ctotals products = {products}/> 
-                </Route>
-            </Switch>  
-        </React.Fragment>
-    )
+  )
 }
 
 export default NavBar;

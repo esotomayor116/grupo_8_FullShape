@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    background-image: url(../images/blue-pattern.jpg);
 }
 
 .navDiv {
@@ -8,7 +9,7 @@ body {
     width: 100%;
     height: 75px;
     border: 1px solid black;
-    background-color: #83FACF;
+    background-color: #13D493;
     margin-bottom: 5px;
 }
 
@@ -43,13 +44,15 @@ span {
 .boxLP {
   text-align: center;
   width: 658px;
+  margin-top: 15px;
   margin-bottom: 5px;
-  border: 1px silver solid;
-  border-radius: 5px;
+  border: 1px black solid;
+  background-color: #13D493;
+  border-radius: 10px;
 }
 
 .titleLP {
-    border-bottom: 1px solid silver;
+    border-bottom: 1px solid black;
     padding-bottom: 10px;
     margin-top:10px;
 }
@@ -65,12 +68,16 @@ span {
 
 .detailLP {
     background-color: #13d493;
-    border-color: blue;
+    border-color: #4E5DBC;
     width: 100px;
     height: 33px;
     margin-bottom: 5px;
     border-radius: 5px;
     font-weight: bold;
+}
+
+.detailLP:hover {
+    background-color: #4E5DBC;
 }
 
 .detail1LP {
@@ -89,7 +96,6 @@ span {
     margin: auto;
     justify-content: space-around;
     list-style-type: none;
-    background-image: url(../images/fondo1.webp);
     background-repeat: no-repeat;
     background-size: cover;
     align-self: flex-end;
@@ -101,8 +107,8 @@ span {
     justify-content: space-around;
     list-style-type: none;
     border: 1px solid black;
-    background-color: #83FACF;
-    border-radius: 10px;
+    background-color: #13D493;
+    border-radius: 100px;
 }
 
 .totals2 {
@@ -113,19 +119,19 @@ span {
     justify-content: space-around;
     list-style-type: none;
     border: 1px solid black;
-    background-color: #83FACF;
-    border-radius: 10px;
+    background-color: #13D493;
+    border-radius: 100px;
     padding: 10px;
 }
 
 .totals:hover {
-    background-color: #49b18b;
-    border-radius: 100px;
+    background-color: #00FFA9;
+    border-radius: 10px;
 }
 
 .totals2:hover {
-    background-color: #49b18b;
-    border-radius: 100px;
+    background-color: #00FFA9;
+    border-radius: 10px;
 }
 
 .totals h1{
@@ -140,12 +146,16 @@ padding:10px
 /*  Estilos de listado de productos */
 
 .listP {
-    list-style-type: auto;
+    list-style-type: none;
     border: 1px solid black;
-    background-color: #83FACF;
+    background-color: #13D493;
     font-size: 18px;
     width:50% ;
+    border-radius: 5px;
+}
 
+.listP:hover {
+    background-color: #00FFA9;
 }
 
 ul.products{

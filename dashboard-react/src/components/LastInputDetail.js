@@ -1,12 +1,15 @@
 import React from 'react';
-import { useState, useEffect} from 'react';
 
 function LastInputDetail (props) {
+    let products = [];
 
-    const products = props.products;
-    let lastProductName = <p>Cargando...</p>;
-    let lastProductImage = <p>Cargando...</p>;
-    let lastProductDescription = <p>Cargando...</p>;
+    if (props.products != undefined) {
+        products = props.products;
+    }
+
+    let lastProductName = <p className="totals2">Cargando...</p>;
+    let lastProductImage;
+    let lastProductDescription;
     let lastProductCode;
     let lastProductUnitPrice;
     let lastProductStatus;
@@ -21,7 +24,7 @@ function LastInputDetail (props) {
         lastProductCode = <p className='detail1LP'><span>Código universal: </span> {products[products.length-1].productCode}</p>
         lastProductUnitPrice = <p className='detail1LP'><span>Precio Unitario: </span>${products[products.length-1].productUnitPrice}</p>
         lastProductStatus = <p className='detail1LP'><span>Status: </span>{products[products.length-1].status.statusName}</p>
-        lastProductCategory = <p className='detail1LP'><span>Categoría: </span>{products[products.length-1].categories.categoryName}</p>
+        lastProductCategory = <p className='detail1LP'><span>Categoría: </span>{products[products.length-1].category.categoryName}</p>
         if (products[products.length-1].colors != null) {
             lastProductColor = <p className='detail1LP'><span>Color: </span>{products[products.length-1].colors.colorName}</p>
         }
@@ -31,7 +34,7 @@ function LastInputDetail (props) {
     }
     
     return (
-            <div className='lastProduct'>
+        <div className='lastProduct'>
             <div className='boxLP'>
                 <h1 className='titleLP'>Último producto ingresado</h1>
                 {lastProductName}

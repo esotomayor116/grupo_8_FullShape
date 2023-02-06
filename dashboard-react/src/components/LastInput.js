@@ -1,5 +1,4 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 
 
@@ -8,10 +7,10 @@ function LastInput (props) {
     if (props.products != undefined) {
         products = props.products;
     }
-    let lastProductName = <p>Cargando...</p>;
-    let lastProductImage = <p>Cargando...</p>;
-    let lastProductDescription = <p>Cargando...</p>;
-    let lastProductDetail = <p>Cargando...</p>
+    let lastProductName;
+    let lastProductImage;
+    let lastProductDescription;
+    let lastProductDetail;
 
     if (products.length > 0) {
         lastProductName = <h2>{products[products.length-1].productName}</h2>;
@@ -21,15 +20,22 @@ function LastInput (props) {
     }
     
     return (
-        <div className='lastProduct'>
-            <div className='boxLP'>
-                <h1 className='titleLP'>Último producto ingresado</h1>
-                {lastProductName}
-                {lastProductImage}
-                {lastProductDescription}
-                {lastProductDetail}
-            </div>
-        </div>
+        <>
+            {products.length > 0 &&  <div className='lastProduct'>
+                <div className='boxLP'>
+                    <h1 className='titleLP'>Último producto ingresado</h1>
+                    {lastProductName}
+                    {lastProductImage}
+                    {lastProductDescription}
+                    {lastProductDetail}
+                </div>
+            </div>}
+           {products.length == 0 &&
+            <ul className="totalsDiv">
+                <li className="totals2">Cargando...</li>
+            </ul>
+           }
+        </>
     )
 }
 

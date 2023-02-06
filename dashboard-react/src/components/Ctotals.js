@@ -1,8 +1,10 @@
 import React from 'react';
 
 function Ctotals (props) {
-    let count;
-    let products = [];
+    let products;
+    let count = <li className="totals2">
+        Cargando...
+    </li>
     if (props.products != undefined) {
         products = props.products
         if (products.countByCategory) {
@@ -11,11 +13,11 @@ function Ctotals (props) {
                     {category}
                 </div> 
                 </li>
-                })
+            })
         } 
     }
     return (
-        <ul className= 'totalsDiv'>{count}</ul>
+        <ul className="totalsDiv">{count}</ul>
     )
 }
 
