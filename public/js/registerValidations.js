@@ -43,18 +43,23 @@ window.addEventListener('load', function () {
         error.push("Passwords don't match")
       }
   
-      if (image.value == "") {
-        error.push("Please upload an image before continuing")
-      } else {
-        let acceptedExtensions = [".jpg", ".png", ".jpeg"];
-  
-        for (let i= 0; i<acceptedExtensions.length; i++) {
-          if (!image.value.includes(acceptedExtensions[i])) {
-            error.push("The permitted extensions are '.jpg', '.png', and '.jpeg'");
-            break;
+      function imageCheck () {
+        if (image.value == "") {
+          error.push("Please upload an image before continuing")
+        } else {
+          let acceptedExtensions = [".jpg", ".png", ".jpeg"];
+    
+          for (let i= 0; i<acceptedExtensions.length; i++) {
+            if (image.value.includes(acceptedExtensions[i])) {
+              return true;
+            } 
           }
+            console.log(image.value)
+            error.push("The permitted extensions are '.jpg', '.png', and '.jpeg'");
         }
       }
+
+      imageCheck();
   
       if (error.length > 0) {
   
